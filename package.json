@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "export NODE_ENV=development && webpack-dev-server -d",
     "prod": "export NODE_ENV=production && webpack",
+    "dev1": "set NODE_ENV=development && webpack-dev-server -d",
+    "prod1": "set NODE_ENV=production && webpack",
     "test": "jest"
   },
   "author": "Lizaveta Sasinovich",
