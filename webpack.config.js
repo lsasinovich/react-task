@@ -1,8 +1,12 @@
 const webpack = require('webpack');
 const path = require("path");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
+console.log(NODE_ENV);
+var isProd = process.env.NODE_ENV === 'production' // true or false
 
 module.exports = function(env, options) {
   
@@ -31,6 +35,10 @@ module.exports = function(env, options) {
         test: /\.scss$/,
         loader: ['style-loader', 'css-loader', 'sass-loader']
       },
+      {
+        loader: 'file-loader', 
+        test: /\.(ttf|eot|svg)$/
+      }
     ]
   },
   plugins: [
@@ -43,7 +51,6 @@ module.exports = function(env, options) {
         template: "./client/index.html"
     }),
     new webpack.EnvironmentPlugin(['NODE_ENV', 'USER']),
-
   ],
   
   watch: NODE_ENV == 'development',
@@ -54,23 +61,27 @@ module.exports = function(env, options) {
     contentBase: "./dist",
     compress: true,
     open: true
-  }
+  },
+
+  mode: NODE_ENV
 }
+
+if (NODE_ENV == 'production') {
+  config.optimization = {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        uglifyOptions: {
+          compress: false,
+          ecma: 6,
+          mangle: true
+        },
+        sourceMap: true
+      })
+    ]
+  }
+} 
 
   return config;
 };
-
-if (NODE_ENV == 'production') {
-  module.exports.plugins.push(
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        drop_console: true,
-        unsafe: true
-      }
-    })
-  );
-  module.exports.mode = "production"
-} else if (NODE_ENV == 'development'){
-  module.exports.mode = "development"
-}
