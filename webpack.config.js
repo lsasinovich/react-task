@@ -36,8 +36,11 @@ module.exports = function(env, options) {
         loader: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
-        loader: 'file-loader', 
-        test: /\.(ttf|eot|svg)$/
+        test: /\.(ttf|eot|svg|woff|png|jpg)$/,
+        loader: "file-loader",
+        options: {
+          name: "[path][name].[ext]?[hash]"
+        }
       }
     ]
   },
