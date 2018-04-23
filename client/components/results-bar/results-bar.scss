@@ -1,0 +1,23 @@
+.results-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15%;
+    background-color: #dfdede;
+    font-weight: 700;
+    font-size: 14px;
+    
+    .results-count {
+        flex: 5;
+    }
+
+    .results-sort {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex: 4;
+
+        .rating {
+            color: #e64242;
+        }
+    }
+}

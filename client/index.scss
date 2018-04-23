@@ -1,8 +1,12 @@
 body {
-    font-family: 'Pt Sans';
+    font-family: 'Helvetica';
     margin: 0;
 }
 
 button:focus {
     outline: none; 
+}
+
+p {
+    margin: 0;
 }

@@ -1,0 +1,38 @@
+.item {
+    width: 150px;
+    margin-bottom: 20px;
+
+    img {
+        width: 100%;
+        height: 230px;
+    }
+
+    .film-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 5px 0;
+        font-weight: 700;
+        
+        div {
+            display: flex;
+            flex-direction: column;
+
+            .title {
+                margin-bottom: 8px;
+                font-size: 12px;
+            }
+    
+            .genre {
+                font-size: 9px;
+            }
+        }
+
+        .year {
+            padding: 2px 4px;
+            border: 1px solid black;
+            font-size: 10px;
+        }
+    }
+}
