@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 import './film-item.scss';
+
 
 export class FilmItem extends React.Component {
     render() {
@@ -18,4 +20,10 @@ export class FilmItem extends React.Component {
             </div>
         );
     }
+};
+
+FilmItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired
 };

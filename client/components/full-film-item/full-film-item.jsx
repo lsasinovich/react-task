@@ -17,7 +17,7 @@ export class FullFilmItem extends React.Component {
                     <p>{this.props.additional}</p>
                     <p className="year-and-time">{this.props.year}    {this.props.duration} min</p>
                     <p className="description">{this.props.description}</p>
-                    <Button class="btn white-button genre-button">SEARCH</Button>
+                    <Button class="btn genre-button cl-white bg-red">SEARCH</Button>
                 </div>
             </div>
         );

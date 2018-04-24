@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom';
 
 import './nextflixroulette.scss';
 
-export class Nextflixroulette extends React.Component {
-    render() {
-        return (
-            <p className="logo">netflixroulette</p>
-        );
-    }
+export function Nextflixroulette() {
+    return (
+        <p className="logo">netflixroulette</p>
+    );
 };

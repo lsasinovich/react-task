@@ -1,0 +1,31 @@
+//COLORS
+$red: #e64242;
+$black: #000;
+$white: #fff;
+$grey: #696868;
+$light-grey: #dfdede;
+$yellow: #fbff00;
+
+//SIZE
+$medium: 780px;
+$small: 480px;
+
+.bg-white {
+    background-color: $white;
+}
+
+.bg-grey {
+    background-color: $grey;
+}
+
+.bg-red {
+    background-color: $red;
+}
+
+.cl-red {
+    color: $red;
+}
+
+.cl-white {
+    color: $white;
+}

@@ -1,6 +1,8 @@
+@import "../../mixins.scss";
+
 .logo {
     font-weight: 900;
     padding: 15px 0;
     font-size: 16px;
-    color: #e64242;
+    color: $red;
 }

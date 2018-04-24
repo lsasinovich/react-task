@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom';
 
 import './empty-results.scss';
 
-export class EmptyResults extends React.Component {
-    render() {
-        return (
+export function EmptyResults() {
+    return (
         <p className="empty-page">No films found</p>
     );
-}
 };
