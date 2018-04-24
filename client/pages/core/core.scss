@@ -1,6 +1,6 @@
 .core-page{
-    position: relative;
     min-height: 100vh;
+    position: relative;
 
     .header{
         height: 250px;
@@ -41,9 +41,10 @@
 
     .footer {
         position: absolute;
-        bottom: -38px;
+        bottom: 0;
         width: 100%;
-        padding: 0 0 15px 15px;
+        box-sizing: border-box;
+        padding-left: 15px;
         background: rgba($color: #000000, $alpha: 0.4);
     }
 }

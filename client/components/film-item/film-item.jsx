@@ -6,7 +6,7 @@ import './film-item.scss';
 export class FilmItem extends React.Component {
     render() {
         return (
-            <div className="item">
+            <div className="film-item">
                 <img src={"http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg"} />
                 <div className="film-info">
                     <div>

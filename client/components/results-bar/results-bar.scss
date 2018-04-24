@@ -5,16 +5,15 @@
     background-color: #dfdede;
     font-weight: 700;
     font-size: 14px;
-    
-    .results-count {
-        flex: 5;
-    }
 
     .results-sort {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        flex: 4;
+
+        p:nth-child(2) {
+            margin: 0 15px;
+        }
 
         .rating {
             color: #e64242;

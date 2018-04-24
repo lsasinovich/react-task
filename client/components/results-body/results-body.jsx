@@ -9,17 +9,20 @@ import './results-body.scss';
 export class ResultsBody extends React.Component {
     render() {
         return (
-            <div className="">
-                <ResultsBar count={7}/>
-                <div className="results-body">
-                    <FilmItem title="FOUR ROOMS" genre="Drama" year={1992}/>
-                    <FilmItem />
-                    <FilmItem />
-                    <FilmItem />
-                    <FilmItem />
-                    <FilmItem />
-                    <FilmItem />
-                </div>
+            <div className="results-body">
+                <FilmItem title="FOUR ROOMS" genre="Drama" year={1992}/>
+                <FilmItem title="FOUR ROOMS" genre="Drama" year={1992}/>
+                <FilmItem title="FOUR ROOMS" genre="Drama" year={1992}/>
+                <FilmItem title="FOUR ROOMS" genre="Drama" year={1992}/>
+                <FilmItem title="FOUR ROOMS" genre="Drama" year={1992}/>
+                <FilmItem title="FOUR ROOMS" genre="Drama" year={1992}/>
+                <FilmItem title="FOUR ROOMS" genre="Drama" year={1992}/>
+                <FilmItem title="FOUR ROOMS" genre="Drama" year={1992}/>
+                <FilmItem title="FOUR ROOMS" genre="Drama" year={1992}/>
+                <FilmItem title="FOUR ROOMS" genre="Drama" year={1992}/>
+                <FilmItem title="FOUR ROOMS" genre="Drama" year={1992}/>
+                <FilmItem title="FOUR ROOMS" genre="Drama" year={1992}/>
+                <FilmItem title="FOUR ROOMS" genre="Drama" year={1992}/>
             </div>
         );
     }

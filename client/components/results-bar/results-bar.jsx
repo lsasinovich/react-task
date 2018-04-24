@@ -21,7 +21,7 @@ export class ResultsBar extends React.Component {
 
 ResultsBar.propTypes = {
     count: PropTypes.number
-  };
+};
   
 ResultsBar.defaultProps = {
     count: -1

@@ -6,6 +6,8 @@ import { Nextflixroulette } from '../../components/nextflixroulette/nextflixroul
 import { EmptyResults } from '../../components/empty-results/empty-results';
 import { ResultsBar } from '../../components/results-bar/results-bar';
 import { ResultsBody } from '../../components/results-body/results-body';
+import { FullFilmItem } from '../../components/full-film-item/full-film-item';
+
 import './core.scss';
 
 export class Core extends React.Component {
@@ -26,6 +28,8 @@ export class Core extends React.Component {
                     </div>
                 </div>
                 <div className="main">
+                    <ResultsBar count={7}/>
+                    <FullFilmItem title="FOUR ROOMS" rating={4.7} additional="Oscar movie" year={1992} duration={154} description="Film description"/>
                     <ResultsBody/>
                 </div>
                 <div className="footer">
