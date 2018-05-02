@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "set NODE_ENV=development && webpack-dev-server -d",
+    "dev": "export NODE_ENV=development && webpack-dev-server",
     "prod": "set NODE_ENV=production && webpack -p",
-    "dev1": "set NODE_ENV=development && webpack-dev-server -d",
+    "dev1": "webpack-dev-server --mode development",
     "prod1": "set NODE_ENV=production && webpack",
     "test": "jest"
   },

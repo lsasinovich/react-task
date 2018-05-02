@@ -1,12 +1,9 @@
 const webpack = require('webpack');
 const path = require("path");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
-console.log(NODE_ENV);
-var isProd = process.env.NODE_ENV === 'production' // true or false
 
 module.exports = function(env, options) {
   

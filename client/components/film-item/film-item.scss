@@ -9,16 +9,17 @@
     
 
     img {
-        width: 150px;
-        height: 250px;
+        width: 200px;
+        height: 320px;
     }
 
     .film-info {
-        width: 140px;
+        width: 180px;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        padding: 5px;
+        justify-content: space-between;
+        padding: 10px;
         margin: 0;
         font-weight: 700;
         
@@ -41,26 +42,27 @@
             padding: 2px 4px;
             border: 1px solid $black;
             font-size: 10px;
-            flex: 1;
         }
+    }
+}
+@media screen and ( min-width: $xlarge ) {
+    .film-item {
+        width: 25%;
+    }
+}
+
+@media screen and ( max-width: $medium ) {
+    .film-item {
+        width: 50%;
     }
 }
 
 @media screen and ( max-width: $small ) {
     .film-item {
-        display: flex;
         width: 100%;
         margin-bottom: 20px;
-        
-    
-        img {
-            width: 220px;
-            height: 350px;
-        }
     
         .film-info {
-            width: 210px;
-            
             div {
                 width: 170px;
                 margin-right: 10px;

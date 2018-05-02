@@ -7,6 +7,7 @@ $light-grey: #dfdede;
 $yellow: #fbff00;
 
 //SIZE
+$xlarge: 1200px;
 $medium: 780px;
 $small: 480px;
 
@@ -28,4 +29,61 @@ $small: 480px;
 
 .cl-white {
     color: $white;
+}
+
+//BUTTONS
+.btn {
+    color: $white;
+    border: none;
+    border-radius: 0;
+}
+.genre-button {
+    padding: 5px 20px;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.title-button {
+    font-size: 14px;
+    padding: 5px 20px;
+}
+
+.search-button {
+    font-size: 16px;
+    padding: 5px 40px;
+}
+
+@media screen and ( max-width: $medium ) {
+    .genre-button {
+        font-size: 12px;
+        padding: 5px 15px;
+    }
+
+    .title-button {
+        font-size: 12px;
+        padding: 5px 15px;
+    }
+    
+    .search-button {
+        font-size: 14px;
+        padding: 5px 20px;
+    }
+}
+
+
+@media screen and ( max-width: $small ) {
+    .genre-button {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+
+    .title-button {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+    
+    .search-button {
+        font-size: 12px;
+        padding: 5px 15px;
+    }
 }
