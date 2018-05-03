@@ -33,9 +33,9 @@ $small: 480px;
 
 //BUTTONS
 .btn {
-    color: $white;
     border: none;
     border-radius: 0;
+    font-weight: 600;
 }
 .genre-button {
     padding: 5px 20px;
@@ -51,6 +51,11 @@ $small: 480px;
 .search-button {
     font-size: 16px;
     padding: 5px 40px;
+}
+
+.return-button {
+    padding: 5px 20px;
+    font-size: 14px;
 }
 
 @media screen and ( max-width: $medium ) {
@@ -74,16 +79,16 @@ $small: 480px;
 @media screen and ( max-width: $small ) {
     .genre-button {
         font-size: 10px;
-        padding: 5px 10px;
+        padding: 5px;
     }
 
     .title-button {
         font-size: 10px;
-        padding: 5px 10px;
+        padding: 5px;
     }
     
     .search-button {
-        font-size: 12px;
-        padding: 5px 15px;
+        font-size: 11px;
+        padding: 5px;
     }
 }

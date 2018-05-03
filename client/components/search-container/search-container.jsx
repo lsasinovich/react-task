@@ -30,7 +30,7 @@ export class SearchContainer extends React.Component {
     render() {
         return (
             <div className="search-container">
-                <Header/>
+                <Header fullItem={true}/>
                 <ResultsBar />
                 <ResultsBody assets={this.state.results}/>
             </div>

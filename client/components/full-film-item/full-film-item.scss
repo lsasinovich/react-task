@@ -1,4 +1,4 @@
-@import '../../mixins.scss'; 
+@import "../../mixins.scss";
 
 .full-film-item {
     display: flex;
@@ -6,7 +6,6 @@
     font-weight: 400;
     font-size: 16px;
     color: $white;
-    background-color: $black;
 
     img {
         width: 300px;
@@ -47,6 +46,11 @@
             font-weight: 700;
         }
 
+        .description {
+            width: 400px;
+            word-wrap: break-word;
+        }
+
         .btn {
             font-weight: 700;
         }
@@ -55,6 +59,8 @@
 
 @media screen and ( max-width: $medium ) {
     .full-film-item {
+        width: 250px;
+
         img {
             width: 250px;
             height: 300px;
@@ -77,6 +83,11 @@
                     font-size: 14px;
                 }
             }
+
+            
+            .description {
+                width: 250px;
+            }
         }
     }
 }
@@ -87,11 +98,7 @@
         flex-direction: column;
         font-size: 14px;
         align-items: center;
-    
-        img {
-            width: 250px;
-            height: 300px;
-        }
+        justify-content: center;
     
         .full-film-info {
             padding-left: 0;

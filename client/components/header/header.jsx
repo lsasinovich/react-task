@@ -1,23 +1,26 @@
 import React from 'react';
 import { Nextflixroulette } from '../nextflixroulette/nextflixroulette';
+import { FullFilmItem } from '../full-film-item/full-film-item';
 
 import './header.scss';
 
 export class Header extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {inputValue: ""};
+        this.state = {inputValue: "", fullItem: this.props.fullItem};
     }
 
     updateInputValue(evt) {
         this.setState({
-          inputValue: evt.target.value
+          inputValue: evt.target.value,
+          fullItem: this.state.fullItem
         });
     }
 
     resetInputValue(evt) {
         this.setState({
-            inputValue: ""
+            inputValue: "",
+            fullItem: this.state.fullItem
         });
     }
 
@@ -33,10 +36,24 @@ export class Header extends React.Component {
         console.log("Genre button was clicked");
     }
 
+    returnToMainPage() {
+        this.setState({
+            inputValue: this.state.inputValue,
+            fullItem: !this.state.fullItem
+        });
+    }
+
     render() {
         return (
             <div className="header">
+            <div className="return-div">
                 <Nextflixroulette/>
+                { this.state.fullItem && 
+                    <button className="btn return-button cl-red bg-white" onClick={this.returnToMainPage.bind(this)}>SEARCH</button> 
+                }
+            </div>
+            { !this.state.fullItem ?
+                <div>
                 <p className="find-movie">FIND YOUR MOVIE</p>
                 <div className="search-wrapper">
                     <input className="search-bar" 
@@ -50,11 +67,14 @@ export class Header extends React.Component {
                 <div className="button-group cl-white">
                     <div>
                         <p className="search-by">SEARCH BY</p>
-                        <button className='btn genre-button bg-grey' onClick={this.genreHendler.bind(this)}>GENRE</button>
-                        <button className='btn title-button bg-red' onClick={this.titleHendler.bind(this)}>TITLE</button>
+                        <button className='btn genre-button bg-grey cl-white' onClick={this.genreHendler.bind(this)}>GENRE</button>
+                        <button className='btn title-button bg-red cl-white' onClick={this.titleHendler.bind(this)}>TITLE</button>
                     </div>
-                    <button className='btn search-button bg-red' onClick={this.searchHendler.bind(this)}>SEARCH</button>
+                    <button className='btn search-button bg-red cl-white' onClick={this.searchHendler.bind(this)}>SEARCH</button>
                 </div>
+                </div> :
+                <FullFilmItem />
+            }
             </div>
         );
     }

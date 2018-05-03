@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 
 import './full-film-item.scss';
 
-function returnToMainPage() {
-    console.log('Return to main page');
-}
-
 export const FullFilmItem = (props) => (
     <div className="full-film-item">
         <img src={props.posterUrl} />
@@ -18,7 +14,6 @@ export const FullFilmItem = (props) => (
             <p>{props.additional}</p>
             <p className="year-and-time">{props.year}    {props.duration} min</p>
             <p className="description">{props.description}</p>
-            <button className="btn genre-button cl-white bg-red" onClick={returnToMainPage}>SEARCH</button>
         </div>
     </div>
 );
@@ -31,6 +26,7 @@ FullFilmItem.propTypes = {
     year: PropTypes.number,
     rating: PropTypes.number,
     duratin: PropTypes.number,
+    description: PropTypes.string,
 };
 
 FullFilmItem.defaultProps = {
@@ -41,4 +37,5 @@ FullFilmItem.defaultProps = {
     year: 1992,
     rating: 4.7,
     duration: 124,
+    description: "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film."
 };
