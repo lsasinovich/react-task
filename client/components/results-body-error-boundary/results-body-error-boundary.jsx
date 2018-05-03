@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './resultsBodyErrorBoundary.scss';
+import './results-body-error-boundary.scss';
 
 export class ResultsBodyErrorBoundary extends React.Component {
     constructor(props) {
