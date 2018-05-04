@@ -7,6 +7,9 @@ import './results-bar.scss';
 export class ResultsBar extends React.Component {
     constructor(props) {
         super(props);
+
+        this.switchSort = this.switchSort.bind(this);
+
         this.state = {
             rating: 'active',
             releaseDate: 'passive'
@@ -14,8 +17,7 @@ export class ResultsBar extends React.Component {
     }
 
     switchSort(eve) {
-        console.log(eve.target.className);
-        if(eve.target.className === 'passive') {
+        if(eve.target.classList.contains("passive")) {
             if(this.state.rating === 'active') {
                 this.setState({
                     rating: 'passive',
@@ -28,7 +30,6 @@ export class ResultsBar extends React.Component {
                 });
             }
         }
-        console.log(this.state);
     }
 
     render() {
@@ -37,8 +38,8 @@ export class ResultsBar extends React.Component {
                 <p className="results-count">{this.props.count} movies found</p>
                 <div className="results-sort">
                     <p>Sort by</p>
-                    <p className={this.state.releaseDate} onClick={this.switchSort.bind(this)}>release date</p>
-                    <p className={this.state.rating} onClick={this.switchSort.bind(this)}>rating</p>
+                    <p className={`releaseDate ${this.state.releaseDate}`} onClick={this.switchSort}>release date</p>
+                    <p className={`rating ${this.state.rating}`} onClick={this.switchSort}>rating</p>
                 </div>
             </div>
         );

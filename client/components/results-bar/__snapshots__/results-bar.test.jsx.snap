@@ -1,0 +1,273 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ResultsBar/> should render ResultsBar and match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ResultsBar
+    count={0}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className="results-count"
+        >
+          0
+           movies found
+        </p>,
+        <div
+          className="results-sort"
+        >
+          <p>
+            Sort by
+          </p>
+          <p
+            className="releaseDate passive"
+            onClick={[Function]}
+          >
+            release date
+          </p>
+          <p
+            className="rating active"
+            onClick={[Function]}
+          >
+            rating
+          </p>
+        </div>,
+      ],
+      "className": "results-bar",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            0,
+            " movies found",
+          ],
+          "className": "results-count",
+        },
+        "ref": null,
+        "rendered": Array [
+          0,
+          " movies found",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p>
+              Sort by
+            </p>,
+            <p
+              className="releaseDate passive"
+              onClick={[Function]}
+            >
+              release date
+            </p>,
+            <p
+              className="rating active"
+              onClick={[Function]}
+            >
+              rating
+            </p>,
+          ],
+          "className": "results-sort",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Sort by",
+            },
+            "ref": null,
+            "rendered": "Sort by",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "release date",
+              "className": "releaseDate passive",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "release date",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "rating",
+              "className": "rating active",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "rating",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className="results-count"
+          >
+            0
+             movies found
+          </p>,
+          <div
+            className="results-sort"
+          >
+            <p>
+              Sort by
+            </p>
+            <p
+              className="releaseDate passive"
+              onClick={[Function]}
+            >
+              release date
+            </p>
+            <p
+              className="rating active"
+              onClick={[Function]}
+            >
+              rating
+            </p>
+          </div>,
+        ],
+        "className": "results-bar",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              0,
+              " movies found",
+            ],
+            "className": "results-count",
+          },
+          "ref": null,
+          "rendered": Array [
+            0,
+            " movies found",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p>
+                Sort by
+              </p>,
+              <p
+                className="releaseDate passive"
+                onClick={[Function]}
+              >
+                release date
+              </p>,
+              <p
+                className="rating active"
+                onClick={[Function]}
+              >
+                rating
+              </p>,
+            ],
+            "className": "results-sort",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Sort by",
+              },
+              "ref": null,
+              "rendered": "Sort by",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "release date",
+                "className": "releaseDate passive",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "release date",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "rating",
+                "className": "rating active",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "rating",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

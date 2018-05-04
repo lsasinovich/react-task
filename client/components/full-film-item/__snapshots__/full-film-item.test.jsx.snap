@@ -1,0 +1,432 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FullFilmItem/> should render FullFilmItem and match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FullFilmItem
+    additional="Oscar movie"
+    description="A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film."
+    duration={124}
+    genre="horror"
+    posterUrl="http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg"
+    rating={4.7}
+    title="Wolf wood"
+    year={1992}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <img
+          src="http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg"
+        />,
+        <div
+          className="full-film-info"
+        >
+          <div
+            className="title-and-rating"
+          >
+            <p
+              className="title"
+            >
+              Wolf wood
+            </p>
+            <p
+              className="rating"
+            >
+              4.7
+            </p>
+          </div>
+          <p>
+            Oscar movie
+          </p>
+          <p
+            className="year-and-time"
+          >
+            1992
+                
+            124
+             min
+          </p>
+          <p
+            className="description"
+          >
+            A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.
+          </p>
+        </div>,
+      ],
+      "className": "full-film-item",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "src": "http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="title-and-rating"
+            >
+              <p
+                className="title"
+              >
+                Wolf wood
+              </p>
+              <p
+                className="rating"
+              >
+                4.7
+              </p>
+            </div>,
+            <p>
+              Oscar movie
+            </p>,
+            <p
+              className="year-and-time"
+            >
+              1992
+                  
+              124
+               min
+            </p>,
+            <p
+              className="description"
+            >
+              A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.
+            </p>,
+          ],
+          "className": "full-film-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <p
+                  className="title"
+                >
+                  Wolf wood
+                </p>,
+                <p
+                  className="rating"
+                >
+                  4.7
+                </p>,
+              ],
+              "className": "title-and-rating",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Wolf wood",
+                  "className": "title",
+                },
+                "ref": null,
+                "rendered": "Wolf wood",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": 4.7,
+                  "className": "rating",
+                },
+                "ref": null,
+                "rendered": 4.7,
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Oscar movie",
+            },
+            "ref": null,
+            "rendered": "Oscar movie",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                1992,
+                "    ",
+                124,
+                " min",
+              ],
+              "className": "year-and-time",
+            },
+            "ref": null,
+            "rendered": Array [
+              1992,
+              "    ",
+              124,
+              " min",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.",
+              "className": "description",
+            },
+            "ref": null,
+            "rendered": "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <img
+            src="http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg"
+          />,
+          <div
+            className="full-film-info"
+          >
+            <div
+              className="title-and-rating"
+            >
+              <p
+                className="title"
+              >
+                Wolf wood
+              </p>
+              <p
+                className="rating"
+              >
+                4.7
+              </p>
+            </div>
+            <p>
+              Oscar movie
+            </p>
+            <p
+              className="year-and-time"
+            >
+              1992
+                  
+              124
+               min
+            </p>
+            <p
+              className="description"
+            >
+              A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.
+            </p>
+          </div>,
+        ],
+        "className": "full-film-item",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "src": "http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="title-and-rating"
+              >
+                <p
+                  className="title"
+                >
+                  Wolf wood
+                </p>
+                <p
+                  className="rating"
+                >
+                  4.7
+                </p>
+              </div>,
+              <p>
+                Oscar movie
+              </p>,
+              <p
+                className="year-and-time"
+              >
+                1992
+                    
+                124
+                 min
+              </p>,
+              <p
+                className="description"
+              >
+                A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.
+              </p>,
+            ],
+            "className": "full-film-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p
+                    className="title"
+                  >
+                    Wolf wood
+                  </p>,
+                  <p
+                    className="rating"
+                  >
+                    4.7
+                  </p>,
+                ],
+                "className": "title-and-rating",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Wolf wood",
+                    "className": "title",
+                  },
+                  "ref": null,
+                  "rendered": "Wolf wood",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": 4.7,
+                    "className": "rating",
+                  },
+                  "ref": null,
+                  "rendered": 4.7,
+                  "type": "p",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Oscar movie",
+              },
+              "ref": null,
+              "rendered": "Oscar movie",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  1992,
+                  "    ",
+                  124,
+                  " min",
+                ],
+                "className": "year-and-time",
+              },
+              "ref": null,
+              "rendered": Array [
+                1992,
+                "    ",
+                124,
+                " min",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.",
+                "className": "description",
+              },
+              "ref": null,
+              "rendered": "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

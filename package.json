@@ -8,11 +8,13 @@
     "prod": "export NODE_ENV=production && webpack -p",
     "dev1": "set NODE_ENV=development && webpack-dev-server -d",
     "prod1": "set NODE_ENV=production && webpack -p",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "author": "Lizaveta Sasinovich",
   "license": "ISC",
   "dependencies": {
+    "classnames": "^2.2.5",
     "express": "^4.16.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -50,6 +52,15 @@
     "webpack-dev-server": "^3.1.3"
   },
   "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{jsx}",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": ["html", "text-summary"],
+    "setupFiles": [
+      "<rootDir>/jest/setupTests.js"
+    ],
     "transform": {
       ".*": "<rootDir>/node_modules/jest-css-modules"
     },
@@ -59,6 +70,10 @@
     "moduleFileExtensions": [
       "js",
       "jsx"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(css|scss|less)$": "<rootDir>/jest/styleMock.js",
+      "\\.(png|jpg|gif|ttf|eot|svg)$": "<rootDir>/jest/fileMock.js"
+    }
   }
 }

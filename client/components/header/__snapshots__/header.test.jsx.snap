@@ -1,0 +1,923 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header/> should render Header and match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Header
+    filmItem={false}
+    fullItem={false}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="return-div"
+        >
+          <Nextflixroulette />
+        </div>,
+        <div>
+          <p
+            className="find-movie"
+          >
+            FIND YOUR MOVIE
+          </p>
+          <div
+            className="search-wrapper"
+          >
+            <input
+              className="search-bar"
+              onChange={[Function]}
+              onClick={[Function]}
+              placeholder="Let's find your movie"
+              value=""
+            />
+            <img
+              src="test-file-stub"
+            />
+          </div>
+          <div
+            className="button-group cl-white"
+          >
+            <div>
+              <p
+                className="search-by"
+              >
+                SEARCH BY
+              </p>
+              <button
+                className="btn genre-button bg-grey cl-white"
+                onClick={[Function]}
+              >
+                GENRE
+              </button>
+              <button
+                className="btn title-button bg-red cl-white"
+                onClick={[Function]}
+              >
+                TITLE
+              </button>
+            </div>
+            <button
+              className="btn search-button bg-red cl-white"
+              onClick={[Function]}
+            >
+              SEARCH
+            </button>
+          </div>
+        </div>,
+      ],
+      "className": "header",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Nextflixroulette />,
+            false,
+          ],
+          "className": "return-div",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          false,
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p
+              className="find-movie"
+            >
+              FIND YOUR MOVIE
+            </p>,
+            <div
+              className="search-wrapper"
+            >
+              <input
+                className="search-bar"
+                onChange={[Function]}
+                onClick={[Function]}
+                placeholder="Let's find your movie"
+                value=""
+              />
+              <img
+                src="test-file-stub"
+              />
+            </div>,
+            <div
+              className="button-group cl-white"
+            >
+              <div>
+                <p
+                  className="search-by"
+                >
+                  SEARCH BY
+                </p>
+                <button
+                  className="btn genre-button bg-grey cl-white"
+                  onClick={[Function]}
+                >
+                  GENRE
+                </button>
+                <button
+                  className="btn title-button bg-red cl-white"
+                  onClick={[Function]}
+                >
+                  TITLE
+                </button>
+              </div>
+              <button
+                className="btn search-button bg-red cl-white"
+                onClick={[Function]}
+              >
+                SEARCH
+              </button>
+            </div>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "FIND YOUR MOVIE",
+              "className": "find-movie",
+            },
+            "ref": null,
+            "rendered": "FIND YOUR MOVIE",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <input
+                  className="search-bar"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  placeholder="Let's find your movie"
+                  value=""
+                />,
+                <img
+                  src="test-file-stub"
+                />,
+              ],
+              "className": "search-wrapper",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "search-bar",
+                  "onChange": [Function],
+                  "onClick": [Function],
+                  "placeholder": "Let's find your movie",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "src": "test-file-stub",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div>
+                  <p
+                    className="search-by"
+                  >
+                    SEARCH BY
+                  </p>
+                  <button
+                    className="btn genre-button bg-grey cl-white"
+                    onClick={[Function]}
+                  >
+                    GENRE
+                  </button>
+                  <button
+                    className="btn title-button bg-red cl-white"
+                    onClick={[Function]}
+                  >
+                    TITLE
+                  </button>
+                </div>,
+                <button
+                  className="btn search-button bg-red cl-white"
+                  onClick={[Function]}
+                >
+                  SEARCH
+                </button>,
+              ],
+              "className": "button-group cl-white",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <p
+                      className="search-by"
+                    >
+                      SEARCH BY
+                    </p>,
+                    <button
+                      className="btn genre-button bg-grey cl-white"
+                      onClick={[Function]}
+                    >
+                      GENRE
+                    </button>,
+                    <button
+                      className="btn title-button bg-red cl-white"
+                      onClick={[Function]}
+                    >
+                      TITLE
+                    </button>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "SEARCH BY",
+                      "className": "search-by",
+                    },
+                    "ref": null,
+                    "rendered": "SEARCH BY",
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "GENRE",
+                      "className": "btn genre-button bg-grey cl-white",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "GENRE",
+                    "type": "button",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "TITLE",
+                      "className": "btn title-button bg-red cl-white",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": "TITLE",
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "SEARCH",
+                  "className": "btn search-button bg-red cl-white",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "SEARCH",
+                "type": "button",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="return-div"
+          >
+            <Nextflixroulette />
+          </div>,
+          <div>
+            <p
+              className="find-movie"
+            >
+              FIND YOUR MOVIE
+            </p>
+            <div
+              className="search-wrapper"
+            >
+              <input
+                className="search-bar"
+                onChange={[Function]}
+                onClick={[Function]}
+                placeholder="Let's find your movie"
+                value=""
+              />
+              <img
+                src="test-file-stub"
+              />
+            </div>
+            <div
+              className="button-group cl-white"
+            >
+              <div>
+                <p
+                  className="search-by"
+                >
+                  SEARCH BY
+                </p>
+                <button
+                  className="btn genre-button bg-grey cl-white"
+                  onClick={[Function]}
+                >
+                  GENRE
+                </button>
+                <button
+                  className="btn title-button bg-red cl-white"
+                  onClick={[Function]}
+                >
+                  TITLE
+                </button>
+              </div>
+              <button
+                className="btn search-button bg-red cl-white"
+                onClick={[Function]}
+              >
+                SEARCH
+              </button>
+            </div>
+          </div>,
+        ],
+        "className": "header",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Nextflixroulette />,
+              false,
+            ],
+            "className": "return-div",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            false,
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p
+                className="find-movie"
+              >
+                FIND YOUR MOVIE
+              </p>,
+              <div
+                className="search-wrapper"
+              >
+                <input
+                  className="search-bar"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  placeholder="Let's find your movie"
+                  value=""
+                />
+                <img
+                  src="test-file-stub"
+                />
+              </div>,
+              <div
+                className="button-group cl-white"
+              >
+                <div>
+                  <p
+                    className="search-by"
+                  >
+                    SEARCH BY
+                  </p>
+                  <button
+                    className="btn genre-button bg-grey cl-white"
+                    onClick={[Function]}
+                  >
+                    GENRE
+                  </button>
+                  <button
+                    className="btn title-button bg-red cl-white"
+                    onClick={[Function]}
+                  >
+                    TITLE
+                  </button>
+                </div>
+                <button
+                  className="btn search-button bg-red cl-white"
+                  onClick={[Function]}
+                >
+                  SEARCH
+                </button>
+              </div>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "FIND YOUR MOVIE",
+                "className": "find-movie",
+              },
+              "ref": null,
+              "rendered": "FIND YOUR MOVIE",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <input
+                    className="search-bar"
+                    onChange={[Function]}
+                    onClick={[Function]}
+                    placeholder="Let's find your movie"
+                    value=""
+                  />,
+                  <img
+                    src="test-file-stub"
+                  />,
+                ],
+                "className": "search-wrapper",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "search-bar",
+                    "onChange": [Function],
+                    "onClick": [Function],
+                    "placeholder": "Let's find your movie",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "src": "test-file-stub",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div>
+                    <p
+                      className="search-by"
+                    >
+                      SEARCH BY
+                    </p>
+                    <button
+                      className="btn genre-button bg-grey cl-white"
+                      onClick={[Function]}
+                    >
+                      GENRE
+                    </button>
+                    <button
+                      className="btn title-button bg-red cl-white"
+                      onClick={[Function]}
+                    >
+                      TITLE
+                    </button>
+                  </div>,
+                  <button
+                    className="btn search-button bg-red cl-white"
+                    onClick={[Function]}
+                  >
+                    SEARCH
+                  </button>,
+                ],
+                "className": "button-group cl-white",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <p
+                        className="search-by"
+                      >
+                        SEARCH BY
+                      </p>,
+                      <button
+                        className="btn genre-button bg-grey cl-white"
+                        onClick={[Function]}
+                      >
+                        GENRE
+                      </button>,
+                      <button
+                        className="btn title-button bg-red cl-white"
+                        onClick={[Function]}
+                      >
+                        TITLE
+                      </button>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "SEARCH BY",
+                        "className": "search-by",
+                      },
+                      "ref": null,
+                      "rendered": "SEARCH BY",
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "GENRE",
+                        "className": "btn genre-button bg-grey cl-white",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": "GENRE",
+                      "type": "button",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "TITLE",
+                        "className": "btn title-button bg-red cl-white",
+                        "onClick": [Function],
+                      },
+                      "ref": null,
+                      "rendered": "TITLE",
+                      "type": "button",
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "SEARCH",
+                    "className": "btn search-button bg-red cl-white",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "SEARCH",
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<Header/> should render Header with Full Film Item 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Header
+    filmItem={false}
+    fullItem={true}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="return-div"
+        >
+          <Nextflixroulette />
+          <button
+            className="btn return-button cl-red bg-white"
+            onClick={[Function]}
+          >
+            SEARCH
+          </button>
+        </div>,
+        <FullFilmItem
+          additional="Oscar movie"
+          description="A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film."
+          duration={124}
+          genre="horror"
+          posterUrl="http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg"
+          rating={4.7}
+          title="Wolf wood"
+          year={1992}
+        />,
+      ],
+      "className": "header",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Nextflixroulette />,
+            <button
+              className="btn return-button cl-red bg-white"
+              onClick={[Function]}
+            >
+              SEARCH
+            </button>,
+          ],
+          "className": "return-div",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "SEARCH",
+              "className": "btn return-button cl-red bg-white",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "SEARCH",
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additional": "Oscar movie",
+          "description": "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.",
+          "duration": 124,
+          "genre": "horror",
+          "posterUrl": "http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg",
+          "rating": 4.7,
+          "title": "Wolf wood",
+          "year": 1992,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="return-div"
+          >
+            <Nextflixroulette />
+            <button
+              className="btn return-button cl-red bg-white"
+              onClick={[Function]}
+            >
+              SEARCH
+            </button>
+          </div>,
+          <FullFilmItem
+            additional="Oscar movie"
+            description="A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film."
+            duration={124}
+            genre="horror"
+            posterUrl="http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg"
+            rating={4.7}
+            title="Wolf wood"
+            year={1992}
+          />,
+        ],
+        "className": "header",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Nextflixroulette />,
+              <button
+                className="btn return-button cl-red bg-white"
+                onClick={[Function]}
+              >
+                SEARCH
+              </button>,
+            ],
+            "className": "return-div",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "SEARCH",
+                "className": "btn return-button cl-red bg-white",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "SEARCH",
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additional": "Oscar movie",
+            "description": "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.",
+            "duration": 124,
+            "genre": "horror",
+            "posterUrl": "http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg",
+            "rating": 4.7,
+            "title": "Wolf wood",
+            "year": 1992,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

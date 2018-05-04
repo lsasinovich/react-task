@@ -1,0 +1,308 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FilmItem/> should render Film Item and match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FilmItem
+    genre="horror"
+    posterUrl="http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg"
+    title="Wolf wood"
+    year={1992}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <img
+          src="http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg"
+        />,
+        <div
+          className="film-info"
+        >
+          <div>
+            <p
+              className="title"
+            >
+              Wolf wood
+            </p>
+            <p
+              className="genre"
+            >
+              horror
+            </p>
+          </div>
+          <p
+            className="year"
+          >
+            1992
+          </p>
+        </div>,
+      ],
+      "className": "film-item",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "src": "http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div>
+              <p
+                className="title"
+              >
+                Wolf wood
+              </p>
+              <p
+                className="genre"
+              >
+                horror
+              </p>
+            </div>,
+            <p
+              className="year"
+            >
+              1992
+            </p>,
+          ],
+          "className": "film-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <p
+                  className="title"
+                >
+                  Wolf wood
+                </p>,
+                <p
+                  className="genre"
+                >
+                  horror
+                </p>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Wolf wood",
+                  "className": "title",
+                },
+                "ref": null,
+                "rendered": "Wolf wood",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "horror",
+                  "className": "genre",
+                },
+                "ref": null,
+                "rendered": "horror",
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": 1992,
+              "className": "year",
+            },
+            "ref": null,
+            "rendered": 1992,
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <img
+            src="http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg"
+          />,
+          <div
+            className="film-info"
+          >
+            <div>
+              <p
+                className="title"
+              >
+                Wolf wood
+              </p>
+              <p
+                className="genre"
+              >
+                horror
+              </p>
+            </div>
+            <p
+              className="year"
+            >
+              1992
+            </p>
+          </div>,
+        ],
+        "className": "film-item",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "src": "http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div>
+                <p
+                  className="title"
+                >
+                  Wolf wood
+                </p>
+                <p
+                  className="genre"
+                >
+                  horror
+                </p>
+              </div>,
+              <p
+                className="year"
+              >
+                1992
+              </p>,
+            ],
+            "className": "film-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p
+                    className="title"
+                  >
+                    Wolf wood
+                  </p>,
+                  <p
+                    className="genre"
+                  >
+                    horror
+                  </p>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Wolf wood",
+                    "className": "title",
+                  },
+                  "ref": null,
+                  "rendered": "Wolf wood",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "horror",
+                    "className": "genre",
+                  },
+                  "ref": null,
+                  "rendered": "horror",
+                  "type": "p",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": 1992,
+                "className": "year",
+              },
+              "ref": null,
+              "rendered": 1992,
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ResultsBar } from '../results-bar/results-bar';
 import { ResultsBody } from '../results-body/results-body';
-import { Nextflixroulette } from '../nextflixroulette/nextflixroulette';
 import { Header } from '../header/header';
 
 import './search-container.scss';
@@ -22,15 +21,15 @@ const resultAssets = [
 export class SearchContainer extends React.Component {
     constructor(props) {
         super(props);
+        
         this.state = {
-            //results: [],
-            results: resultAssets
+            results: []
         }
     }
     render() {
         return (
             <div className="search-container">
-                <Header fullItem={true}/>
+                <Header />
                 <ResultsBar />
                 <ResultsBody assets={this.state.results}/>
             </div>
