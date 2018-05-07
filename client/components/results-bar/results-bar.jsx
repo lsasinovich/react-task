@@ -16,8 +16,8 @@ export class ResultsBar extends React.Component {
         };
     }
 
-    switchSort(eve) {
-        if(eve.target.classList.contains("passive")) {
+    switchSort = (event) => {
+        if(event.target.className === 'passive') {
             if(this.state.rating === 'active') {
                 this.setState({
                     rating: 'passive',
@@ -38,8 +38,8 @@ export class ResultsBar extends React.Component {
                 <p className="results-count">{this.props.count} movies found</p>
                 <div className="results-sort">
                     <p>Sort by</p>
-                    <p className={`releaseDate ${this.state.releaseDate}`} onClick={this.switchSort}>release date</p>
-                    <p className={`rating ${this.state.rating}`} onClick={this.switchSort}>rating</p>
+                    <p className={this.state.releaseDate} onClick={this.switchSort}>release date</p>
+                    <p className={this.state.rating} onClick={this.switchSort}>rating</p>
                 </div>
             </div>
         );

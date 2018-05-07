@@ -3,18 +3,22 @@ import PropTypes from 'prop-types';
 
 import './film-item.scss';
 
-export const FilmItem = (props) => (
-    <div className="film-item">
-        <img src={props.posterUrl} />
-        <div className="film-info">
-            <div>
-                <p className="title">{props.title}</p>
-                <p className="genre">{props.genre}</p>
+export class FilmItem extends React.Component {
+    render() {
+        return (
+            <div className="film-item">
+                <img src={this.props.posterUrl}/>
+                <div className="film-info">
+                    <div>
+                        <p className="title">{this.props.title}</p>
+                        <p className="genre">{this.props.genre}</p>
+                    </div>
+                    <p className="year">{this.props.year}</p>
+                </div>
             </div>
-            <p className="year">{props.year}</p>
-        </div>
-    </div>
-)
+        );
+    }
+}
 
 FilmItem.propTypes = {
     title: PropTypes.string,

@@ -22,33 +22,33 @@ export class Header extends React.Component {
         };
     }
 
-    updateInputValue(evt) {
+    updateInputValue = () => {
         this.setState({
           inputValue: evt.target.value,
           fullItem: this.state.fullItem
         });
     }
 
-    resetInputValue(evt) {
+    resetInputValue = () => {
         this.setState({
             inputValue: "",
             fullItem: this.state.fullItem
         });
     }
 
-    searchHendler() {
+    searchHendler = () => {
         console.log(this.state.inputValue);
     }
 
-    titleHendler() {
+    titleHendler = () => {
         console.log("Title button was clicked");
     }
 
-    genreHendler() {
+    genreHendler = () => {
         console.log("Genre button was clicked");
     }
 
-    returnToMainPage() {
+    returnToMainPage = () => {
         this.setState({
             inputValue: this.state.inputValue,
             fullItem: !this.state.fullItem
