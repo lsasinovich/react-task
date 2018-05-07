@@ -1,0 +1,553 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Core/> should render Core and match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Core />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Header
+          filmItem={false}
+          fullItem={false}
+        />,
+        <ResultsBar
+          count={0}
+        />,
+        <ResultsBody
+          assets={
+            Array [
+              Object {
+                "title": "Asset 1",
+              },
+              Object {
+                "title": "Asset 2",
+              },
+              Object {
+                "title": "Asset 3",
+              },
+              Object {
+                "title": "Asset 4",
+              },
+              Object {
+                "title": "Asset 5",
+              },
+              Object {
+                "title": "Asset 6",
+              },
+              Object {
+                "title": "Asset 7",
+              },
+              Object {
+                "title": "Asset 8",
+              },
+              Object {
+                "title": "Asset 9",
+              },
+            ]
+          }
+        />,
+        <Footer />,
+      ],
+      "className": "core-page",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "filmItem": false,
+          "fullItem": false,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "count": 0,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "assets": Array [
+            Object {
+              "title": "Asset 1",
+            },
+            Object {
+              "title": "Asset 2",
+            },
+            Object {
+              "title": "Asset 3",
+            },
+            Object {
+              "title": "Asset 4",
+            },
+            Object {
+              "title": "Asset 5",
+            },
+            Object {
+              "title": "Asset 6",
+            },
+            Object {
+              "title": "Asset 7",
+            },
+            Object {
+              "title": "Asset 8",
+            },
+            Object {
+              "title": "Asset 9",
+            },
+          ],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Header
+            filmItem={false}
+            fullItem={false}
+          />,
+          <ResultsBar
+            count={0}
+          />,
+          <ResultsBody
+            assets={
+              Array [
+                Object {
+                  "title": "Asset 1",
+                },
+                Object {
+                  "title": "Asset 2",
+                },
+                Object {
+                  "title": "Asset 3",
+                },
+                Object {
+                  "title": "Asset 4",
+                },
+                Object {
+                  "title": "Asset 5",
+                },
+                Object {
+                  "title": "Asset 6",
+                },
+                Object {
+                  "title": "Asset 7",
+                },
+                Object {
+                  "title": "Asset 8",
+                },
+                Object {
+                  "title": "Asset 9",
+                },
+              ]
+            }
+          />,
+          <Footer />,
+        ],
+        "className": "core-page",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "filmItem": false,
+            "fullItem": false,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "count": 0,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "assets": Array [
+              Object {
+                "title": "Asset 1",
+              },
+              Object {
+                "title": "Asset 2",
+              },
+              Object {
+                "title": "Asset 3",
+              },
+              Object {
+                "title": "Asset 4",
+              },
+              Object {
+                "title": "Asset 5",
+              },
+              Object {
+                "title": "Asset 6",
+              },
+              Object {
+                "title": "Asset 7",
+              },
+              Object {
+                "title": "Asset 8",
+              },
+              Object {
+                "title": "Asset 9",
+              },
+            ],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<Core/> should render Core with Full Film Item 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Core />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Header
+          filmItem={false}
+          fullItem={true}
+        />,
+        <ResultsBar
+          count={0}
+        />,
+        <ResultsBody
+          assets={
+            Array [
+              Object {
+                "title": "Asset 1",
+              },
+              Object {
+                "title": "Asset 2",
+              },
+              Object {
+                "title": "Asset 3",
+              },
+              Object {
+                "title": "Asset 4",
+              },
+              Object {
+                "title": "Asset 5",
+              },
+              Object {
+                "title": "Asset 6",
+              },
+              Object {
+                "title": "Asset 7",
+              },
+              Object {
+                "title": "Asset 8",
+              },
+              Object {
+                "title": "Asset 9",
+              },
+            ]
+          }
+        />,
+        <Footer />,
+      ],
+      "className": "core-page",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "filmItem": false,
+          "fullItem": true,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "count": 0,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "assets": Array [
+            Object {
+              "title": "Asset 1",
+            },
+            Object {
+              "title": "Asset 2",
+            },
+            Object {
+              "title": "Asset 3",
+            },
+            Object {
+              "title": "Asset 4",
+            },
+            Object {
+              "title": "Asset 5",
+            },
+            Object {
+              "title": "Asset 6",
+            },
+            Object {
+              "title": "Asset 7",
+            },
+            Object {
+              "title": "Asset 8",
+            },
+            Object {
+              "title": "Asset 9",
+            },
+          ],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Header
+            filmItem={false}
+            fullItem={true}
+          />,
+          <ResultsBar
+            count={0}
+          />,
+          <ResultsBody
+            assets={
+              Array [
+                Object {
+                  "title": "Asset 1",
+                },
+                Object {
+                  "title": "Asset 2",
+                },
+                Object {
+                  "title": "Asset 3",
+                },
+                Object {
+                  "title": "Asset 4",
+                },
+                Object {
+                  "title": "Asset 5",
+                },
+                Object {
+                  "title": "Asset 6",
+                },
+                Object {
+                  "title": "Asset 7",
+                },
+                Object {
+                  "title": "Asset 8",
+                },
+                Object {
+                  "title": "Asset 9",
+                },
+              ]
+            }
+          />,
+          <Footer />,
+        ],
+        "className": "core-page",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "filmItem": false,
+            "fullItem": true,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "count": 0,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "assets": Array [
+              Object {
+                "title": "Asset 1",
+              },
+              Object {
+                "title": "Asset 2",
+              },
+              Object {
+                "title": "Asset 3",
+              },
+              Object {
+                "title": "Asset 4",
+              },
+              Object {
+                "title": "Asset 5",
+              },
+              Object {
+                "title": "Asset 6",
+              },
+              Object {
+                "title": "Asset 7",
+              },
+              Object {
+                "title": "Asset 8",
+              },
+              Object {
+                "title": "Asset 9",
+              },
+            ],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

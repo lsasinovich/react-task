@@ -26,7 +26,7 @@ export class Core extends React.Component {
         this.state = {
             //results: [],
             results: resultAssets,
-            fullItem: true
+            fullItem: false
         }
     }
 
@@ -35,7 +35,7 @@ export class Core extends React.Component {
             <div className="core-page">
                 <Header fullItem={this.state.fullItem}/>
                 <ResultsBar />
-                <ResultsBody assets={this.state.results} callbackFromParent={this.onChildChange}/>
+                <ResultsBody assets={this.state.results} />
                 <Footer/>
             </div>
         );

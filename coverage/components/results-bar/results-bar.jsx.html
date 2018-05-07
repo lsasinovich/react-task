@@ -3,12 +3,12 @@
 <head>
     <title>Code coverage report for components/results-bar/results-bar.jsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="..\..\prettify.css" />
-    <link rel="stylesheet" href="..\..\base.css" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(..\..\sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,35 +16,35 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\index.html">All files</a> / <a href="index.html">components/results-bar</a> results-bar.jsx
+      <a href="../../index.html">All files</a> / <a href="index.html">components/results-bar</a> results-bar.jsx
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">78.95% </span>
+        <span class="strong">88.24% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>30/38</span>
+        <span class='fraction'>30/34</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">48.48% </span>
+        <span class="strong">55.17% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>16/33</span>
+        <span class='fraction'>16/29</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">90% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>9/10</span>
+        <span class='fraction'>9/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">69.23% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>9/13</span>
+        <span class='fraction'>9/9</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -100,7 +100,7 @@
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">6x</span>
+<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -116,23 +116,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -170,17 +170,17 @@ export class ResultsBar extends React.Component {
             rating: 'active',
             releaseDate: 'passive'
         };
-    }<span class="fstat-no" title="function not covered" ></span>
+    }
 &nbsp;
-    switchSort(eve) {
-        if(e<span class="cstat-no" title="statement not covered" >ve.target.classList.contains("passive")) {</span>
-            if(t<span class="cstat-no" title="statement not covered" >his.state.rating === 'active') {</span>
-                this<span class="cstat-no" title="statement not covered" >.setState({</span>
+    switchSort = (event) =&gt; {
+        if(event.target.className === 'passive') {
+            if(this.state.rating === 'active') {
+                this.setState({
                     rating: 'passive',
                     releaseDate: 'active'
                 });
             } else {
-                this<span class="cstat-no" title="statement not covered" >.setState({</span>
+                this.setState({
                     rating: 'active',
                     releaseDate: 'passive'
                 });
@@ -194,8 +194,8 @@ export class ResultsBar extends React.Component {
                 &lt;p className="results-count"&gt;{this.props.count} movies found&lt;/p&gt;
                 &lt;div className="results-sort"&gt;
                     &lt;p&gt;Sort by&lt;/p&gt;
-                    &lt;p className={`releaseDate ${this.state.releaseDate}`} onClick={this.switchSort}&gt;release date&lt;/p&gt;
-                    &lt;p className={`rating ${this.state.rating}`} onClick={this.switchSort}&gt;rating&lt;/p&gt;
+                    &lt;p className={this.state.releaseDate} onClick={this.switchSort}&gt;release date&lt;/p&gt;
+                    &lt;p className={this.state.rating} onClick={this.switchSort}&gt;rating&lt;/p&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         );
@@ -214,10 +214,10 @@ ResultsBar.defaultProps = {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri May 04 2018 16:46:08 GMT+0300 (Belarus Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon May 07 2018 20:39:40 GMT+0300 (MSK)
 </div>
 </div>
-<script src="..\..\prettify.js"></script>
+<script src="../../prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -225,7 +225,7 @@ window.onload = function () {
         }
 };
 </script>
-<script src="..\..\sorter.js"></script>
-<script src="..\..\block-navigation.js"></script>
+<script src="../../sorter.js"></script>
+<script src="../../block-navigation.js"></script>
 </body>
 </html>

@@ -33,13 +33,13 @@ ShallowWrapper {
             Sort by
           </p>
           <p
-            className="releaseDate passive"
+            className="passive"
             onClick={[Function]}
           >
             release date
           </p>
           <p
-            className="rating active"
+            className="active"
             onClick={[Function]}
           >
             rating
@@ -78,13 +78,13 @@ ShallowWrapper {
               Sort by
             </p>,
             <p
-              className="releaseDate passive"
+              className="passive"
               onClick={[Function]}
             >
               release date
             </p>,
             <p
-              className="rating active"
+              className="active"
               onClick={[Function]}
             >
               rating
@@ -111,7 +111,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "release date",
-              "className": "releaseDate passive",
+              "className": "passive",
               "onClick": [Function],
             },
             "ref": null,
@@ -124,7 +124,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "rating",
-              "className": "rating active",
+              "className": "active",
               "onClick": [Function],
             },
             "ref": null,
@@ -157,13 +157,13 @@ ShallowWrapper {
               Sort by
             </p>
             <p
-              className="releaseDate passive"
+              className="passive"
               onClick={[Function]}
             >
               release date
             </p>
             <p
-              className="rating active"
+              className="active"
               onClick={[Function]}
             >
               rating
@@ -202,13 +202,13 @@ ShallowWrapper {
                 Sort by
               </p>,
               <p
-                className="releaseDate passive"
+                className="passive"
                 onClick={[Function]}
               >
                 release date
               </p>,
               <p
-                className="rating active"
+                className="active"
                 onClick={[Function]}
               >
                 rating
@@ -235,7 +235,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "release date",
-                "className": "releaseDate passive",
+                "className": "passive",
                 "onClick": [Function],
               },
               "ref": null,
@@ -248,7 +248,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "rating",
-                "className": "rating active",
+                "className": "active",
                 "onClick": [Function],
               },
               "ref": null,
