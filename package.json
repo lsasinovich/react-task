@@ -37,6 +37,7 @@
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.3",
+    "jest-babel": "^1.0.1",
     "jest-css-modules": "^1.1.0",
     "node-sass": "^4.8.3",
     "postcss-loader": "^2.1.4",
@@ -57,12 +58,15 @@
       "**/*.{jsx}",
       "!**/node_modules/**"
     ],
-    "coverageReporters": ["html", "text-summary"],
+    "coverageReporters": [
+      "html",
+      "text-summary"
+    ],
     "setupFiles": [
       "<rootDir>/jest/setupTests.js"
     ],
     "transform": {
-      ".*": "<rootDir>/node_modules/jest-css-modules"
+      ".*": "<rootDir>/node_modules/babel-jest"
     },
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react"

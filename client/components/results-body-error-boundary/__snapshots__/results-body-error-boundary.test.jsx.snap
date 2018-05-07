@@ -50,7 +50,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`<ResultsBodyErrorBoundary/> should render ResultsBodyErrorBoundary with Full Film Item 1`] = `
+exports[`<ResultsBodyErrorBoundary/> should render ResultsBodyErrorBoundary with Errors 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],

@@ -8,15 +8,14 @@ export class ResultsBar extends React.Component {
     constructor(props) {
         super(props);
 
-        this.switchSort = this.switchSort.bind(this);
-
         this.state = {
             rating: 'active',
             releaseDate: 'passive'
         };
     }
 
-    switchSort = (event) => {
+    switchSort (event) {
+        console.log(event);
         if(event.target.className === 'passive') {
             if(this.state.rating === 'active') {
                 this.setState({
@@ -38,8 +37,8 @@ export class ResultsBar extends React.Component {
                 <p className="results-count">{this.props.count} movies found</p>
                 <div className="results-sort">
                     <p>Sort by</p>
-                    <p className={this.state.releaseDate} onClick={this.switchSort}>release date</p>
-                    <p className={this.state.rating} onClick={this.switchSort}>rating</p>
+                    <p className={this.state.releaseDate} onClick={(event) => this.switchSort(event)}>release date</p>
+                    <p className={this.state.rating} onClick={(event) => this.switchSort(event)}>rating</p>
                 </div>
             </div>
         );

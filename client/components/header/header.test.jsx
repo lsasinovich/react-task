@@ -18,68 +18,79 @@ describe('<Header/>', function() {
   });
 });
 
-// describe('Click events must work as well', function() {  
-//     it('Genre button', () => {
-//       const spy = jest.spyOn(Header.prototype, "genreHendler");
-  
-//       const wrapper = shallow(<Header />);
-//       const buttons = wrapper.find('button');
-//       buttons.at(0).simulate('click');
+describe('Click events must work as well', function() {  
+    it('Genre button', () => {
+        const wrapper = mount(<Header />);
+        const instance = wrapper.instance();
+        
+        jest.spyOn(instance, 'genreHendler');
+        wrapper.update();
+        const buttons = wrapper.find('button');
+
+        buttons.at(0).simulate('click');
       
-//       expect(spy).toBeCalled();
-//     });
+        expect(instance.genreHendler).toHaveBeenCalled();
+    });
 
-//     it('Title Button', () => {
-//         const spy = jest.spyOn(Header.prototype, "titleHendler");
+    it('Title Button', () => {
+        const wrapper = mount(<Header />);
+        const instance = wrapper.instance();
+        
+        jest.spyOn(instance, 'titleHendler');
+        wrapper.update();
+        const buttons = wrapper.find('button');
+
+        buttons.at(1).simulate('click');
+      
+        expect(instance.titleHendler).toHaveBeenCalled();
+    });
+
+    it('Search Button', () => {
+        const wrapper = mount(<Header />);
+        const instance = wrapper.instance();
+        
+        jest.spyOn(instance, 'searchHendler');
+        wrapper.update();
+        const buttons = wrapper.find('button');
+
+        buttons.at(2).simulate('click');
+      
+        expect(instance.searchHendler).toHaveBeenCalled();
+    });
+
+    it('should return to main page by clicking on Return Butoon', () => {
+        const wrapper = mount(<Header fullItem={true}/>);
+        const instance = wrapper.instance();
+        
+        jest.spyOn(instance, 'returnToMainPage');
+        wrapper.update();
+        const buttons = wrapper.find('button');
+
+        buttons.at(0).simulate('click');
+      
+        expect(instance.returnToMainPage).toHaveBeenCalled();
+    });
+
     
-//         const wrapper = shallow(<Header />);
-//         const buttons = wrapper.find('button');
-//         buttons.at(1).simulate('click');
+    it('should reset input value', () => {
+        const spy = jest.spyOn(Header.prototype, "resetInputValue");
+
+        const wrapper = shallow(<Header />);
+        const inputs = wrapper.find('input');
+        inputs.at(0).simulate('click');
         
-//         expect(spy).toBeCalled();
-//     });
+        expect(spy).toBeCalled();
+        expect(wrapper.state().inputValue).toEqual("");
+    });
 
-//     it('Search Button', () => {
-//         const spy = jest.spyOn(Header.prototype, "searchHendler");
+    it('should update input change', () => {
+        const spy = jest.spyOn(Header.prototype, "updateInputValue");
 
-//         const wrapper = shallow(<Header />);
-//         const buttons = wrapper.find('button');
-//         buttons.at(2).simulate('click');
-        
-//         expect(spy).toBeCalled();
-//     });
+        const wrapper = shallow(<Header />);
+        const inputs = wrapper.find('input');
+        inputs.at(0).simulate('change', {target: {value: 'matched'} });
 
-//     it('should return to main page by clicking on Return Butoon', () => {
-//         const spy = jest.spyOn(Header.prototype, "returnToMainPage");
-
-//         const wrapper = shallow(<Header fullItem={true}/>);
-//         const buttons = wrapper.find('button');
-//         buttons.at(0).simulate('click');
-
-//         expect(spy).toBeCalled();
-//         expect(wrapper.state().fullItem).toEqual(false);
-//     });
-
-    
-//     it('should reset input value', () => {
-//         const spy = jest.spyOn(Header.prototype, "resetInputValue");
-
-//         const wrapper = shallow(<Header />);
-//         const inputs = wrapper.find('input');
-//         inputs.at(0).simulate('click');
-        
-//         expect(spy).toBeCalled();
-//         expect(wrapper.state().inputValue).toEqual("");
-//     });
-
-//     it('should update input change', () => {
-//         const spy = jest.spyOn(Header.prototype, "updateInputValue");
-
-//         const wrapper = shallow(<Header />);
-//         const inputs = wrapper.find('input');
-//         inputs.at(0).simulate('change', {target: {value: 'matched'} });
-
-//         expect(spy).toBeCalled();
-//         expect(wrapper.state().inputValue).toEqual("matched");
-//     });
-//   });
+        expect(spy).toBeCalled();
+        expect(wrapper.state().inputValue).toEqual("matched");
+    });
+  });
