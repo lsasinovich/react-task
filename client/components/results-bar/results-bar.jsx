@@ -15,7 +15,6 @@ export class ResultsBar extends React.Component {
     }
 
     switchSort (event) {
-        console.log(event);
         if(event.target.className === 'passive') {
             if(this.state.rating === 'active') {
                 this.setState({
