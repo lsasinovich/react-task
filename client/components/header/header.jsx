@@ -49,15 +49,16 @@ export class Header extends React.Component {
     }
 
     render() {
+        console.log(this.props.fullItem);
         return (
             <div className="header">
             <div className="return-div">
                 <Nextflixroulette/>
-                { this.state.fullItem && 
+                { this.props.fullItem && 
                     <button className="btn return-button cl-red bg-white" onClick={() => this.returnToMainPage()}>SEARCH</button> 
                 }
             </div>
-            { !this.state.fullItem ?
+            { !this.props.fullItem ?
                 <div>
                 <p className="find-movie">FIND YOUR MOVIE</p>
                 <div className="search-wrapper">

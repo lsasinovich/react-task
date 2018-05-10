@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from "react-redux";
 import { Footer } from '../../components/footer/footer';
 import { ResultsBar } from '../../components/results-bar/results-bar';
 import { ResultsBody } from '../../components/results-body/results-body';
@@ -8,36 +9,39 @@ import { Header } from '../../components/header/header';
 import './core.scss';
 import '../../mixins.scss';
 
-const resultAssets = [
-    { title: 'Asset 1' },
-    { title: 'Asset 2' },
-    { title: 'Asset 3' },
-    { title: 'Asset 4' },
-    { title: 'Asset 5' },
-    { title: 'Asset 6' },
-    { title: 'Asset 7' },
-    { title: 'Asset 8' },
-    { title: 'Asset 9' },
-];
-
-export class Core extends React.Component {
+class Core extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            //results: [],
-            results: resultAssets,
-            fullItem: false
-        }
     }
 
     render() {
+        console.log(this.props);
         return (
             <div className="core-page">
-                <Header fullItem={this.state.fullItem}/>
+            <button onClick={this.props.setFullItem}>Hello</button>
+                <Header fullItem={this.props.user.fullItem}/>
                 <ResultsBar />
-                <ResultsBody assets={this.state.results} />
+                <ResultsBody assets={this.props.user.results} />
                 <Footer/>
             </div>
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        user: state
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setFullItem: (fullItem) => {
+            dispatch({
+                type: 'ADD'
+            })
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Core);
