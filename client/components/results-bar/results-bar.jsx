@@ -1,33 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import './results-bar.scss';
 
-export class ResultsBar extends React.Component {
+class ResultsBar extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            rating: 'active',
-            releaseDate: 'passive'
-        };
-    }
-
-    switchSort (event) {
-        if(event.target.className === 'passive') {
-            if(this.state.rating === 'active') {
-                this.setState({
-                    rating: 'passive',
-                    releaseDate: 'active'
-                });
-            } else {
-                this.setState({
-                    rating: 'active',
-                    releaseDate: 'passive'
-                });
-            }
-        }
     }
 
     render() {
@@ -36,8 +16,8 @@ export class ResultsBar extends React.Component {
                 <p className="results-count">{this.props.count} movies found</p>
                 <div className="results-sort">
                     <p>Sort by</p>
-                    <p className={this.state.releaseDate} onClick={(event) => this.switchSort(event)}>release date</p>
-                    <p className={this.state.rating} onClick={(event) => this.switchSort(event)}>rating</p>
+                    <p className={this.props.user.sort === "releaseDate" ? "cl-red" : "cl-black"} onClick={this.props.switchSort.bind(this, "releaseDate")}>release date</p>
+                    <p className={this.props.user.sort === "rating" ? "cl-red" : "cl-black"} onClick={this.props.switchSort.bind(this, "rating")}>rating</p>
                 </div>
             </div>
         );
@@ -51,3 +31,24 @@ ResultsBar.propTypes = {
 ResultsBar.defaultProps = {
     count: 0
 };
+
+
+
+const mapStateToProps = (state) => {
+    return {
+        user: state
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        switchSort: (sort) => {
+            dispatch({
+                type: 'SWITCH_SORT',
+                sort: sort,
+            })
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ResultsBar);

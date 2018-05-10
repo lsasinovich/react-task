@@ -21,18 +21,54 @@ const resultAssets = [
 
 const initialState = {
     results: resultAssets,
-    fullItem: true
+    fullItem: false,
+    inputValue: "",
+    sort: "rating",
+    search: 'title'
 }
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case "ADD": {
-            state = {
-                results: state.results,
-                fullItem: !state.fullItem
+        case "RETURN_TO_MAIN_PAGE": {
+                state = { 
+                    ...state,
+                    fullItem: false
+                }
+                break;
+        }
+        case "UPDATE_INPUT_VALUE": {
+            state = { 
+                ...state,
+                inputValue: action.value
             }
+            break;
+        }
+        case "RESET_INPUT_VALUE": {
+            state = { 
+                ...state,
+                inputValue: ""
+            }
+            break;
+        }
+        case "SEARCH_HENDLER": {
+            break;
+        }
+        case "SEARCH_TYPE_HENDLER": {
+            state = {
+                ...state,
+                search: action.search
+            }
+            break;
+        }
+        case "SWITCH_SORT": {
+            state = { 
+                ...state,
+                sort: action.sort
+            }
+            break;
         }
     }
+    console.log(state);
     return state;
 }
 
