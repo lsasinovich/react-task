@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import './results-bar.scss';
+import { ACTIONS } from '../../constants/app-constants';
 
 class ResultsBar extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class ResultsBar extends React.Component {
     render() {
         return(
             <div className="results-bar">
-                <p className="results-count">{this.props.count} movies found</p>
+                <p className="results-count">{this.props.user.count} movies found</p>
                 <div className="results-sort">
                     <p>Sort by</p>
                     <p className={this.props.user.sort === "releaseDate" ? "cl-red" : "cl-black"} onClick={this.props.switchSort.bind(this, "releaseDate")}>release date</p>
@@ -23,16 +24,6 @@ class ResultsBar extends React.Component {
         );
     }
 };
-
-ResultsBar.propTypes = {
-    count: PropTypes.number
-};
-  
-ResultsBar.defaultProps = {
-    count: 0
-};
-
-
 
 const mapStateToProps = (state) => {
     return {
@@ -44,7 +35,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         switchSort: (sort) => {
             dispatch({
-                type: 'SWITCH_SORT',
+                type: ACTIONS.SWITCH_SORT,
                 sort: sort,
             })
         }

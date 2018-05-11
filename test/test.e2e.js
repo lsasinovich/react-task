@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 
 describe('My React Test', function () {
   beforeEach(function() {
-    browser.url('localhost:3000');
+    browser.url('localhost:3001');
     browser.waitForText('.header');
   })
 

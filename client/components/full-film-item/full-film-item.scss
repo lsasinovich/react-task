@@ -5,11 +5,12 @@
     flex-direction: row;
     font-weight: 400;
     font-size: 16px;
+    padding-bottom: 20px;
     color: $white;
 
     img {
-        width: 300px;
-        height: 350px;
+        width: 280px;
+        height: 380px;
     }
 
     .full-film-info {
@@ -44,6 +45,10 @@
             margin-top: 10px;
             margin-bottom: 20px;
             font-weight: 700;
+
+            .year {
+                margin-right: 15px;
+            }
         }
 
         .description {

@@ -4,7 +4,7 @@ import { FullFilmItem } from './full-film-item';
 const testData = {
   title: "Title",
   posterUrl: "PosterUrl",
-  genre: "Genre",
+  genres: "Genre",
   additional: "Additional",
   year: 1900,
   rating: 4.6,

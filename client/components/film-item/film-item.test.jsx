@@ -4,7 +4,7 @@ import { FilmItem } from './film-item';
 const testData = {
   title: "Title",
   posterUrl: "PosterUrl",
-  genre: "Genre",
+  genres: "Genre",
   year: 1900
 }
 

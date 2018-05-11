@@ -3,72 +3,88 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import Core from './pages/core/core';
 
+import { SORT, ACTIONS } from './constants/app-constants';
 import './index.scss';
 
 import { createStore } from 'redux';
 
-const resultAssets = [
-    { title: 'Asset 1' },
-    { title: 'Asset 2' },
-    { title: 'Asset 3' },
-    { title: 'Asset 4' },
-    { title: 'Asset 5' },
-    { title: 'Asset 6' },
-    { title: 'Asset 7' },
-    { title: 'Asset 8' },
-    { title: 'Asset 9' },
-];
-
 const initialState = {
-    results: resultAssets,
-    fullItem: false,
+    results: {data:[]},
+    fullItem: {
+        isActive: false,
+        filmId: -1
+    },
     inputValue: "",
     sort: "rating",
-    search: 'title'
+    search: 'title',
+    count: 0
+}
+function sort(state, sort, action) {
+    fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sort]}&search=${state.inputValue}&searchBy=${state.search}`)
+        .then(response => response.json())
+        .then(json => reducer(state, { type: ACTIONS.SEARCH, results: json }));
 }
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case "RETURN_TO_MAIN_PAGE": {
+        case ACTIONS.RETURN_TO_MAIN_PAGE: {
                 state = { 
                     ...state,
-                    fullItem: false
+                    fullItem: {
+                        isActive: false,
+                        filmId: -1
+                    }
                 }
                 break;
         }
-        case "UPDATE_INPUT_VALUE": {
+        case ACTIONS.UPDATE_INPUT_VALUE: {
             state = { 
                 ...state,
                 inputValue: action.value
             }
             break;
         }
-        case "RESET_INPUT_VALUE": {
+        case ACTIONS.RESET_INPUT_VALUE: {
             state = { 
                 ...state,
                 inputValue: ""
             }
             break;
         }
-        case "SEARCH_HENDLER": {
+        case ACTIONS.SEARCH: {
+            state = {
+                ...state,
+                results: action.results,
+                count: action.results.data.length || 0
+            }
             break;
         }
-        case "SEARCH_TYPE_HENDLER": {
+        case ACTIONS.SWITCH_SEARCH: {
             state = {
                 ...state,
                 search: action.search
             }
             break;
         }
-        case "SWITCH_SORT": {
+        case ACTIONS.SWITCH_SORT: {
             state = { 
                 ...state,
                 sort: action.sort
             }
+            sort(state, action.sort);
+            break;
+        }
+        case ACTIONS.FULL_FILM_LOAD: {
+            state = {
+                ...state,
+                fullItem: {
+                    isActive: true,
+                    filmData: action.filmData
+                }
+            }
             break;
         }
     }
-    console.log(state);
     return state;
 }
 

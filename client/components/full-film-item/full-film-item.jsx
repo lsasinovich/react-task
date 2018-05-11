@@ -1,41 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import './full-film-item.scss';
 
-export const FullFilmItem = (props) => (
-    <div className="full-film-item">
-        <img src={props.posterUrl} />
-        <div className="full-film-info">
-            <div className="title-and-rating">
-                <p className="title">{props.title}</p>
-                <p className="rating">{props.rating}</p>
+class FullFilmItem extends React.Component {
+    render() {
+        const {filmData} = this.props;
+        console.log(filmData);
+        return (
+            <div className="full-film-item">
+                <img src={filmData.poster_path} />
+                <div className="full-film-info">
+                    <div className="title-and-rating">
+                        <p className="title">{filmData.title}</p>
+                        <p className="rating">{filmData.vote_average}</p>
+                    </div>
+                    <p>{this.props.user.fullItem.filmData.tagline}</p>
+                    <p className="year-and-time">
+                        <span className="year">{filmData.release_date.slice(0, 4)}</span>
+                        <span>{filmData.runtime} min</span>
+                    </p>
+                    <p className="description">{filmData.overview}</p>
+                </div>
             </div>
-            <p>{props.additional}</p>
-            <p className="year-and-time">{props.year}    {props.duration} min</p>
-            <p className="description">{props.description}</p>
-        </div>
-    </div>
-);
-
-FullFilmItem.propTypes = {
-    title: PropTypes.string,
-    posterUrl: PropTypes.string,
-    genre: PropTypes.string,
-    additional: PropTypes.string,
-    year: PropTypes.number,
-    rating: PropTypes.number,
-    duratin: PropTypes.number,
-    description: PropTypes.string,
+        );
+    }
 };
 
-FullFilmItem.defaultProps = {
-    title: "Wolf wood",
-    posterUrl: "http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg",
-    genre: "horror",
-    additional: "Oscar movie",
-    year: 1992,
-    rating: 4.7,
-    duration: 124,
-    description: "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film."
+const mapStateToProps = (state) => {
+    return {
+        user: state,
+        filmData: state.fullItem.filmData
+    };
 };
+
+export default connect(mapStateToProps)(FullFilmItem);
