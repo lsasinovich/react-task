@@ -8,7 +8,7 @@ import ResultsBody from '../../components/results-body/results-body';
 
 import './core.scss';
 import '../../mixins.scss';
-import { ACTIONS } from '../../constants/app-constants';
+import { ACTIONS, ITEM_COUNT_PER_PAGE } from '../../constants/app-constants';
 
 class Core extends React.Component {
     constructor(props) {
@@ -16,7 +16,7 @@ class Core extends React.Component {
     }
 
     componentWillMount() {
-        return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=rating&limit=12`)
+        return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=release_date&sortOrder=desc&limit=${ITEM_COUNT_PER_PAGE}`)
         .then(response => response.json())
         .then(json => this.props.searchHandler(json))
     }

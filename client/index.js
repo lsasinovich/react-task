@@ -9,14 +9,17 @@ import './index.scss';
 import { createStore } from 'redux';
 
 const initialState = {
-    results: {data:[]},
+    searchInfo: {},
+    results: {
+        data:[]
+    },
     fullItem: {
         isActive: false
     },
     inputValue: "",
-    sort: "rating",
+    sort: "releaseDate",
     search: 'title',
-    count: 0,
+    resultsCount: -1,
     pagination: {
         activePage: 1
     }
@@ -28,8 +31,7 @@ const reducer = (state, action) => {
                 state = { 
                     ...state,
                     fullItem: {
-                        isActive: false,
-                        filmId: -1
+                        isActive: false
                     }
                 }
                 break;
@@ -52,7 +54,15 @@ const reducer = (state, action) => {
             state = {
                 ...state,
                 results: action.results,
-                count: action.results.total
+                resultsCount: action.results.total,
+                searchInfo: {
+                    search: state.search,
+                    value: state.inputValue
+                },
+                pagination: {
+                    activePage: 1
+                }
+            
             }
             break;
         }
@@ -67,6 +77,10 @@ const reducer = (state, action) => {
             state = { 
                 ...state,
                 sort: action.sort,
+                results: action.results,
+                pagination: {
+                    activePage: 1
+                }
             }
             break;
         }

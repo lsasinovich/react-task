@@ -1,12 +1,16 @@
 @import "../../mixins.scss";
 
 .results-bar {
-    display: flex;
-    justify-content: space-between;
     padding: 10px 150px;
     background-color: $light-grey;
     font-weight: 700;
     font-size: 14px;
+    min-height: 40px;
+
+    .results-bar-content {
+        display: flex;
+        justify-content: space-between;
+    }
 
     .results-sort {
         display: flex;

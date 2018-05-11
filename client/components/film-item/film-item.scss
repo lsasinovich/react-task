@@ -30,6 +30,10 @@
             .title {
                 margin-bottom: 8px;
                 font-size: 12px;
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
     
             .genre {

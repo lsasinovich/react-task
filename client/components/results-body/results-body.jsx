@@ -8,11 +8,10 @@ import { EmptyResults } from '../empty-results/empty-results';
 import { ResultsBodyErrorBoundary } from '../results-body-error-boundary/results-body-error-boundary';
 
 import './results-body.scss';
-import { ACTIONS } from '../../constants/app-constants';
+import { ACTIONS,  ITEM_COUNT_PER_PAGE, PAGE_RANGE_DISPLAYED} from '../../constants/app-constants';
 
 class ResultsBody extends React.Component {
     paginationHandler(event) {
-        console.log(event);
         return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${this.props.user.sort}&search=${this.props.user.inputValue}&searchBy=${this.props.user.search}&offset=${(event-1)*12}&limit=12`)
             .then(response => response.json())
             .then(json => this.props.paginationHandler(event, json))
@@ -43,9 +42,9 @@ class ResultsBody extends React.Component {
                 <div className="pagination-container">
                     <Pagination 
                         activePage={this.props.user.pagination.activePage}
-                        itemsCountPerPage={12}
-                        totalItemsCount={this.props.user.count}
-                        pageRangeDisplayed={5}
+                        itemsCountPerPage={ITEM_COUNT_PER_PAGE}
+                        totalItemsCount={this.props.user.resultsCount}
+                        pageRangeDisplayed={PAGE_RANGE_DISPLAYED}
                         onChange={(event)=>this.paginationHandler(event)}
                     /> 
                 </div>

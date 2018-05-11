@@ -10,7 +10,7 @@
 
     img {
         width: 280px;
-        height: 380px;
+        height: 420px;
     }
 
     .full-film-info {
@@ -65,11 +65,6 @@
 @media screen and ( max-width: $medium ) {
     .full-film-item {
         width: 250px;
-
-        img {
-            width: 250px;
-            height: 300px;
-        }
     
         .full-film-info {
             padding-left: 40px;

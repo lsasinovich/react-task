@@ -14,17 +14,9 @@ class Header extends React.Component {
     }
 
     getMovie(search) {
-        return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${this.props.user.sort}&search=${this.props.user.inputValue}&searchBy=${SEARCH[search] || this.props.user.search}&limit=12`)
+        return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SEARCH[this.props.user.sort]}&search=${this.props.user.inputValue}&searchBy=${SEARCH[search] || this.props.user.search}&limit=12`)
           .then(response => response.json())
           .then(json => this.props.searchHandler(json))
-    }
-
-    switchSort(search) {
-        if(search !== this.props.user.search) {
-            return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${this.props.user.sort}&search=${this.props.user.inputValue}&searchBy=${SEARCH[search]}&limit=12`)
-            .then(response => response.json())
-            .then(json => this.props.switchSearch(search, json))
-        }
     }
 
     render() {
