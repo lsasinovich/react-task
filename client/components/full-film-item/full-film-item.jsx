@@ -14,12 +14,16 @@ class FullFilmItem extends React.Component {
                 <div className="full-film-info">
                     <div className="title-and-rating">
                         <p className="title">{filmData.title}</p>
-                        <p className="rating">{filmData.vote_average}</p>
+                        { !!filmData.vote_average && 
+                            <p className="rating">{filmData.vote_average}</p>
+                        }
                     </div>
                     <p>{this.props.user.fullItem.filmData.tagline}</p>
                     <p className="year-and-time">
                         <span className="year">{filmData.release_date.slice(0, 4)}</span>
-                        <span>{filmData.runtime} min</span>
+                        { filmData.runtime &&
+                            <span>{filmData.runtime} min</span>
+                        }
                     </p>
                     <p className="description">{filmData.overview}</p>
                 </div>

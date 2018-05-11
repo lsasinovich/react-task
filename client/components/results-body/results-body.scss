@@ -1,10 +1,38 @@
+@import '../../mixins.scss';
+
 .results-body {
     padding-top: 15px;
     padding-bottom: 55px;
     display: flex;
     flex-wrap: wrap;
 
+    
+
     .empty-page {
         flex: 1;
     }
+}
+
+.pagination-container {
+        text-align: center;
+
+        .pagination {
+            li {
+                a {
+                    color: $black;
+                }
+            }
+        }
+
+        .pagination>.active>a, 
+        .pagination>.active>a:focus, 
+        .pagination>.active>a:hover, 
+        .pagination>.active>span, 
+        .pagination>.active>span:focus, 
+        .pagination>.active>span:hover {
+            color: $white;
+            background-color: $red; 
+            border-color: $red;
+        }
+        
 }

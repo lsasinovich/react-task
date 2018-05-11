@@ -11,18 +11,15 @@ import { createStore } from 'redux';
 const initialState = {
     results: {data:[]},
     fullItem: {
-        isActive: false,
-        filmId: -1
+        isActive: false
     },
     inputValue: "",
     sort: "rating",
     search: 'title',
-    count: 0
-}
-function sort(state, sort, action) {
-    fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sort]}&search=${state.inputValue}&searchBy=${state.search}`)
-        .then(response => response.json())
-        .then(json => reducer(state, { type: ACTIONS.SEARCH, results: json }));
+    count: 0,
+    pagination: {
+        activePage: 1
+    }
 }
 
 const reducer = (state, action) => {
@@ -55,7 +52,7 @@ const reducer = (state, action) => {
             state = {
                 ...state,
                 results: action.results,
-                count: action.results.data.length || 0
+                count: action.results.total
             }
             break;
         }
@@ -69,9 +66,8 @@ const reducer = (state, action) => {
         case ACTIONS.SWITCH_SORT: {
             state = { 
                 ...state,
-                sort: action.sort
+                sort: action.sort,
             }
-            sort(state, action.sort);
             break;
         }
         case ACTIONS.FULL_FILM_LOAD: {
@@ -81,6 +77,16 @@ const reducer = (state, action) => {
                     isActive: true,
                     filmData: action.filmData
                 }
+            }
+            break;
+        }
+        case ACTIONS.PAGINATION_HANDLER: {
+            state = {
+                ...state,
+                pagination: {
+                    activePage: action.activePage
+                },
+                results: action.results
             }
             break;
         }

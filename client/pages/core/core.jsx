@@ -16,7 +16,7 @@ class Core extends React.Component {
     }
 
     componentWillMount() {
-        return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=rating`)
+        return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=rating&limit=12`)
         .then(response => response.json())
         .then(json => this.props.searchHandler(json))
     }

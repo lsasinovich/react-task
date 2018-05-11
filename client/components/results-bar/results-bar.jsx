@@ -17,8 +17,8 @@ class ResultsBar extends React.Component {
                 <p className="results-count">{this.props.user.count} movies found</p>
                 <div className="results-sort">
                     <p>Sort by</p>
-                    <p className={this.props.user.sort === "releaseDate" ? "cl-red" : "cl-black"} onClick={this.props.switchSort.bind(this, "releaseDate")}>release date</p>
-                    <p className={this.props.user.sort === "rating" ? "cl-red" : "cl-black"} onClick={this.props.switchSort.bind(this, "rating")}>rating</p>
+                    <p className={this.props.user.sort === "releaseDate" ? "cl-red" : "cl-black"} onClick={()=>this.props.switchSort("releaseDate")}>release date</p>
+                    <p className={this.props.user.sort === "rating" ? "cl-red" : "cl-black"} onClick={()=>this.props.switchSort("rating")}>rating</p>
                 </div>
             </div>
         );
