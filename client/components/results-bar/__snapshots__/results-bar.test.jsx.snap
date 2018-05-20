@@ -5,7 +5,56 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ResultsBar
-    count={0}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    switchSort={[Function]}
+    user={
+      Object {
+        "fullItem": Object {
+          "isActive": false,
+        },
+        "inputValue": "",
+        "pagination": Object {
+          "activePage": 1,
+        },
+        "results": Object {
+          "data": Array [],
+        },
+        "resultsCount": -1,
+        "search": "title",
+        "searchInfo": Object {},
+        "sort": "releaseDate",
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -19,78 +68,109 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <p
-          className="results-count"
-        >
-          0
-           movies found
-        </p>,
+      "children": <div>
         <div
-          className="results-sort"
+          className="results-bar-content"
         >
-          <p>
-            Sort by
-          </p>
           <p
-            className="passive"
-            onClick={[Function]}
+            className="results-count"
           >
-            release date
+            -1
+             movies found
           </p>
-          <p
-            className="active"
-            onClick={[Function]}
+          <div
+            className="results-sort"
           >
-            rating
-          </p>
-        </div>,
-      ],
-      "className": "results-bar",
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            0,
-            " movies found",
-          ],
-          "className": "results-count",
-        },
-        "ref": null,
-        "rendered": Array [
-          0,
-          " movies found",
-        ],
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
             <p>
               Sort by
-            </p>,
+            </p>
             <p
-              className="passive"
+              className="cl-red"
               onClick={[Function]}
             >
               release date
-            </p>,
+            </p>
             <p
-              className="active"
+              className="cl-black"
               onClick={[Function]}
             >
               rating
+            </p>
+          </div>
+        </div>
+      </div>,
+      "className": "results-bar",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="results-bar-content"
+        >
+          <p
+            className="results-count"
+          >
+            -1
+             movies found
+          </p>
+          <div
+            className="results-sort"
+          >
+            <p>
+              Sort by
+            </p>
+            <p
+              className="cl-red"
+              onClick={[Function]}
+            >
+              release date
+            </p>
+            <p
+              className="cl-black"
+              onClick={[Function]}
+            >
+              rating
+            </p>
+          </div>
+        </div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p
+              className="results-count"
+            >
+              -1
+               movies found
             </p>,
+            <div
+              className="results-sort"
+            >
+              <p>
+                Sort by
+              </p>
+              <p
+                className="cl-red"
+                onClick={[Function]}
+              >
+                release date
+              </p>
+              <p
+                className="cl-black"
+                onClick={[Function]}
+              >
+                rating
+              </p>
+            </div>,
           ],
-          "className": "results-sort",
+          "className": "results-bar-content",
         },
         "ref": null,
         "rendered": Array [
@@ -99,10 +179,17 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Sort by",
+              "children": Array [
+                -1,
+                " movies found",
+              ],
+              "className": "results-count",
             },
             "ref": null,
-            "rendered": "Sort by",
+            "rendered": Array [
+              -1,
+              " movies found",
+            ],
             "type": "p",
           },
           Object {
@@ -110,31 +197,72 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "release date",
-              "className": "passive",
-              "onClick": [Function],
+              "children": Array [
+                <p>
+                  Sort by
+                </p>,
+                <p
+                  className="cl-red"
+                  onClick={[Function]}
+                >
+                  release date
+                </p>,
+                <p
+                  className="cl-black"
+                  onClick={[Function]}
+                >
+                  rating
+                </p>,
+              ],
+              "className": "results-sort",
             },
             "ref": null,
-            "rendered": "release date",
-            "type": "p",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "rating",
-              "className": "active",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "rating",
-            "type": "p",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Sort by",
+                },
+                "ref": null,
+                "rendered": "Sort by",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "release date",
+                  "className": "cl-red",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "release date",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "rating",
+                  "className": "cl-black",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "rating",
+                "type": "p",
+              },
+            ],
+            "type": "div",
           },
         ],
         "type": "div",
       },
-    ],
+      "type": "div",
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -143,78 +271,109 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <p
-            className="results-count"
-          >
-            0
-             movies found
-          </p>,
+        "children": <div>
           <div
-            className="results-sort"
+            className="results-bar-content"
           >
-            <p>
-              Sort by
-            </p>
             <p
-              className="passive"
-              onClick={[Function]}
+              className="results-count"
             >
-              release date
+              -1
+               movies found
             </p>
-            <p
-              className="active"
-              onClick={[Function]}
+            <div
+              className="results-sort"
             >
-              rating
-            </p>
-          </div>,
-        ],
-        "className": "results-bar",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              0,
-              " movies found",
-            ],
-            "className": "results-count",
-          },
-          "ref": null,
-          "rendered": Array [
-            0,
-            " movies found",
-          ],
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
               <p>
                 Sort by
-              </p>,
+              </p>
               <p
-                className="passive"
+                className="cl-red"
                 onClick={[Function]}
               >
                 release date
-              </p>,
+              </p>
               <p
-                className="active"
+                className="cl-black"
                 onClick={[Function]}
               >
                 rating
+              </p>
+            </div>
+          </div>
+        </div>,
+        "className": "results-bar",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="results-bar-content"
+          >
+            <p
+              className="results-count"
+            >
+              -1
+               movies found
+            </p>
+            <div
+              className="results-sort"
+            >
+              <p>
+                Sort by
+              </p>
+              <p
+                className="cl-red"
+                onClick={[Function]}
+              >
+                release date
+              </p>
+              <p
+                className="cl-black"
+                onClick={[Function]}
+              >
+                rating
+              </p>
+            </div>
+          </div>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p
+                className="results-count"
+              >
+                -1
+                 movies found
               </p>,
+              <div
+                className="results-sort"
+              >
+                <p>
+                  Sort by
+                </p>
+                <p
+                  className="cl-red"
+                  onClick={[Function]}
+                >
+                  release date
+                </p>
+                <p
+                  className="cl-black"
+                  onClick={[Function]}
+                >
+                  rating
+                </p>
+              </div>,
             ],
-            "className": "results-sort",
+            "className": "results-bar-content",
           },
           "ref": null,
           "rendered": Array [
@@ -223,10 +382,17 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Sort by",
+                "children": Array [
+                  -1,
+                  " movies found",
+                ],
+                "className": "results-count",
               },
               "ref": null,
-              "rendered": "Sort by",
+              "rendered": Array [
+                -1,
+                " movies found",
+              ],
               "type": "p",
             },
             Object {
@@ -234,31 +400,522 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "release date",
-                "className": "passive",
-                "onClick": [Function],
+                "children": Array [
+                  <p>
+                    Sort by
+                  </p>,
+                  <p
+                    className="cl-red"
+                    onClick={[Function]}
+                  >
+                    release date
+                  </p>,
+                  <p
+                    className="cl-black"
+                    onClick={[Function]}
+                  >
+                    rating
+                  </p>,
+                ],
+                "className": "results-sort",
               },
               "ref": null,
-              "rendered": "release date",
-              "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "rating",
-                "className": "active",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "rating",
-              "type": "p",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Sort by",
+                  },
+                  "ref": null,
+                  "rendered": "Sort by",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "release date",
+                    "className": "cl-red",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "release date",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "rating",
+                    "className": "cl-black",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "rating",
+                  "type": "p",
+                },
+              ],
+              "type": "div",
             },
           ],
           "type": "div",
         },
-      ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<ResultsBar/> should render ResultsBar with fullItem 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ResultsBar
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    switchSort={[Function]}
+    user={
+      Object {
+        "fullItem": Object {
+          "isActive": true,
+        },
+        "inputValue": "",
+        "pagination": Object {
+          "activePage": 1,
+        },
+        "results": Object {
+          "data": Array [],
+        },
+        "resultsCount": 135,
+        "search": "title",
+        "searchInfo": Object {},
+        "sort": "releaseDate",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div>
+        <div />
+      </div>,
+      "className": "results-bar",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div />,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": null,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div>
+          <div />
+        </div>,
+        "className": "results-bar",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div />,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<ResultsBar/> should render ResultsBar with input value 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ResultsBar
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    switchSort={[Function]}
+    user={
+      Object {
+        "fullItem": Object {
+          "isActive": true,
+        },
+        "inputValue": "input",
+        "pagination": Object {
+          "activePage": 1,
+        },
+        "results": Object {
+          "data": Array [],
+        },
+        "resultsCount": 135,
+        "search": "title",
+        "searchInfo": Object {},
+        "sort": "releaseDate",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div>
+        <div>
+          <p>
+            Films by 
+             
+          </p>
+        </div>
+      </div>,
+      "className": "results-bar",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div>
+          <p>
+            Films by 
+             
+          </p>
+        </div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <p>
+            Films by 
+             
+          </p>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Films by ",
+              undefined,
+              " ",
+              undefined,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Films by ",
+            undefined,
+            " ",
+            undefined,
+          ],
+          "type": "p",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div>
+          <div>
+            <p>
+              Films by 
+               
+            </p>
+          </div>
+        </div>,
+        "className": "results-bar",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div>
+            <p>
+              Films by 
+               
+            </p>
+          </div>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <p>
+              Films by 
+               
+            </p>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Films by ",
+                undefined,
+                " ",
+                undefined,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Films by ",
+              undefined,
+              " ",
+              undefined,
+            ],
+            "type": "p",
+          },
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<ResultsBar/> should render ResultsBar without results count 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ResultsBar
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    switchSort={[Function]}
+    user={
+      Object {
+        "fullItem": Object {
+          "isActive": false,
+        },
+        "inputValue": "",
+        "pagination": Object {
+          "activePage": 1,
+        },
+        "results": Object {
+          "data": Array [],
+        },
+        "search": "title",
+        "searchInfo": Object {},
+        "sort": "releaseDate",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": null,
+      "className": "results-bar",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": null,
+        "className": "results-bar",
+      },
+      "ref": null,
+      "rendered": null,
       "type": "div",
     },
   ],

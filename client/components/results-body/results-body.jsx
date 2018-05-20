@@ -1,26 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import Pagination from "react-js-pagination";
 import { ResultsBar } from '../results-bar/results-bar';
 import FilmItem from '../film-item/film-item';
 import { EmptyResults } from '../empty-results/empty-results';
 import { ResultsBodyErrorBoundary } from '../results-body-error-boundary/results-body-error-boundary';
 
 import './results-body.scss';
-import { ACTIONS,  ITEM_COUNT_PER_PAGE, PAGE_RANGE_DISPLAYED} from '../../constants/app-constants';
 
 class ResultsBody extends React.Component {
-    paginationHandler(event) {
-        return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${this.props.user.sort}&search=${this.props.user.inputValue}&searchBy=${this.props.user.search}&offset=${(event-1)*12}&limit=12`)
-            .then(response => response.json())
-            .then(json => this.props.paginationHandler(event, json))
-    }
-
     render() {
         const assets = this.props.user.results;
-
-        const children = assets.data.length ? assets.data.map(asset => (
+        const children = assets.data[0] ? assets.data.map(asset => (
             <FilmItem
                 key={asset.id}
                 id={asset.id}
@@ -35,20 +26,8 @@ class ResultsBody extends React.Component {
             <ResultsBodyErrorBoundary>
             <div>
                 <div className="results-body">
-                    { children }               
-                
+                    { children }   
                 </div>
-                { !!assets.data.length &&
-                <div className="pagination-container">
-                    <Pagination 
-                        activePage={this.props.user.pagination.activePage}
-                        itemsCountPerPage={ITEM_COUNT_PER_PAGE}
-                        totalItemsCount={this.props.user.resultsCount}
-                        pageRangeDisplayed={PAGE_RANGE_DISPLAYED}
-                        onChange={(event)=>this.paginationHandler(event)}
-                    /> 
-                </div>
-                }
             </div>
             </ResultsBodyErrorBoundary>
         );
@@ -61,18 +40,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        paginationHandler: (activePage, data) => {
-            dispatch({
-                type: ACTIONS.PAGINATION_HANDLER,
-                activePage: activePage,
-                results: data
-            })
-        }
-    };
-};
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(ResultsBody);
+export default connect(mapStateToProps)(ResultsBody);

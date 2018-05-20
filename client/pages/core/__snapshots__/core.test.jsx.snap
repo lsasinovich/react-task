@@ -4,7 +4,58 @@ exports[`<Core/> should render Core and match snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Core />,
+  Symbol(enzyme.__unrendered__): <Core
+    searchHandler={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    user={
+      Object {
+        "fullItem": Object {
+          "isActive": false,
+        },
+        "inputValue": "",
+        "pagination": Object {
+          "activePage": 1,
+        },
+        "results": Object {
+          "data": Array [],
+        },
+        "resultsCount": -1,
+        "search": "title",
+        "searchInfo": Object {},
+        "sort": "releaseDate",
+      }
+    }
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -18,44 +69,19 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Header
-          filmItem={false}
-          fullItem={false}
+        <Connect(Header)
+          fullItem={
+            Object {
+              "isActive": false,
+            }
+          }
         />,
-        <ResultsBar
-          count={0}
-        />,
-        <ResultsBody
+        <Connect(ResultsBar) />,
+        <Connect(ResultsBody)
           assets={
-            Array [
-              Object {
-                "title": "Asset 1",
-              },
-              Object {
-                "title": "Asset 2",
-              },
-              Object {
-                "title": "Asset 3",
-              },
-              Object {
-                "title": "Asset 4",
-              },
-              Object {
-                "title": "Asset 5",
-              },
-              Object {
-                "title": "Asset 6",
-              },
-              Object {
-                "title": "Asset 7",
-              },
-              Object {
-                "title": "Asset 8",
-              },
-              Object {
-                "title": "Asset 9",
-              },
-            ]
+            Object {
+              "data": Array [],
+            }
           }
         />,
         <Footer />,
@@ -69,8 +95,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "filmItem": false,
-          "fullItem": false,
+          "fullItem": Object {
+            "isActive": false,
+          },
         },
         "ref": null,
         "rendered": null,
@@ -80,9 +107,7 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {
-          "count": 0,
-        },
+        "props": Object {},
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -92,35 +117,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "assets": Array [
-            Object {
-              "title": "Asset 1",
-            },
-            Object {
-              "title": "Asset 2",
-            },
-            Object {
-              "title": "Asset 3",
-            },
-            Object {
-              "title": "Asset 4",
-            },
-            Object {
-              "title": "Asset 5",
-            },
-            Object {
-              "title": "Asset 6",
-            },
-            Object {
-              "title": "Asset 7",
-            },
-            Object {
-              "title": "Asset 8",
-            },
-            Object {
-              "title": "Asset 9",
-            },
-          ],
+          "assets": Object {
+            "data": Array [],
+          },
         },
         "ref": null,
         "rendered": null,
@@ -145,44 +144,19 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Header
-            filmItem={false}
-            fullItem={false}
+          <Connect(Header)
+            fullItem={
+              Object {
+                "isActive": false,
+              }
+            }
           />,
-          <ResultsBar
-            count={0}
-          />,
-          <ResultsBody
+          <Connect(ResultsBar) />,
+          <Connect(ResultsBody)
             assets={
-              Array [
-                Object {
-                  "title": "Asset 1",
-                },
-                Object {
-                  "title": "Asset 2",
-                },
-                Object {
-                  "title": "Asset 3",
-                },
-                Object {
-                  "title": "Asset 4",
-                },
-                Object {
-                  "title": "Asset 5",
-                },
-                Object {
-                  "title": "Asset 6",
-                },
-                Object {
-                  "title": "Asset 7",
-                },
-                Object {
-                  "title": "Asset 8",
-                },
-                Object {
-                  "title": "Asset 9",
-                },
-              ]
+              Object {
+                "data": Array [],
+              }
             }
           />,
           <Footer />,
@@ -196,8 +170,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "filmItem": false,
-            "fullItem": false,
+            "fullItem": Object {
+              "isActive": false,
+            },
           },
           "ref": null,
           "rendered": null,
@@ -207,9 +182,7 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {
-            "count": 0,
-          },
+          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -219,35 +192,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "assets": Array [
-              Object {
-                "title": "Asset 1",
-              },
-              Object {
-                "title": "Asset 2",
-              },
-              Object {
-                "title": "Asset 3",
-              },
-              Object {
-                "title": "Asset 4",
-              },
-              Object {
-                "title": "Asset 5",
-              },
-              Object {
-                "title": "Asset 6",
-              },
-              Object {
-                "title": "Asset 7",
-              },
-              Object {
-                "title": "Asset 8",
-              },
-              Object {
-                "title": "Asset 9",
-              },
-            ],
+            "assets": Object {
+              "data": Array [],
+            },
           },
           "ref": null,
           "rendered": null,
@@ -280,7 +227,58 @@ exports[`<Core/> should render Core with Full Film Item 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Core />,
+  Symbol(enzyme.__unrendered__): <Core
+    searchHandler={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    user={
+      Object {
+        "fullItem": Object {
+          "isActive": true,
+        },
+        "inputValue": "",
+        "pagination": Object {
+          "activePage": 1,
+        },
+        "results": Object {
+          "data": Array [],
+        },
+        "resultsCount": -1,
+        "search": "title",
+        "searchInfo": Object {},
+        "sort": "releaseDate",
+      }
+    }
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -294,44 +292,19 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Header
-          filmItem={false}
-          fullItem={true}
+        <Connect(Header)
+          fullItem={
+            Object {
+              "isActive": true,
+            }
+          }
         />,
-        <ResultsBar
-          count={0}
-        />,
-        <ResultsBody
+        <Connect(ResultsBar) />,
+        <Connect(ResultsBody)
           assets={
-            Array [
-              Object {
-                "title": "Asset 1",
-              },
-              Object {
-                "title": "Asset 2",
-              },
-              Object {
-                "title": "Asset 3",
-              },
-              Object {
-                "title": "Asset 4",
-              },
-              Object {
-                "title": "Asset 5",
-              },
-              Object {
-                "title": "Asset 6",
-              },
-              Object {
-                "title": "Asset 7",
-              },
-              Object {
-                "title": "Asset 8",
-              },
-              Object {
-                "title": "Asset 9",
-              },
-            ]
+            Object {
+              "data": Array [],
+            }
           }
         />,
         <Footer />,
@@ -345,8 +318,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "filmItem": false,
-          "fullItem": true,
+          "fullItem": Object {
+            "isActive": true,
+          },
         },
         "ref": null,
         "rendered": null,
@@ -356,9 +330,7 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {
-          "count": 0,
-        },
+        "props": Object {},
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -368,35 +340,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "assets": Array [
-            Object {
-              "title": "Asset 1",
-            },
-            Object {
-              "title": "Asset 2",
-            },
-            Object {
-              "title": "Asset 3",
-            },
-            Object {
-              "title": "Asset 4",
-            },
-            Object {
-              "title": "Asset 5",
-            },
-            Object {
-              "title": "Asset 6",
-            },
-            Object {
-              "title": "Asset 7",
-            },
-            Object {
-              "title": "Asset 8",
-            },
-            Object {
-              "title": "Asset 9",
-            },
-          ],
+          "assets": Object {
+            "data": Array [],
+          },
         },
         "ref": null,
         "rendered": null,
@@ -421,44 +367,19 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Header
-            filmItem={false}
-            fullItem={true}
+          <Connect(Header)
+            fullItem={
+              Object {
+                "isActive": true,
+              }
+            }
           />,
-          <ResultsBar
-            count={0}
-          />,
-          <ResultsBody
+          <Connect(ResultsBar) />,
+          <Connect(ResultsBody)
             assets={
-              Array [
-                Object {
-                  "title": "Asset 1",
-                },
-                Object {
-                  "title": "Asset 2",
-                },
-                Object {
-                  "title": "Asset 3",
-                },
-                Object {
-                  "title": "Asset 4",
-                },
-                Object {
-                  "title": "Asset 5",
-                },
-                Object {
-                  "title": "Asset 6",
-                },
-                Object {
-                  "title": "Asset 7",
-                },
-                Object {
-                  "title": "Asset 8",
-                },
-                Object {
-                  "title": "Asset 9",
-                },
-              ]
+              Object {
+                "data": Array [],
+              }
             }
           />,
           <Footer />,
@@ -472,8 +393,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "filmItem": false,
-            "fullItem": true,
+            "fullItem": Object {
+              "isActive": true,
+            },
           },
           "ref": null,
           "rendered": null,
@@ -483,9 +405,7 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {
-            "count": 0,
-          },
+          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -495,35 +415,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "assets": Array [
-              Object {
-                "title": "Asset 1",
-              },
-              Object {
-                "title": "Asset 2",
-              },
-              Object {
-                "title": "Asset 3",
-              },
-              Object {
-                "title": "Asset 4",
-              },
-              Object {
-                "title": "Asset 5",
-              },
-              Object {
-                "title": "Asset 6",
-              },
-              Object {
-                "title": "Asset 7",
-              },
-              Object {
-                "title": "Asset 8",
-              },
-              Object {
-                "title": "Asset 9",
-              },
-            ],
+            "assets": Object {
+              "data": Array [],
+            },
           },
           "ref": null,
           "rendered": null,

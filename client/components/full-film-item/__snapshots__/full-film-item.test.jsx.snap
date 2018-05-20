@@ -5,14 +5,62 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <FullFilmItem
-    additional="Oscar movie"
-    description="A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film."
-    duration={124}
-    genre="horror"
-    posterUrl="http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg"
-    rating={4.7}
-    title="Wolf wood"
-    year={1992}
+    dispatch={[Function]}
+    filmData={
+      Object {
+        "overview": "Overview",
+        "poster_path": "Poster Path",
+        "release_date": "2018-12-01",
+        "runtime": 124,
+        "title": "Title",
+        "vote_average": 4.7,
+      }
+    }
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    user={
+      Object {
+        "fullItem": Object {
+          "filmData": Object {
+            "overview": "Overview",
+            "poster_path": "Poster Path",
+            "release_date": "2018-12-01",
+            "runtime": 124,
+            "title": "Title",
+            "vote_average": 4.7,
+          },
+        },
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -28,7 +76,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <img
-          src="http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg"
+          src="Poster Path"
         />,
         <div
           className="full-film-info"
@@ -39,7 +87,7 @@ ShallowWrapper {
             <p
               className="title"
             >
-              Wolf wood
+              Title
             </p>
             <p
               className="rating"
@@ -47,21 +95,24 @@ ShallowWrapper {
               4.7
             </p>
           </div>
-          <p>
-            Oscar movie
-          </p>
+          <p />
           <p
             className="year-and-time"
           >
-            1992
-                
-            124
-             min
+            <span
+              className="year"
+            >
+              2018
+            </span>
+            <span>
+              124
+               min
+            </span>
           </p>
           <p
             className="description"
           >
-            A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.
+            Overview
           </p>
         </div>,
       ],
@@ -74,7 +125,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "src": "http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg",
+          "src": "Poster Path",
         },
         "ref": null,
         "rendered": null,
@@ -92,7 +143,7 @@ ShallowWrapper {
               <p
                 className="title"
               >
-                Wolf wood
+                Title
               </p>
               <p
                 className="rating"
@@ -100,21 +151,24 @@ ShallowWrapper {
                 4.7
               </p>
             </div>,
-            <p>
-              Oscar movie
-            </p>,
+            <p />,
             <p
               className="year-and-time"
             >
-              1992
-                  
-              124
-               min
+              <span
+                className="year"
+              >
+                2018
+              </span>
+              <span>
+                124
+                 min
+              </span>
             </p>,
             <p
               className="description"
             >
-              A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.
+              Overview
             </p>,
           ],
           "className": "full-film-info",
@@ -130,7 +184,7 @@ ShallowWrapper {
                 <p
                   className="title"
                 >
-                  Wolf wood
+                  Title
                 </p>,
                 <p
                   className="rating"
@@ -147,11 +201,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Wolf wood",
+                  "children": "Title",
                   "className": "title",
                 },
                 "ref": null,
-                "rendered": "Wolf wood",
+                "rendered": "Title",
                 "type": "p",
               },
               Object {
@@ -174,10 +228,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Oscar movie",
+              "children": undefined,
             },
             "ref": null,
-            "rendered": "Oscar movie",
+            "rendered": null,
             "type": "p",
           },
           Object {
@@ -186,19 +240,49 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                1992,
-                "    ",
-                124,
-                " min",
+                <span
+                  className="year"
+                >
+                  2018
+                </span>,
+                <span>
+                  124
+                   min
+                </span>,
               ],
               "className": "year-and-time",
             },
             "ref": null,
             "rendered": Array [
-              1992,
-              "    ",
-              124,
-              " min",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "2018",
+                  "className": "year",
+                },
+                "ref": null,
+                "rendered": "2018",
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    124,
+                    " min",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  124,
+                  " min",
+                ],
+                "type": "span",
+              },
             ],
             "type": "p",
           },
@@ -207,11 +291,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.",
+              "children": "Overview",
               "className": "description",
             },
             "ref": null,
-            "rendered": "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.",
+            "rendered": "Overview",
             "type": "p",
           },
         ],
@@ -228,7 +312,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <img
-            src="http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg"
+            src="Poster Path"
           />,
           <div
             className="full-film-info"
@@ -239,7 +323,7 @@ ShallowWrapper {
               <p
                 className="title"
               >
-                Wolf wood
+                Title
               </p>
               <p
                 className="rating"
@@ -247,21 +331,24 @@ ShallowWrapper {
                 4.7
               </p>
             </div>
-            <p>
-              Oscar movie
-            </p>
+            <p />
             <p
               className="year-and-time"
             >
-              1992
-                  
-              124
-               min
+              <span
+                className="year"
+              >
+                2018
+              </span>
+              <span>
+                124
+                 min
+              </span>
             </p>
             <p
               className="description"
             >
-              A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.
+              Overview
             </p>
           </div>,
         ],
@@ -274,7 +361,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "src": "http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg",
+            "src": "Poster Path",
           },
           "ref": null,
           "rendered": null,
@@ -292,7 +379,7 @@ ShallowWrapper {
                 <p
                   className="title"
                 >
-                  Wolf wood
+                  Title
                 </p>
                 <p
                   className="rating"
@@ -300,21 +387,24 @@ ShallowWrapper {
                   4.7
                 </p>
               </div>,
-              <p>
-                Oscar movie
-              </p>,
+              <p />,
               <p
                 className="year-and-time"
               >
-                1992
-                    
-                124
-                 min
+                <span
+                  className="year"
+                >
+                  2018
+                </span>
+                <span>
+                  124
+                   min
+                </span>
               </p>,
               <p
                 className="description"
               >
-                A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.
+                Overview
               </p>,
             ],
             "className": "full-film-info",
@@ -330,7 +420,7 @@ ShallowWrapper {
                   <p
                     className="title"
                   >
-                    Wolf wood
+                    Title
                   </p>,
                   <p
                     className="rating"
@@ -347,11 +437,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Wolf wood",
+                    "children": "Title",
                     "className": "title",
                   },
                   "ref": null,
-                  "rendered": "Wolf wood",
+                  "rendered": "Title",
                   "type": "p",
                 },
                 Object {
@@ -374,10 +464,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Oscar movie",
+                "children": undefined,
               },
               "ref": null,
-              "rendered": "Oscar movie",
+              "rendered": null,
               "type": "p",
             },
             Object {
@@ -386,19 +476,49 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  1992,
-                  "    ",
-                  124,
-                  " min",
+                  <span
+                    className="year"
+                  >
+                    2018
+                  </span>,
+                  <span>
+                    124
+                     min
+                  </span>,
                 ],
                 "className": "year-and-time",
               },
               "ref": null,
               "rendered": Array [
-                1992,
-                "    ",
-                124,
-                " min",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "2018",
+                    "className": "year",
+                  },
+                  "ref": null,
+                  "rendered": "2018",
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      124,
+                      " min",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    124,
+                    " min",
+                  ],
+                  "type": "span",
+                },
               ],
               "type": "p",
             },
@@ -407,11 +527,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.",
+                "children": "Overview",
                 "className": "description",
               },
               "ref": null,
-              "rendered": "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.",
+              "rendered": "Overview",
               "type": "p",
             },
           ],
@@ -431,31 +551,67 @@ ShallowWrapper {
 }
 `;
 
-exports[`<FullFilmItem/> should render FullFilmItem and match snapshot 2`] = `
+exports[`<FullFilmItem/> should render FullFilmItem and match snapshot without runtime 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <FullFilmItem
-    additional="Oscar movie"
-    description="A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film."
-    duration={124}
-    genre="horror"
-    posterUrl="http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg"
-    props={
+    dispatch={[Function]}
+    filmData={
       Object {
-        "additional": "Additional",
-        "description": "Description",
-        "duratin": 123,
-        "genre": "Genre",
-        "posterUrl": "PosterUrl",
-        "rating": 4.6,
+        "overview": "Overview",
+        "poster_path": "Poster Path",
+        "release_date": "2018-12-01",
+        "runtime": 124,
         "title": "Title",
-        "year": 1900,
+        "vote_average": 4.7,
       }
     }
-    rating={4.7}
-    title="Wolf wood"
-    year={1992}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    user={
+      Object {
+        "fullItem": Object {
+          "filmData": Object {
+            "overview": "Overview",
+            "poster_path": "Poster Path",
+            "release_date": "2018-12-01",
+            "runtime": 124,
+            "title": "Title",
+            "vote_average": 4.7,
+          },
+        },
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -471,7 +627,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <img
-          src="http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg"
+          src="Poster Path"
         />,
         <div
           className="full-film-info"
@@ -482,7 +638,7 @@ ShallowWrapper {
             <p
               className="title"
             >
-              Wolf wood
+              Title
             </p>
             <p
               className="rating"
@@ -490,21 +646,24 @@ ShallowWrapper {
               4.7
             </p>
           </div>
-          <p>
-            Oscar movie
-          </p>
+          <p />
           <p
             className="year-and-time"
           >
-            1992
-                
-            124
-             min
+            <span
+              className="year"
+            >
+              2018
+            </span>
+            <span>
+              124
+               min
+            </span>
           </p>
           <p
             className="description"
           >
-            A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.
+            Overview
           </p>
         </div>,
       ],
@@ -517,7 +676,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "src": "http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg",
+          "src": "Poster Path",
         },
         "ref": null,
         "rendered": null,
@@ -535,7 +694,7 @@ ShallowWrapper {
               <p
                 className="title"
               >
-                Wolf wood
+                Title
               </p>
               <p
                 className="rating"
@@ -543,21 +702,24 @@ ShallowWrapper {
                 4.7
               </p>
             </div>,
-            <p>
-              Oscar movie
-            </p>,
+            <p />,
             <p
               className="year-and-time"
             >
-              1992
-                  
-              124
-               min
+              <span
+                className="year"
+              >
+                2018
+              </span>
+              <span>
+                124
+                 min
+              </span>
             </p>,
             <p
               className="description"
             >
-              A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.
+              Overview
             </p>,
           ],
           "className": "full-film-info",
@@ -573,7 +735,7 @@ ShallowWrapper {
                 <p
                   className="title"
                 >
-                  Wolf wood
+                  Title
                 </p>,
                 <p
                   className="rating"
@@ -590,11 +752,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Wolf wood",
+                  "children": "Title",
                   "className": "title",
                 },
                 "ref": null,
-                "rendered": "Wolf wood",
+                "rendered": "Title",
                 "type": "p",
               },
               Object {
@@ -617,10 +779,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Oscar movie",
+              "children": undefined,
             },
             "ref": null,
-            "rendered": "Oscar movie",
+            "rendered": null,
             "type": "p",
           },
           Object {
@@ -629,19 +791,49 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                1992,
-                "    ",
-                124,
-                " min",
+                <span
+                  className="year"
+                >
+                  2018
+                </span>,
+                <span>
+                  124
+                   min
+                </span>,
               ],
               "className": "year-and-time",
             },
             "ref": null,
             "rendered": Array [
-              1992,
-              "    ",
-              124,
-              " min",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "2018",
+                  "className": "year",
+                },
+                "ref": null,
+                "rendered": "2018",
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    124,
+                    " min",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  124,
+                  " min",
+                ],
+                "type": "span",
+              },
             ],
             "type": "p",
           },
@@ -650,11 +842,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.",
+              "children": "Overview",
               "className": "description",
             },
             "ref": null,
-            "rendered": "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.",
+            "rendered": "Overview",
             "type": "p",
           },
         ],
@@ -671,7 +863,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <img
-            src="http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg"
+            src="Poster Path"
           />,
           <div
             className="full-film-info"
@@ -682,7 +874,7 @@ ShallowWrapper {
               <p
                 className="title"
               >
-                Wolf wood
+                Title
               </p>
               <p
                 className="rating"
@@ -690,21 +882,24 @@ ShallowWrapper {
                 4.7
               </p>
             </div>
-            <p>
-              Oscar movie
-            </p>
+            <p />
             <p
               className="year-and-time"
             >
-              1992
-                  
-              124
-               min
+              <span
+                className="year"
+              >
+                2018
+              </span>
+              <span>
+                124
+                 min
+              </span>
             </p>
             <p
               className="description"
             >
-              A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.
+              Overview
             </p>
           </div>,
         ],
@@ -717,7 +912,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "src": "http://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg",
+            "src": "Poster Path",
           },
           "ref": null,
           "rendered": null,
@@ -735,7 +930,7 @@ ShallowWrapper {
                 <p
                   className="title"
                 >
-                  Wolf wood
+                  Title
                 </p>
                 <p
                   className="rating"
@@ -743,21 +938,24 @@ ShallowWrapper {
                   4.7
                 </p>
               </div>,
-              <p>
-                Oscar movie
-              </p>,
+              <p />,
               <p
                 className="year-and-time"
               >
-                1992
-                    
-                124
-                 min
+                <span
+                  className="year"
+                >
+                  2018
+                </span>
+                <span>
+                  124
+                   min
+                </span>
               </p>,
               <p
                 className="description"
               >
-                A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.
+                Overview
               </p>,
             ],
             "className": "full-film-info",
@@ -773,7 +971,7 @@ ShallowWrapper {
                   <p
                     className="title"
                   >
-                    Wolf wood
+                    Title
                   </p>,
                   <p
                     className="rating"
@@ -790,11 +988,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "Wolf wood",
+                    "children": "Title",
                     "className": "title",
                   },
                   "ref": null,
-                  "rendered": "Wolf wood",
+                  "rendered": "Title",
                   "type": "p",
                 },
                 Object {
@@ -817,10 +1015,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Oscar movie",
+                "children": undefined,
               },
               "ref": null,
-              "rendered": "Oscar movie",
+              "rendered": null,
               "type": "p",
             },
             Object {
@@ -829,19 +1027,49 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  1992,
-                  "    ",
-                  124,
-                  " min",
+                  <span
+                    className="year"
+                  >
+                    2018
+                  </span>,
+                  <span>
+                    124
+                     min
+                  </span>,
                 ],
                 "className": "year-and-time",
               },
               "ref": null,
               "rendered": Array [
-                1992,
-                "    ",
-                124,
-                " min",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "2018",
+                    "className": "year",
+                  },
+                  "ref": null,
+                  "rendered": "2018",
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      124,
+                      " min",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    124,
+                    " min",
+                  ],
+                  "type": "span",
+                },
               ],
               "type": "p",
             },
@@ -850,11 +1078,562 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.",
+                "children": "Overview",
                 "className": "description",
               },
               "ref": null,
-              "rendered": "A film crew is a group of people hired by a film company, employed during the phase, for the purpose of producing a film or motion picture. Crew is distinguished from cast, who are the actors who appear in front of the camera or provide voices for characters in the film.",
+              "rendered": "Overview",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<FullFilmItem/> should render FullFilmItem and match snapshot without vote average 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FullFilmItem
+    dispatch={[Function]}
+    filmData={
+      Object {
+        "overview": "Overview",
+        "poster_path": "Poster Path",
+        "release_date": "2018-12-01",
+        "runtime": 124,
+        "title": "Title",
+        "vote_average": 4.7,
+      }
+    }
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+    storeSubscription={
+      Subscription {
+        "listeners": Object {
+          "clear": [Function],
+          "get": [Function],
+          "notify": [Function],
+          "subscribe": [Function],
+        },
+        "onStateChange": [Function],
+        "parentSub": undefined,
+        "store": Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        },
+        "unsubscribe": [Function],
+      }
+    }
+    user={
+      Object {
+        "fullItem": Object {
+          "filmData": Object {
+            "overview": "Overview",
+            "poster_path": "Poster Path",
+            "release_date": "2018-12-01",
+            "runtime": 124,
+            "title": "Title",
+            "vote_average": 4.7,
+          },
+        },
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <img
+          src="Poster Path"
+        />,
+        <div
+          className="full-film-info"
+        >
+          <div
+            className="title-and-rating"
+          >
+            <p
+              className="title"
+            >
+              Title
+            </p>
+            <p
+              className="rating"
+            >
+              4.7
+            </p>
+          </div>
+          <p />
+          <p
+            className="year-and-time"
+          >
+            <span
+              className="year"
+            >
+              2018
+            </span>
+            <span>
+              124
+               min
+            </span>
+          </p>
+          <p
+            className="description"
+          >
+            Overview
+          </p>
+        </div>,
+      ],
+      "className": "full-film-item",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "src": "Poster Path",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="title-and-rating"
+            >
+              <p
+                className="title"
+              >
+                Title
+              </p>
+              <p
+                className="rating"
+              >
+                4.7
+              </p>
+            </div>,
+            <p />,
+            <p
+              className="year-and-time"
+            >
+              <span
+                className="year"
+              >
+                2018
+              </span>
+              <span>
+                124
+                 min
+              </span>
+            </p>,
+            <p
+              className="description"
+            >
+              Overview
+            </p>,
+          ],
+          "className": "full-film-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <p
+                  className="title"
+                >
+                  Title
+                </p>,
+                <p
+                  className="rating"
+                >
+                  4.7
+                </p>,
+              ],
+              "className": "title-and-rating",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Title",
+                  "className": "title",
+                },
+                "ref": null,
+                "rendered": "Title",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": 4.7,
+                  "className": "rating",
+                },
+                "ref": null,
+                "rendered": 4.7,
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <span
+                  className="year"
+                >
+                  2018
+                </span>,
+                <span>
+                  124
+                   min
+                </span>,
+              ],
+              "className": "year-and-time",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "2018",
+                  "className": "year",
+                },
+                "ref": null,
+                "rendered": "2018",
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    124,
+                    " min",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  124,
+                  " min",
+                ],
+                "type": "span",
+              },
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Overview",
+              "className": "description",
+            },
+            "ref": null,
+            "rendered": "Overview",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <img
+            src="Poster Path"
+          />,
+          <div
+            className="full-film-info"
+          >
+            <div
+              className="title-and-rating"
+            >
+              <p
+                className="title"
+              >
+                Title
+              </p>
+              <p
+                className="rating"
+              >
+                4.7
+              </p>
+            </div>
+            <p />
+            <p
+              className="year-and-time"
+            >
+              <span
+                className="year"
+              >
+                2018
+              </span>
+              <span>
+                124
+                 min
+              </span>
+            </p>
+            <p
+              className="description"
+            >
+              Overview
+            </p>
+          </div>,
+        ],
+        "className": "full-film-item",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "src": "Poster Path",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="title-and-rating"
+              >
+                <p
+                  className="title"
+                >
+                  Title
+                </p>
+                <p
+                  className="rating"
+                >
+                  4.7
+                </p>
+              </div>,
+              <p />,
+              <p
+                className="year-and-time"
+              >
+                <span
+                  className="year"
+                >
+                  2018
+                </span>
+                <span>
+                  124
+                   min
+                </span>
+              </p>,
+              <p
+                className="description"
+              >
+                Overview
+              </p>,
+            ],
+            "className": "full-film-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p
+                    className="title"
+                  >
+                    Title
+                  </p>,
+                  <p
+                    className="rating"
+                  >
+                    4.7
+                  </p>,
+                ],
+                "className": "title-and-rating",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Title",
+                    "className": "title",
+                  },
+                  "ref": null,
+                  "rendered": "Title",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": 4.7,
+                    "className": "rating",
+                  },
+                  "ref": null,
+                  "rendered": 4.7,
+                  "type": "p",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <span
+                    className="year"
+                  >
+                    2018
+                  </span>,
+                  <span>
+                    124
+                     min
+                  </span>,
+                ],
+                "className": "year-and-time",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "2018",
+                    "className": "year",
+                  },
+                  "ref": null,
+                  "rendered": "2018",
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      124,
+                      " min",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    124,
+                    " min",
+                  ],
+                  "type": "span",
+                },
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Overview",
+                "className": "description",
+              },
+              "ref": null,
+              "rendered": "Overview",
               "type": "p",
             },
           ],

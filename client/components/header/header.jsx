@@ -38,6 +38,7 @@ class Header extends React.Component {
                         onChange={(event)=>this.updateInputValue(event)}
                         onKeyPress={ (event) => {
                             if (event.key == 'Enter') { 
+                                console.log('I am here');
                                 this.getMovie();
                             }
                         }

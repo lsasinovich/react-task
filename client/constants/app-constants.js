@@ -21,3 +21,20 @@ export const ACTIONS = {
 
 export const ITEM_COUNT_PER_PAGE = 12;
 export const PAGE_RANGE_DISPLAYED = 5;
+
+export const INITIAL_STATE = {
+    searchInfo: {},
+    results: {
+        data:[]
+    },
+    fullItem: {
+        isActive: false
+    },
+    inputValue: "",
+    sort: "releaseDate",
+    search: 'title',
+    resultsCount: -1,
+    pagination: {
+        activePage: 1
+    }
+}

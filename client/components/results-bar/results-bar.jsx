@@ -7,13 +7,8 @@ import './results-bar.scss';
 import { ACTIONS, SORT, ITEM_COUNT_PER_PAGE } from '../../constants/app-constants';
 
 class ResultsBar extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     switchSort(sort) {
         if(sort !== this.props.user.sort) {
-            console.log(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sort]}&sortOrder=desc&search=${this.props.user.inputValue}&searchBy=${this.props.user.search}&limit=${ITEM_COUNT_PER_PAGE}`);
             return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sort]}&sortOrder=desc&search=${this.props.user.inputValue}&searchBy=${this.props.user.search}&limit=${ITEM_COUNT_PER_PAGE}`)
             .then(response => response.json())
             .then(json => this.props.switchSort(sort, json))
@@ -57,6 +52,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, results) => {
     return {
         switchSort: (sort, results) => {
+            console.log(ACTIONS.SWITCH_SORT);
             dispatch({
                 type: ACTIONS.SWITCH_SORT,
                 sort: sort,

@@ -7,7 +7,6 @@ import './full-film-item.scss';
 class FullFilmItem extends React.Component {
     render() {
         const {filmData} = this.props;
-        console.log(filmData);
         return (
             <div className="full-film-item">
                 <img src={filmData.poster_path} />
