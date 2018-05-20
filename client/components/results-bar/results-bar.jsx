@@ -5,15 +5,9 @@ import { connect } from 'react-redux';
 
 import './results-bar.scss';
 import { ACTIONS, SORT, ITEM_COUNT_PER_PAGE } from '../../constants/app-constants';
+import { switchSortAction } from '../../action-creators';
 
 class ResultsBar extends React.Component {
-    switchSort(sort) {
-        if(sort !== this.props.user.sort) {
-            return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sort]}&sortOrder=desc&search=${this.props.user.inputValue}&searchBy=${this.props.user.search}&limit=${ITEM_COUNT_PER_PAGE}`)
-            .then(response => response.json())
-            .then(json => this.props.switchSort(sort, json))
-        }
-    }
 
     render() {
         return(
@@ -25,8 +19,8 @@ class ResultsBar extends React.Component {
                         <p className="results-count">{this.props.user.resultsCount} movies found</p>
                         <div className="results-sort">
                             <p>Sort by</p>
-                            <p className={this.props.user.sort === "releaseDate" ? "cl-red" : "cl-black"} onClick={()=>this.switchSort("releaseDate")}>release date</p>
-                            <p className={this.props.user.sort === "rating" ? "cl-red" : "cl-black"} onClick={()=>this.switchSort("rating")}>rating</p>
+                            <p className={this.props.user.sort === "releaseDate" ? "cl-red" : "cl-black"} onClick={()=>switchSortAction(this.props.dispatch, "releaseDate", "release_date", this.props.user.inputValue, this.props.user.search)}>release date</p>
+                            <p className={this.props.user.sort === "rating" ? "cl-red" : "cl-black"} onClick={()=>switchSortAction(this.props.dispatch, "rating", "vote_average", this.props.user.inputValue, this.props.user.search)}>rating</p>
                         </div>
                     </div> :
                     <div>
@@ -49,17 +43,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch, results) => {
-    return {
-        switchSort: (sort, results) => {
-            console.log(ACTIONS.SWITCH_SORT);
-            dispatch({
-                type: ACTIONS.SWITCH_SORT,
-                sort: sort,
-                results: results
-            })
-        }
-    }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ResultsBar);
+export default connect(mapStateToProps)(ResultsBar);

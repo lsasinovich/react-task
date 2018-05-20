@@ -15,12 +15,6 @@ class Core extends React.Component {
         super(props);
     }
 
-    componentWillMount() {
-        fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=release_date&sortOrder=desc&limit=${ITEM_COUNT_PER_PAGE}`)
-        .then(response => response.json())
-        .then(json => this.props.searchHandler(json))
-    }
-
     render() {
         return (
             <div className="core-page">
@@ -39,15 +33,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        searchHandler: (results) => {
-            dispatch({
-                type: ACTIONS.SEARCH,
-                results: results
-            })
-        }
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Core);
+export default connect(mapStateToProps)(Core);

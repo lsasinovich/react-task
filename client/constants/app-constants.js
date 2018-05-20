@@ -33,8 +33,5 @@ export const INITIAL_STATE = {
     inputValue: "",
     sort: "releaseDate",
     search: 'title',
-    resultsCount: -1,
-    pagination: {
-        activePage: 1
-    }
+    resultsCount: -1
 }

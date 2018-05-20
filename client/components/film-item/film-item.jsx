@@ -4,14 +4,9 @@ import { connect } from 'react-redux';
 
 import './film-item.scss';
 import { ACTIONS } from '../../constants/app-constants';
+import { fullLoad } from '../../action-creators';
 
 class FilmItem extends React.Component {
-    fullFilmLoad(id) {
-        return fetch(`http://react-cdp-api.herokuapp.com/movies/${id}`)
-              .then(response => response.json())
-              .then(json => this.props.fullFilmLoad(json));
-    }
-
     render() {
         return (
             <div className="film-item">
@@ -21,7 +16,7 @@ class FilmItem extends React.Component {
                 }
                 <div className="film-info">
                     <div>
-                        <p className="title" onClick={()=>this.fullFilmLoad(this.props.id)}>{this.props.title}</p>
+                        <p className="title" onClick={()=>fullLoad(this.props.dispatch, this.props.id)}>{this.props.title}</p>
                         <p className="genre">{this.props.genres}</p>
                     </div>
                     <p className="year">{this.props.year}</p>
@@ -45,15 +40,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        fullFilmLoad: (json) => {
-            dispatch({
-                type: ACTIONS.FULL_FILM_LOAD,
-                filmData: json
-            })
-        }
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(FilmItem);
+export default connect(mapStateToProps)(FilmItem);

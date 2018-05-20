@@ -1,5 +1,7 @@
-import { createStore, compose } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 import storage from 'redux-persist/lib/storage';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { persistStore, persistReducer } from 'redux-persist';
 import { SORT, ACTIONS, INITIAL_STATE } from './constants/app-constants';
 
@@ -70,6 +72,6 @@ export function reducers (state = INITIAL_STATE, action) {
 }
 
 const reducer = persistReducer({key: 'root', storage },reducers);
-const store = createStore(reducer, INITIAL_STATE);
+const store = createStore(reducer, INITIAL_STATE, composeWithDevTools(applyMiddleware(thunk)));
 let persistor = persistStore(store);
 export { store, persistor };

@@ -5,6 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ResultsBar
+    dispatch={[Function]}
     store={
       Object {
         "clearActions": [Function],
@@ -36,16 +37,12 @@ ShallowWrapper {
         "unsubscribe": [Function],
       }
     }
-    switchSort={[Function]}
     user={
       Object {
         "fullItem": Object {
           "isActive": false,
         },
         "inputValue": "",
-        "pagination": Object {
-          "activePage": 1,
-        },
         "results": Object {
           "data": Array [],
         },
@@ -484,6 +481,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ResultsBar
+    dispatch={[Function]}
     store={
       Object {
         "clearActions": [Function],
@@ -515,16 +513,12 @@ ShallowWrapper {
         "unsubscribe": [Function],
       }
     }
-    switchSort={[Function]}
     user={
       Object {
         "fullItem": Object {
           "isActive": true,
         },
         "inputValue": "",
-        "pagination": Object {
-          "activePage": 1,
-        },
         "results": Object {
           "data": Array [],
         },
@@ -627,6 +621,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ResultsBar
+    dispatch={[Function]}
     store={
       Object {
         "clearActions": [Function],
@@ -658,16 +653,12 @@ ShallowWrapper {
         "unsubscribe": [Function],
       }
     }
-    switchSort={[Function]}
     user={
       Object {
         "fullItem": Object {
           "isActive": true,
         },
         "inputValue": "input",
-        "pagination": Object {
-          "activePage": 1,
-        },
         "results": Object {
           "data": Array [],
         },
@@ -836,6 +827,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ResultsBar
+    dispatch={[Function]}
     store={
       Object {
         "clearActions": [Function],
@@ -867,16 +859,12 @@ ShallowWrapper {
         "unsubscribe": [Function],
       }
     }
-    switchSort={[Function]}
     user={
       Object {
         "fullItem": Object {
           "isActive": false,
         },
         "inputValue": "",
-        "pagination": Object {
-          "activePage": 1,
-        },
         "results": Object {
           "data": Array [],
         },

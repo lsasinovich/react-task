@@ -9,21 +9,21 @@ const mockStore = configureStore();
 let store = mockStore({...INITIAL_STATE,resultsCount:135, inputValue: "twilight"});
 
 describe('<ResultsBar/>', function() {
-  it('should switch sort by clicking', () => {
-    const wrapper = shallow(<ResultsBar store={store}/>).dive();
-    const instance = wrapper.instance();
+  // it('should switch sort by clicking', () => {
+  //   const wrapper = shallow(<ResultsBar store={store}/>).dive();
+  //   const instance = wrapper.instance();
     
-    jest.spyOn(instance, 'switchSort');
-    wrapper.update();
+  //   jest.spyOn(instance, 'switchSort');
+  //   wrapper.update();
     
-    const buttons = wrapper.find('p');
-    buttons.at(3).simulate('click');
+  //   const buttons = wrapper.find('p');
+  //   buttons.at(3).simulate('click');
   
-    expect(instance.switchSort).toHaveBeenCalled();
-    buttons.at(2).simulate('click');
+  //   expect(instance.switchSort).toHaveBeenCalled();
+  //   buttons.at(2).simulate('click');
   
-    expect(instance.switchSort).toHaveBeenCalled();
-   });
+  //   expect(instance.switchSort).toHaveBeenCalled();
+  //  });
 
   it('should render ResultsBar and match snapshot', function() {
       store = mockStore(INITIAL_STATE);

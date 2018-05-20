@@ -43,9 +43,6 @@ ShallowWrapper {
           "isActive": false,
         },
         "inputValue": "",
-        "pagination": Object {
-          "activePage": 1,
-        },
         "results": Object {
           "data": Array [
             Object {
@@ -285,9 +282,6 @@ ShallowWrapper {
           "isActive": false,
         },
         "inputValue": "",
-        "pagination": Object {
-          "activePage": 1,
-        },
         "results": Object {
           "data": Array [],
         },

@@ -5,19 +5,10 @@ import { Nextflixroulette } from '../nextflixroulette/nextflixroulette';
 import FullFilmItem from '../full-film-item/full-film-item';
 
 import './header.scss';
-import { ACTIONS, SEARCH } from '../../constants/app-constants';
+import { ACTIONS, SEARCH, SORT } from '../../constants/app-constants';
+import { updateInputValue, searchHandler, returnToMainPage, resetInputValue, switchSearch, getMovie } from '../../action-creators';
 
 class Header extends React.Component {
-    updateInputValue (event) {
-        const value = event.target.value;
-        this.props.updateInputValue(value);
-    }
-
-    getMovie(search) {
-        return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SEARCH[this.props.user.sort]}&search=${this.props.user.inputValue}&searchBy=${SEARCH[search] || this.props.user.search}&limit=12`)
-          .then(response => response.json())
-          .then(json => this.props.searchHandler(json))
-    }
 
     render() {
         return (
@@ -25,7 +16,7 @@ class Header extends React.Component {
             <div className="return-div">
                 <Nextflixroulette/>
                 { this.props.user.fullItem.isActive && 
-                    <button className="btn return-button cl-red bg-white" onClick={this.props.returnToMainPage}>SEARCH</button> 
+                    <button className="btn return-button cl-red bg-white" onClick={()=>this.props.dispatch(returnToMainPage())}>SEARCH</button> 
                 }
             </div>
             { !this.props.user.fullItem.isActive ?
@@ -35,11 +26,10 @@ class Header extends React.Component {
                     <input className="search-bar" 
                         placeholder="Let's find your movie" 
                         value={this.props.user.inputValue} 
-                        onChange={(event)=>this.updateInputValue(event)}
+                        onChange={(event)=>this.props.dispatch(updateInputValue(event))}
                         onKeyPress={ (event) => {
                             if (event.key == 'Enter') { 
-                                console.log('I am here');
-                                this.getMovie();
+                                getMovie(this.props.dispatch, SEARCH[this.props.user.search] || this.props.user.search, SORT[this.props.user.sort], this.props.user.inputValue);
                             }
                         }
                     }
@@ -47,16 +37,16 @@ class Header extends React.Component {
                     </input>
                     {this.props.user.inputValue === "" ? 
                         <img className="arrow" src={require('../../images/arrow.png')} /> :
-                        <img className="cross" src={require('../../images/cross.png')} onClick={this.props.resetInputValue} />
+                        <img className="cross" src={require('../../images/cross.png')} onClick={()=>this.props.dispatch(resetInputValue())} />
                     }
                 </div>
                 <div className="button-group cl-white">
                     <div>
                         <p className="search-by">SEARCH BY</p>
-                        <button className={`btn genre-button ${this.props.user.search === "genres" ? "bg-red" : "bg-grey"} cl-white`} onClick={()=>this.props.switchSearch('genres')}>GENRE</button>
-                        <button className={`btn title-button ${this.props.user.search === "title" ? "bg-red" : "bg-grey"} cl-white`} onClick={()=>this.props.switchSearch('title')}>TITLE</button>
+                        <button className={`btn genre-button ${this.props.user.search === "genres" ? "bg-red" : "bg-grey"} cl-white`} onClick={()=>this.props.dispatch(switchSearch('genres'))}>GENRE</button>
+                        <button className={`btn title-button ${this.props.user.search === "title" ? "bg-red" : "bg-grey"} cl-white`} onClick={()=>this.props.dispatch(switchSearch('title'))}>TITLE</button>
                     </div>
-                    <button className='btn search-button bg-red cl-white' onClick={()=>this.getMovie()}>SEARCH</button>
+                    <button className='btn search-button bg-red cl-white' onClick={()=>getMovie(this.props.dispatch, SEARCH[this.props.user.search] || this.props.user.search, SORT[this.props.user.sort], this.props.user.inputValue)}>SEARCH</button>
                 </div>
                 </div> :
                 <FullFilmItem />
@@ -72,38 +62,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        returnToMainPage: () => {
-            dispatch({
-                type: ACTIONS.RETURN_TO_MAIN_PAGE
-            })
-        },
-        updateInputValue: (value) => {
-            dispatch({
-                type: ACTIONS.UPDATE_INPUT_VALUE,
-                value: value
-            })
-        },
-        resetInputValue: () => {
-            dispatch({
-                type: ACTIONS.RESET_INPUT_VALUE
-            })
-        },
-        searchHandler: (results) => {
-            dispatch({
-                type: ACTIONS.SEARCH,
-                results: results
-            })
-        },
-        switchSearch: (search) => {
-            dispatch({
-                type: ACTIONS.SWITCH_SEARCH,
-                search: search
-            })
-
-        }
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps)(Header);
