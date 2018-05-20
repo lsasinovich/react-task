@@ -1,14 +1,14 @@
-import reducer from './store';
+import { reducers } from './store';
 
 import { INITIAL_STATE, ACTIONS } from './constants/app-constants';
 
 describe('reducer', function () {
     it('should return the initial state', () => {
-        expect(reducer(undefined, {})).toEqual( INITIAL_STATE )
+        expect(reducers(undefined, {})).toEqual( INITIAL_STATE )
     });
 
     it('should handle return to main page action', () => {
-        expect(reducer(INITIAL_STATE, {
+        expect(reducers(INITIAL_STATE, {
             type: ACTIONS.RETURN_TO_MAIN_PAGE
         })).toEqual( { ...INITIAL_STATE, 
                        fullItem: {
@@ -17,7 +17,7 @@ describe('reducer', function () {
                     })
     });
     it('should handle update input value action', () => {
-        expect(reducer(INITIAL_STATE, {
+        expect(reducers(INITIAL_STATE, {
                 type: ACTIONS.UPDATE_INPUT_VALUE,
                 value: "INPUT"
         })).toEqual({ ...INITIAL_STATE, 
@@ -25,12 +25,12 @@ describe('reducer', function () {
                     })
     });
     it('should handle reset input value action', () => {
-        expect(reducer({ ...INITIAL_STATE, inputValue: "INPUT"}, {
+        expect(reducers({ ...INITIAL_STATE, inputValue: "INPUT"}, {
                 type: ACTIONS.RESET_INPUT_VALUE
         })).toEqual(INITIAL_STATE)
     });
     it('should handle update input value action', () => {
-        expect(reducer(INITIAL_STATE, {
+        expect(reducers(INITIAL_STATE, {
                 type: ACTIONS.SEARCH,
                 results: {
                     data: [{
@@ -54,7 +54,7 @@ describe('reducer', function () {
     });
 
     it('should handle switch search action', () => {
-        expect(reducer(INITIAL_STATE, {
+        expect(reducers(INITIAL_STATE, {
                 type: ACTIONS.SWITCH_SEARCH,
                 search: 'title'
         })).toEqual({ ...INITIAL_STATE, 
@@ -63,7 +63,7 @@ describe('reducer', function () {
     });
 
     it('should handle switch sort action', () => {
-        expect(reducer(INITIAL_STATE, {
+        expect(reducers(INITIAL_STATE, {
                 type: ACTIONS.SWITCH_SORT,
                 sort: 'rating',
                 results: {
@@ -83,7 +83,7 @@ describe('reducer', function () {
                     })
     });
     it('should load full film item', () => {
-        expect(reducer(INITIAL_STATE, {
+        expect(reducers(INITIAL_STATE, {
                 type: ACTIONS.FULL_FILM_LOAD,
                 filmData: {
                     id: 123

@@ -1,6 +1,6 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import storage from 'redux-persist/es/storage';
-import { persistStore, autoRehydrate, persistReducer } from 'redux-persist';
+import { createStore, compose } from 'redux';
+import storage from 'redux-persist/lib/storage';
+import { persistStore, persistReducer } from 'redux-persist';
 import { SORT, ACTIONS, INITIAL_STATE } from './constants/app-constants';
 
 export function reducers (state = INITIAL_STATE, action) {
@@ -66,11 +66,10 @@ export function reducers (state = INITIAL_STATE, action) {
             break;
         }
     }
-    console.log('here');
     return state;
 }
 
 const reducer = persistReducer({key: 'root', storage },reducers);
-const store = createStore(reducer, INITIAL_STATE, autoRehydrate());
+const store = createStore(reducer, INITIAL_STATE);
 let persistor = persistStore(store);
 export { store, persistor };
