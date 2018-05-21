@@ -16,7 +16,7 @@ class Header extends React.Component {
             <div className="return-div">
                 <Nextflixroulette/>
                 { this.props.user.fullItem.isActive && 
-                    <button className="btn return-button cl-red bg-white" onClick={()=>this.props.dispatch(returnToMainPage())}>SEARCH</button> 
+                    <button className="btn return-button cl-red bg-white" onClick={()=>this.props.returnToMainPage()}>SEARCH</button> 
                 }
             </div>
             { !this.props.user.fullItem.isActive ?
@@ -26,10 +26,10 @@ class Header extends React.Component {
                     <input className="search-bar" 
                         placeholder="Let's find your movie" 
                         value={this.props.user.inputValue} 
-                        onChange={(event)=>this.props.dispatch(updateInputValue(event))}
+                        onChange={(event)=>this.props.updateInputValue(event)}
                         onKeyPress={ (event) => {
                             if (event.key == 'Enter') { 
-                                getMovie(this.props.dispatch, SEARCH[this.props.user.search] || this.props.user.search, SORT[this.props.user.sort], this.props.user.inputValue);
+                                this.props.getMovie(SEARCH[this.props.user.search] || this.props.user.search, SORT[this.props.user.sort], this.props.user.inputValue);
                             }
                         }
                     }
@@ -37,16 +37,16 @@ class Header extends React.Component {
                     </input>
                     {this.props.user.inputValue === "" ? 
                         <img className="arrow" src={require('../../images/arrow.png')} /> :
-                        <img className="cross" src={require('../../images/cross.png')} onClick={()=>this.props.dispatch(resetInputValue())} />
+                        <img className="cross" src={require('../../images/cross.png')} onClick={()=>this.props.resetInputValue()} />
                     }
                 </div>
                 <div className="button-group cl-white">
                     <div>
                         <p className="search-by">SEARCH BY</p>
-                        <button className={`btn genre-button ${this.props.user.search === "genres" ? "bg-red" : "bg-grey"} cl-white`} onClick={()=>this.props.dispatch(switchSearch('genres'))}>GENRE</button>
-                        <button className={`btn title-button ${this.props.user.search === "title" ? "bg-red" : "bg-grey"} cl-white`} onClick={()=>this.props.dispatch(switchSearch('title'))}>TITLE</button>
+                        <button className={`btn genre-button ${this.props.user.search === "genres" ? "bg-red" : "bg-grey"} cl-white`} onClick={()=>this.props.switchSearch('genres')}>GENRE</button>
+                        <button className={`btn title-button ${this.props.user.search === "title" ? "bg-red" : "bg-grey"} cl-white`} onClick={()=>this.props.switchSearch('title')}>TITLE</button>
                     </div>
-                    <button className='btn search-button bg-red cl-white' onClick={()=>getMovie(this.props.dispatch, SEARCH[this.props.user.search] || this.props.user.search, SORT[this.props.user.sort], this.props.user.inputValue)}>SEARCH</button>
+                    <button className='btn search-button bg-red cl-white' onClick={()=>this.props.getMovie(SEARCH[this.props.user.search] || this.props.user.search, SORT[this.props.user.sort], this.props.user.inputValue)}>SEARCH</button>
                 </div>
                 </div> :
                 <FullFilmItem />
@@ -55,6 +55,14 @@ class Header extends React.Component {
         );
     }
 }
+const mapDispatchToProps = {
+    updateInputValue, 
+    searchHandler, 
+    returnToMainPage, 
+    resetInputValue, 
+    switchSearch, 
+    getMovie
+}
 
 const mapStateToProps = (state) => {
     return {
@@ -62,4 +70,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

@@ -1,6 +1,6 @@
 import { ACTIONS, SORT, SEARCH } from './constants/app-constants';
 
-export function switchSort(sort, results) {
+export const switchSort = (sort, results) => dispatch => {
     return {
         type: ACTIONS.SWITCH_SORT,
         sort: sort,
@@ -8,20 +8,20 @@ export function switchSort(sort, results) {
     }
 }
 
-export function fullFilmLoad(json) {
+export const fullFilmLoad = (json) => dispatch => {
     return {
         type: ACTIONS.FULL_FILM_LOAD,
         filmData: json
     };
 }
 
-export function returnToMainPage() {
+export const returnToMainPage = () => dispatch => {
     return {
         type: ACTIONS.RETURN_TO_MAIN_PAGE
     };
 }
 
-export function updateInputValue(event) {
+export const updateInputValue = (event) => dispatch => {
     const value = event.target.value;
 
     return {
@@ -30,20 +30,20 @@ export function updateInputValue(event) {
     };
 }
 
-export function resetInputValue() {
+export const resetInputValue = () => dispatch => {
     return {
         type: ACTIONS.RESET_INPUT_VALUE
     };
 }
 
-export function searchHandler (results) {
+export const searchHandler = (results) => dispatch => {
     return {
         type: ACTIONS.SEARCH,
         results: results
     };
 }
 
-export function switchSearch (search) {
+export const switchSearch = (search) => dispatch => {
     return {
         type: ACTIONS.SWITCH_SEARCH,
         search: search
@@ -51,19 +51,19 @@ export function switchSearch (search) {
 
 }
 
-export function getMovie(dispatch, search, sort, inputValue) {
+export const getMovie = (search, sort, inputValue) => dispatch => {
     return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${sort}&sortOrder=desc&search=${inputValue}&searchBy=${SEARCH[search]}&limit=12`)
       .then(response => response.json())
       .then(json => dispatch(searchHandler(json)))
 }
 
-export function fullLoad(dispatch, id) {
+export const fullLoad = (id) => dispatch => {
     return fetch(`http://react-cdp-api.herokuapp.com/movies/${id}`)
           .then(response => response.json())
           .then(json => dispatch(fullFilmLoad(json)));
 }
 
-export function switchSortAction (dispatch, sort, stateSort, inputValue, search) {
+export const switchSortAction = (sort, stateSort, inputValue, search) => dispatch => {
     if(sort !== stateSort) {
         return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sort]}&sortOrder=desc&search=${inputValue}&searchBy=${SEARCH[search]}&limit=12`)
         .then(response => response.json())

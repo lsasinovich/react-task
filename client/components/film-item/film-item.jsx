@@ -16,7 +16,7 @@ class FilmItem extends React.Component {
                 }
                 <div className="film-info">
                     <div>
-                        <p className="title" onClick={()=>fullLoad(this.props.dispatch, this.props.id)}>{this.props.title}</p>
+                        <p className="title" onClick={()=>this.props.fullLoad(this.props.id)}>{this.props.title}</p>
                         <p className="genre">{this.props.genres}</p>
                     </div>
                     <p className="year">{this.props.year}</p>
@@ -34,10 +34,14 @@ FilmItem.propTypes = {
     year: PropTypes.number,
 };
 
+const mapDispatchToProps = {
+    fullLoad
+}
+
 const mapStateToProps = (state) => {
     return {
         user: state
     };
 };
 
-export default connect(mapStateToProps)(FilmItem);
+export default connect(mapStateToProps, mapDispatchToProps)(FilmItem);
