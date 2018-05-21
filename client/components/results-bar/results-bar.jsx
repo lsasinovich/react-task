@@ -19,8 +19,8 @@ class ResultsBar extends React.Component {
                         <p className="results-count">{this.props.user.resultsCount} movies found</p>
                         <div className="results-sort">
                             <p>Sort by</p>
-                            <p className={this.props.user.sort === "releaseDate" ? "cl-red" : "cl-black"} onClick={()=>switchSortAction(this.props.dispatch, "releaseDate", "release_date", this.props.user.inputValue, this.props.user.search)}>release date</p>
-                            <p className={this.props.user.sort === "rating" ? "cl-red" : "cl-black"} onClick={()=>switchSortAction(this.props.dispatch, "rating", "vote_average", this.props.user.inputValue, this.props.user.search)}>rating</p>
+                            <p className={this.props.user.sort === "releaseDate" ? "cl-red" : "cl-black"} onClick={()=>this.props.switchSortAction("releaseDate", "release_date", this.props.user.inputValue, this.props.user.search)}>release date</p>
+                            <p className={this.props.user.sort === "rating" ? "cl-red" : "cl-black"} onClick={()=>this.props.switchSortAction("rating", "vote_average", this.props.user.inputValue, this.props.user.search)}>rating</p>
                         </div>
                     </div> :
                     <div>
@@ -37,10 +37,12 @@ class ResultsBar extends React.Component {
     }
 };
 
+const mapDispatchToProps = { switchSortAction };
+
 const mapStateToProps = (state) => {
     return {
         user: state
     };
 };
 
-export default connect(mapStateToProps)(ResultsBar);
+export default connect(mapStateToProps, mapDispatchToProps)(ResultsBar);

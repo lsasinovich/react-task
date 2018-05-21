@@ -1,6 +1,6 @@
 import { ACTIONS, SORT, SEARCH } from './constants/app-constants';
 
-export const switchSort = (sort, results) => dispatch => {
+export const switchSort = (sort, results) => {
     return {
         type: ACTIONS.SWITCH_SORT,
         sort: sort,
@@ -8,42 +8,40 @@ export const switchSort = (sort, results) => dispatch => {
     }
 }
 
-export const fullFilmLoad = (json) => dispatch => {
+export const fullFilmLoad = (json) => {
     return {
         type: ACTIONS.FULL_FILM_LOAD,
         filmData: json
     };
 }
 
-export const returnToMainPage = () => dispatch => {
+export const returnToMainPage = () => {
     return {
         type: ACTIONS.RETURN_TO_MAIN_PAGE
     };
 }
 
-export const updateInputValue = (event) => dispatch => {
-    const value = event.target.value;
-
+export const updateInputValue = (value) => {
     return {
         type: ACTIONS.UPDATE_INPUT_VALUE,
         value: value
     };
 }
 
-export const resetInputValue = () => dispatch => {
+export const resetInputValue = () => {
     return {
         type: ACTIONS.RESET_INPUT_VALUE
     };
 }
 
-export const searchHandler = (results) => dispatch => {
+export const searchHandler = (results) => {
     return {
         type: ACTIONS.SEARCH,
         results: results
     };
 }
 
-export const switchSearch = (search) => dispatch => {
+export const switchSearch = (search) => {
     return {
         type: ACTIONS.SWITCH_SEARCH,
         search: search
@@ -64,9 +62,7 @@ export const fullLoad = (id) => dispatch => {
 }
 
 export const switchSortAction = (sort, stateSort, inputValue, search) => dispatch => {
-    if(sort !== stateSort) {
         return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sort]}&sortOrder=desc&search=${inputValue}&searchBy=${SEARCH[search]}&limit=12`)
         .then(response => response.json())
         .then(json => dispatch(switchSort(sort, json)))
-    }
 }

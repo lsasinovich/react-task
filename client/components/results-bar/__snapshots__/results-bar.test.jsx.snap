@@ -5,7 +5,6 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ResultsBar
-    dispatch={[Function]}
     store={
       Object {
         "clearActions": [Function],
@@ -37,6 +36,7 @@ ShallowWrapper {
         "unsubscribe": [Function],
       }
     }
+    switchSortAction={[Function]}
     user={
       Object {
         "fullItem": Object {
@@ -481,7 +481,6 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ResultsBar
-    dispatch={[Function]}
     store={
       Object {
         "clearActions": [Function],
@@ -513,6 +512,7 @@ ShallowWrapper {
         "unsubscribe": [Function],
       }
     }
+    switchSortAction={[Function]}
     user={
       Object {
         "fullItem": Object {
@@ -621,7 +621,6 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ResultsBar
-    dispatch={[Function]}
     store={
       Object {
         "clearActions": [Function],
@@ -653,6 +652,7 @@ ShallowWrapper {
         "unsubscribe": [Function],
       }
     }
+    switchSortAction={[Function]}
     user={
       Object {
         "fullItem": Object {
@@ -827,7 +827,6 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ResultsBar
-    dispatch={[Function]}
     store={
       Object {
         "clearActions": [Function],
@@ -859,6 +858,7 @@ ShallowWrapper {
         "unsubscribe": [Function],
       }
     }
+    switchSortAction={[Function]}
     user={
       Object {
         "fullItem": Object {

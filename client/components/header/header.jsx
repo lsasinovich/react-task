@@ -26,7 +26,7 @@ class Header extends React.Component {
                     <input className="search-bar" 
                         placeholder="Let's find your movie" 
                         value={this.props.user.inputValue} 
-                        onChange={(event)=>this.props.updateInputValue(event)}
+                        onChange={(event)=>this.props.updateInputValue(event.target.value)}
                         onKeyPress={ (event) => {
                             if (event.key == 'Enter') { 
                                 this.props.getMovie(SEARCH[this.props.user.search] || this.props.user.search, SORT[this.props.user.sort], this.props.user.inputValue);

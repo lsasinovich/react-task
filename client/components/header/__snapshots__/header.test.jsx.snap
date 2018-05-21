@@ -5,7 +5,10 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Header
-    dispatch={[Function]}
+    getMovie={[Function]}
+    resetInputValue={[Function]}
+    returnToMainPage={[Function]}
+    searchHandler={[Function]}
     store={
       Object {
         "clearActions": [Function],
@@ -37,6 +40,8 @@ ShallowWrapper {
         "unsubscribe": [Function],
       }
     }
+    switchSearch={[Function]}
+    updateInputValue={[Function]}
     user={
       Object {
         "fullItem": Object {
@@ -761,7 +766,10 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Header
-    dispatch={[Function]}
+    getMovie={[Function]}
+    resetInputValue={[Function]}
+    returnToMainPage={[Function]}
+    searchHandler={[Function]}
     store={
       Object {
         "clearActions": [Function],
@@ -793,6 +801,8 @@ ShallowWrapper {
         "unsubscribe": [Function],
       }
     }
+    switchSearch={[Function]}
+    updateInputValue={[Function]}
     user={
       Object {
         "fullItem": Object {

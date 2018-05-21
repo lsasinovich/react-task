@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">63.64% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>7/11</span>
+        <span class='fraction'>8/12</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">50% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>6/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">63.64% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>7/11</span>
+        <span class='fraction'>8/12</span>
       </div>
     </div>
     <p class="quiet">
@@ -110,7 +110,15 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -160,6 +168,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -192,7 +208,7 @@ class Header extends React.Component {
             &lt;div className="return-div"&gt;
                 &lt;Nextflixroulette/&gt;
                 { this.props.user.fullItem.isActive &amp;&amp; 
-                    &lt;button className="btn return-button cl-red bg-white" onClick={()=&gt;this.props.dispatch(returnToMainPage())}&gt;SEARCH&lt;/button&gt; 
+                    &lt;button className="btn return-button cl-red bg-white" onClick={()=&gt;this.props.returnToMainPage()}&gt;SEARCH&lt;/button&gt; 
                 }
             &lt;/div&gt;
             { !this.props.user.fullItem.isActive ?
@@ -202,10 +218,10 @@ class Header extends React.Component {
                     &lt;input className="search-bar" 
                         placeholder="Let's find your movie" 
                         value={this.props.user.inputValue} 
-                        onChange={<span class="fstat-no" title="function not covered" >(e</span>vent)=&gt;<span class="cstat-no" title="statement not covered" >this.props.dispatch(updateInputValue(event))}</span>
+                        onChange={<span class="fstat-no" title="function not covered" >(e</span>vent)=&gt;<span class="cstat-no" title="statement not covered" >this.props.updateInputValue(event.target.value)}</span>
                         onKeyPress={ <span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; {
 <span class="cstat-no" title="statement not covered" >                            if (event.key == 'Enter') { </span>
-<span class="cstat-no" title="statement not covered" >                                getMovie(this.props.dispatch, SEARCH[this.props.user.search] || this.props.user.search, SORT[this.props.user.sort], this.props.user.inputValue);</span>
+<span class="cstat-no" title="statement not covered" >                                this.props.getMovie(SEARCH[this.props.user.search] || this.props.user.search, SORT[this.props.user.sort], this.props.user.inputValue);</span>
                             }
                         }
                     }
@@ -213,16 +229,16 @@ class Header extends React.Component {
                     &lt;/input&gt;
                     {this.props.user.inputValue === "" ? 
                         &lt;img className="arrow" src={require('../../images/arrow.png')} /&gt; :
-                        &lt;img className="cross" src={require('../../images/cross.png')} onClick={()=&gt;this.props.dispatch(resetInputValue())} /&gt;
+                        &lt;img className="cross" src={require('../../images/cross.png')} onClick={()=&gt;this.props.resetInputValue()} /&gt;
                     }
                 &lt;/div&gt;
                 &lt;div className="button-group cl-white"&gt;
                     &lt;div&gt;
                         &lt;p className="search-by"&gt;SEARCH BY&lt;/p&gt;
-                        &lt;button className={`btn genre-button ${this.props.user.search === "genres" ? <span class="branch-0 cbranch-no" title="branch not covered" >"bg-red" </span>: "bg-grey"} cl-white`} onClick={()=&gt;this.props.dispatch(switchSearch('genres'))}&gt;GENRE&lt;/button&gt;
-                        &lt;button className={`btn title-button ${this.props.user.search === "title" ? "bg-red" : <span class="branch-1 cbranch-no" title="branch not covered" >"bg-grey"}</span> cl-white`} onClick={()=&gt;this.props.dispatch(switchSearch('title'))}&gt;TITLE&lt;/button&gt;
+                        &lt;button className={`btn genre-button ${this.props.user.search === "genres" ? <span class="branch-0 cbranch-no" title="branch not covered" >"bg-red" </span>: "bg-grey"} cl-white`} onClick={()=&gt;this.props.switchSearch('genres')}&gt;GENRE&lt;/button&gt;
+                        &lt;button className={`btn title-button ${this.props.user.search === "title" ? "bg-red" : <span class="branch-1 cbranch-no" title="branch not covered" >"bg-grey"}</span> cl-white`} onClick={()=&gt;this.props.switchSearch('title')}&gt;TITLE&lt;/button&gt;
                     &lt;/div&gt;
-                    &lt;button className='btn search-button bg-red cl-white' onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt;<span class="cstat-no" title="statement not covered" >getMovie(this.props.dispatch, SEARCH[this.props.user.search] || this.props.user.search, SORT[this.props.user.sort], this.props.user.inputValue)}</span>&gt;SEARCH&lt;/button&gt;
+                    &lt;button className='btn search-button bg-red cl-white' onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt;<span class="cstat-no" title="statement not covered" >this.props.getMovie(SEARCH[this.props.user.search] || this.props.user.search, SORT[this.props.user.sort], this.props.user.inputValue)}</span>&gt;SEARCH&lt;/button&gt;
                 &lt;/div&gt;
                 &lt;/div&gt; :
                 &lt;FullFilmItem /&gt;
@@ -231,6 +247,14 @@ class Header extends React.Component {
         );
     }
 }
+const mapDispatchToProps = {
+    updateInputValue, 
+    searchHandler, 
+    returnToMainPage, 
+    resetInputValue, 
+    switchSearch, 
+    getMovie
+}
 &nbsp;
 const mapStateToProps = (state) =&gt; {
     return {
@@ -238,13 +262,13 @@ const mapStateToProps = (state) =&gt; {
     };
 };
 &nbsp;
-export default connect(mapStateToProps)(Header);</pre></td></tr>
+export default connect(mapStateToProps, mapDispatchToProps)(Header);</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon May 21 2018 00:31:39 GMT+0300 (MSK)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon May 21 2018 21:49:44 GMT+0300 (MSK)
 </div>
 </div>
 <script src="../../prettify.js"></script>
