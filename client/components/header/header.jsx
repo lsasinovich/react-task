@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Route, Link } from 'react-router-dom';
+
 import { Nextflixroulette } from '../nextflixroulette/nextflixroulette';
 import FullFilmItem from '../full-film-item/full-film-item';
 
@@ -9,17 +11,16 @@ import { ACTIONS, SEARCH, SORT } from '../../constants/app-constants';
 import { updateInputValue, searchHandler, returnToMainPage, resetInputValue, switchSearch, getMovie } from '../../action-creators';
 
 class Header extends React.Component {
-
     render() {
         return (
             <div className="header">
             <div className="return-div">
                 <Nextflixroulette/>
                 { this.props.user.fullItem.isActive && 
-                    <button className="btn return-button cl-red bg-white" onClick={()=>this.props.returnToMainPage()}>SEARCH</button> 
+                    <Link to='/'><button className="btn return-button cl-red bg-white" onClick={()=>this.props.returnToMainPage()}>SEARCH</button></Link>
                 }
             </div>
-            { !this.props.user.fullItem.isActive ?
+            { !this.props.user.fullItem.isActive &&
                 <div>
                 <p className="find-movie">FIND YOUR MOVIE</p>
                 <div className="search-wrapper">
@@ -48,9 +49,9 @@ class Header extends React.Component {
                     </div>
                     <button className='btn search-button bg-red cl-white' onClick={()=>this.props.getMovie(SEARCH[this.props.user.search] || this.props.user.search, SORT[this.props.user.sort], this.props.user.inputValue)}>SEARCH</button>
                 </div>
-                </div> :
-                <FullFilmItem />
+                </div>
             }
+            <Route path='/film/:id' component={FullFilmItem} />
             </div>
         );
     }

@@ -13,7 +13,8 @@ module.exports = function(env, options) {
 
   output: {
     path: __dirname + '/dist',
-    filename: '[name].js'
+    filename: '[name].js',
+    publicPath: '/'
   },
 
   resolve: {
@@ -59,7 +60,8 @@ module.exports = function(env, options) {
   devServer: {
     contentBase: "./dist",
     compress: true,
-    open: true
+    open: true,
+    historyApiFallback: true,
   },
 
   mode: NODE_ENV

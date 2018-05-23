@@ -2,9 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { fullLoad } from '../../action-creators';
+
 import './full-film-item.scss';
 
 class FullFilmItem extends React.Component {
+    componentWillMount() {
+        console.log(this.props.match.params.id);
+        fullLoad(this.props.match.params.id);
+    }
+
+    componentWillUpdate() {
+        console.log(this.props.match.params.id);
+        fullLoad(this.props.match.params.id);
+    }
     render() {
         const {filmData} = this.props;
         return (
@@ -31,6 +42,10 @@ class FullFilmItem extends React.Component {
     }
 };
 
+const mapDispatchToProps = {
+    fullLoad
+}
+
 const mapStateToProps = (state) => {
     return {
         user: state,
@@ -38,4 +53,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(FullFilmItem);
+export default connect(mapStateToProps, mapDispatchToProps)(FullFilmItem);
