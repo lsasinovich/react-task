@@ -12,24 +12,25 @@ class FullFilmItem extends React.Component {
     }
 
     render() {
+        const filmData = this.props.user.fullItem.filmData;
         return (
             <div className="full-film-item">
-                <img src={this.props.user.fullItem.filmData.poster_path} />
+                <img src={filmData.poster_path} />
                 <div className="full-film-info">
                     <div className="title-and-rating">
-                        <p className="title">{this.props.user.fullItem.filmData.title}</p>
-                        { !!this.props.user.fullItem.filmData.vote_average && 
-                            <p className="rating">{this.props.user.fullItem.filmData.vote_average}</p>
+                        <p className="title">{filmData.title}</p>
+                        { !!filmData.vote_average && 
+                            <p className="rating">{filmData.vote_average}</p>
                         }
                     </div>
-                    <p>{this.props.user.fullItem.filmData.tagline}</p>
+                    <p>{filmData.tagline}</p>
                     <p className="year-and-time">
-                        <span className="year">{this.props.user.fullItem.filmData.release_date.slice(0, 4)}</span>
-                        { this.props.user.fullItem.filmData.runtime &&
-                            <span>{this.props.user.fullItem.filmData.runtime} min</span>
+                        <span className="year">{filmData.release_date.slice(0, 4)}</span>
+                        { filmData.runtime &&
+                            <span>{filmData.runtime} min</span>
                         }
                     </p>
-                    <p className="description">{this.props.user.fullItem.filmData.overview}</p>
+                    <p className="description">{filmData.overview}</p>
                 </div>
             </div>
         );
