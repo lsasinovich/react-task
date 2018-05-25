@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { ResultsBar } from '../results-bar/results-bar';
 import FilmItem from '../film-item/film-item';
-import { EmptyResults } from '../empty-results/empty-results';
+import EmptyResults from '../empty-results/empty-results';
 import { ResultsBodyErrorBoundary } from '../results-body-error-boundary/results-body-error-boundary';
 
 import './results-body.scss';

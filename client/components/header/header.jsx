@@ -12,13 +12,11 @@ import { updateInputValue, searchHandler, returnToMainPage, resetInputValue, swi
 
 class Header extends React.Component {
     render() {
+        console.log(this.props.user);
         return (
             <div className="header">
             <div className="return-div">
                 <Nextflixroulette/>
-                { this.props.user.fullItem.isActive && 
-                    <Link to='/'><button className="btn return-button cl-red bg-white" onClick={()=>this.props.returnToMainPage()}>SEARCH</button></Link>
-                }
             </div>
             { !this.props.user.fullItem.isActive &&
                 <div>
@@ -51,7 +49,7 @@ class Header extends React.Component {
                 </div>
                 </div>
             }
-            <Route path='/film/:id' component={FullFilmItem} />
+            {this.props.children}
             </div>
         );
     }

@@ -14,12 +14,12 @@ import './index.scss';
 const history = createBrowserHistory();
 
 ReactDOM.render(
-    <Router>
         <PersistGate persistor={persistor}>
             <Provider store={store}>
-                <Route path='/' component={Core}/>
+                <Router>
+                    <Route path="/" component={Core}/>
+                </Router>
             </Provider>
-        </PersistGate>
-    </Router>, 
+        </PersistGate>, 
 document.getElementById("root"));
 

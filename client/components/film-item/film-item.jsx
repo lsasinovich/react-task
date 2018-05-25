@@ -17,7 +17,7 @@ class FilmItem extends React.Component {
                 }
                 <div className="film-info">
                     <div>
-                        <Link to={`/film/${this.props.id}`}><p className="title" onClick={()=>this.props.fullLoad(this.props.id)}>{this.props.title}</p></Link>
+                        <Link to={`/film/${this.props.id}`} onClick={()=>this.props.fullLoad(this.props.id)}><p className="title">{this.props.title}</p></Link>
                         <p className="genre">{this.props.genres}</p>
                     </div>
                     <p className="year">{this.props.year}</p>

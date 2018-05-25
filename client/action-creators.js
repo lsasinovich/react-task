@@ -1,5 +1,12 @@
 import { ACTIONS, SORT, SEARCH } from './constants/app-constants';
 
+
+export const setEmptyResults = () => {
+    return {
+        type: ACTIONS.SET_EMPTY_RESULTS
+    }
+}
+
 export const switchSort = (sort, results) => {
     return {
         type: ACTIONS.SWITCH_SORT,

@@ -6,6 +6,22 @@ import { SORT, ACTIONS, INITIAL_STATE } from './constants/app-constants';
 
 export function reducers (state = INITIAL_STATE, action) {
     switch (action.type) {
+        case ACTIONS.SET_EMPTY_RESULTS: {
+            state = { 
+                ...state,
+                results: {
+                    data: []
+                },
+                fullItem: {
+                    isActive: false
+                },
+                resultsCount: 0,
+                inputValue: ""
+
+            }
+            break;
+        }
+
         case ACTIONS.RETURN_TO_MAIN_PAGE: {
                 state = { 
                     ...state,
