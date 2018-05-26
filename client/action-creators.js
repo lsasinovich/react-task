@@ -18,7 +18,7 @@ export const switchSort = (sort, results) => {
 export const fullFilmLoad = (json) => {
     return {
         type: ACTIONS.FULL_FILM_LOAD,
-        filmData: json
+        filmData: json,
     };
 }
 
@@ -63,6 +63,7 @@ export const getMovie = (search, sort, inputValue) => dispatch => {
 }
 
 export const fullLoad = (id) => dispatch => {
+    console.log(id);
     return fetch(`http://react-cdp-api.herokuapp.com/movies/${id}`)
           .then(response => response.json())
           .then(json => dispatch(fullFilmLoad(json)));

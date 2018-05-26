@@ -12,7 +12,6 @@ import { updateInputValue, searchHandler, returnToMainPage, resetInputValue, swi
 
 class Header extends React.Component {
     render() {
-        console.log(this.props.user);
         return (
             <div className="header">
             <div className="return-div">
@@ -28,6 +27,7 @@ class Header extends React.Component {
                         onChange={(event)=>this.props.updateInputValue(event.target.value)}
                         onKeyPress={ (event) => {
                             if (event.key == 'Enter') { 
+                                this.props.history.push(`/search?sortBy=${this.props.user.sort}&searchBy=${this.props.user.search}&inputValue=${this.props.user.inputValue}`);
                                 this.props.getMovie(SEARCH[this.props.user.search] || this.props.user.search, SORT[this.props.user.sort], this.props.user.inputValue);
                             }
                         }
@@ -45,7 +45,10 @@ class Header extends React.Component {
                         <button className={`btn genre-button ${this.props.user.search === "genres" ? "bg-red" : "bg-grey"} cl-white`} onClick={()=>this.props.switchSearch('genres')}>GENRE</button>
                         <button className={`btn title-button ${this.props.user.search === "title" ? "bg-red" : "bg-grey"} cl-white`} onClick={()=>this.props.switchSearch('title')}>TITLE</button>
                     </div>
-                    <button className='btn search-button bg-red cl-white' onClick={()=>this.props.getMovie(SEARCH[this.props.user.search] || this.props.user.search, SORT[this.props.user.sort], this.props.user.inputValue)}>SEARCH</button>
+                    <Link to={`/search?sortBy=${this.props.user.sort}&searchBy=${this.props.user.search}&inputValue=${this.props.user.inputValue}`} 
+                          onClick={()=>this.props.getMovie(SEARCH[this.props.user.search] || this.props.user.search, SORT[this.props.user.sort], this.props.user.inputValue)}>
+                        <button className='btn search-button bg-red cl-white'>SEARCH</button>
+                    </Link>
                 </div>
                 </div>
             }

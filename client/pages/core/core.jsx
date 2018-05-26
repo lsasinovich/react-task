@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Switch } from 'react-router';
+import { Switch, Redirect} from 'react-router';
 
 import { Footer } from '../../components/footer/footer';
 import { Nextflixroulette } from '../../components/nextflixroulette/nextflixroulette';
@@ -27,13 +27,19 @@ class Core extends React.Component {
         return (
             <Router>
                 <div className="core-page">
-                    <Header>
-                        <Route path='/film/:id' render={() =>
-                            <Link to='/' onClick={()=>this.props.returnToMainPage()}><button className="btn return-button cl-red bg-white">SEARCH</button></Link>
-                        } />
-                        <Route exact path='/film/:id' component={FullFilmItem} fullItem={this.props.user.fullItem}/>
-                        <Route path='*' fullItem={this.props.user.fullItem}/>
-                    </Header>
+                    <Switch>
+                        <Route path='/film/:id'>
+                            <Header>
+                                <Route path='/film/:id' render={() =>
+                                        <Link to='/' onClick={()=>this.props.returnToMainPage()}><button className="btn return-button cl-red bg-white">SEARCH</button></Link>
+                                    } />
+                                <Route path='/film/:id' component={FullFilmItem}/> 
+                            </Header>
+                        </Route>
+            
+                        <Route path='/' component={Header} />
+                        <Redirect to='/not_found' />
+                    </Switch>
                     
                     <ResultsBar />
                     <Switch>
