@@ -18,7 +18,8 @@ import { ACTIONS, ITEM_COUNT_PER_PAGE } from '../../constants/app-constants';
 import { setEmptyResults, returnToMainPage } from '../../store/action-creators';
 
 class Core extends React.Component {
-    componentWillMount() {
+    componentDidMount() {
+        console.log(this.props.location.pathname );
        if (this.props.location.pathname === '/') {
             this.props.setEmptyResults();
        };
@@ -26,7 +27,7 @@ class Core extends React.Component {
 
     render() {
         return (
-            <Router>
+           
                 <Switch>
                     <Route exact path="/not_found" component={NotFoundPage} />
                     <Route path="/">
@@ -54,7 +55,6 @@ class Core extends React.Component {
                         </div>
                     </Route>
                 </Switch>
-            </Router>
         );
     }
 }

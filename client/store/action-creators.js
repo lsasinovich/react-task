@@ -15,6 +15,13 @@ export const switchSort = (sort, results) => {
     }
 }
 
+export const getMoviesByGenresAction = (results) => {
+    return {
+        type: ACTIONS.GET_MOVIES_BY_GENRES,
+        results: results
+    }
+}
+
 export const fullFilmLoad = (json) => {
     return {
         type: ACTIONS.FULL_FILM_LOAD,
@@ -73,16 +80,27 @@ export const getMovie = (sort, search, inputValue, location) => dispatch => {
       });
 }
 
+export const getMoviesByGenres = (genres) => dispatch => {
+    console.log(`http://react-cdp-api.herokuapp.com/movies?search=${genres}&searchBy=genres&limit=12`);
+    return fetch(`http://react-cdp-api.herokuapp.com/movies?search=${genres}&searchBy=genres&limit=12`)
+          .then(response => response.json())
+          .then(json => {
+              dispatch(getMoviesByGenresAction(json))
+          })
+}
+
 export const fullLoad = (id) => dispatch => {
+
     return fetch(`http://react-cdp-api.herokuapp.com/movies/${id}`)
           .then(response => response.json())
           .then(json => {
               dispatch(fullFilmLoad(json))
+              dispatch(getMoviesByGenres(json.genres[0]))
           })
-          .catch(function(error) {
-            window.location.pathname = '/not_found';
-            console.log('Can not load this film');
-          });
+        //   .catch(function(error) {
+        //     window.location.pathname = '/not_found';
+        //     console.log('Can not load this film');
+        //   });
 }
 
 export const switchSortAction = (sort, stateSort, inputValue, search) => dispatch => {

@@ -49,12 +49,12 @@ describe('<Core/>', function() {
       const location = {
         pathname: '/not_found'
       }
-      const wrapper = shallow(
+      const wrapper = mount(
         <MemoryRouter initialEntries={[ '/not_found' ]}>
           <Core store={store} location={location}/>
         </MemoryRouter>
       );
-      console.log(wrapper.instance());
+      expect(wrapper).toMatchSnapshot();
       expect(wrapper.contains(<NotFoundPage/>)).toEqual(true);
     });
 });

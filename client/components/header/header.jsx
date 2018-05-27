@@ -12,7 +12,7 @@ import { updateInputValue, searchHandler, returnToMainPage, resetInputValue, swi
 
 class Header extends React.Component {
     
-    componentWillMount() {
+    componentDidMount() {
         if(!this.props.location || this.props.location.pathname === '/') return;
         this.props.getMovie(this.props.user.sort, this.props.user.search, this.props.user.inputValue, this.props.location);
     }

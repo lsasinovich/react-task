@@ -76,6 +76,14 @@ export function reducers (state = INITIAL_STATE, action) {
             }
             break;
         }
+        case ACTIONS.GET_MOVIES_BY_GENRES: {
+            state = { 
+                ...state,
+                results: action.results,
+                resultsCount: action.results.total,
+            }
+            break;
+        }
         case ACTIONS.FULL_FILM_LOAD: {
             state = {
                 ...state,

@@ -55,6 +55,7 @@
     "postcss-loader": "^2.1.4",
     "precss": "^3.1.2",
     "prop-types": "^15.6.1",
+    "react-router-test-context": "^0.1.0",
     "react-test-renderer": "^16.3.2",
     "redux-mock-store": "^1.5.1",
     "redux-promise-middleware": "^5.1.1",

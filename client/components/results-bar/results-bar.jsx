@@ -12,7 +12,7 @@ class ResultsBar extends React.Component {
     render() {
         return(
             <div className="results-bar">
-            { !!this.props.user.resultsCount ? 
+            { !!this.props.user.resultsCount && 
                 <div>
                 { !this.props.user.fullItem.isActive ? 
                     <div className="results-bar-content">
@@ -23,14 +23,9 @@ class ResultsBar extends React.Component {
                             <p className={this.props.user.sort === "rating" ? "cl-red" : "cl-black"} onClick={()=>this.props.switchSortAction("rating", "vote_average", this.props.user.inputValue, this.props.user.search)}>rating</p>
                         </div>
                     </div> :
-                    <div>
-                        { !!this.props.user.inputValue ? 
-                            <p>Films by {this.props.user.searchInfo.value} {this.props.user.searchInfo.search}</p>
-                            : null
-                        }
-                    </div>
+                    <p>Films by {this.props.user.fullItem.filmData.genres[0]} genre</p>
                 }
-                </div> : null
+                </div>
             }
             </div>
         );

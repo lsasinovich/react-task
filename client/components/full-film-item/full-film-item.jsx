@@ -8,7 +8,7 @@ import { fullLoad, returnToMainPage } from '../../store/action-creators';
 import './full-film-item.scss';
 
 class FullFilmItem extends React.Component {
-    componentWillMount() {
+    componentDidMount() {
         this.props.fullLoad(this.props.match.params.id);
     }
 
@@ -16,7 +16,7 @@ class FullFilmItem extends React.Component {
         if (this.props.user.fullItem.filmData) {
         return (
             <div>
-            <Link to='/' onClick={()=>{this.props.returnToMainPage()}}><button className="btn return-button cl-red bg-white">SEARCH</button></Link>
+            <Link to='/' onClick={()=>{console.log(this.props)}}><button className="btn return-button cl-red bg-white">SEARCH</button></Link>
             <div className="full-film-item">
                 <img src={this.props.user.fullItem.filmData.poster_path} />
                 <div className="full-film-info">

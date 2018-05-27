@@ -5,7 +5,7 @@ import { setEmptyResults, returnToMainPage } from '../../store/action-creators';
 import './empty-results.scss';
 
 class EmptyResults extends React.Component {
-    componentWillMount() {
+    componentDidMount() {
         this.props.setEmptyResults();
     }
 
