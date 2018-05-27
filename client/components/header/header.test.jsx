@@ -64,16 +64,6 @@ describe('Click events must work as well', function() {
     //     buttons.at(2).simulate('click');
     //     expect(getMovie).toHaveBeenCalled();
     // });
-
-    it('should return to main page by clicking on Return Butoon', () => {
-        store = mockStore({...INITIAL_STATE, fullItem: { isActive: true }});
-        const wrapper = shallow(<Header store={store}/>).dive();
-        const buttons = wrapper.find('button');
-
-        buttons.at(0).simulate('click');
-        expect(store.getActions()).toEqual(  [ { type: 'RETURN_TO_MAIN_PAGE' } ]);
-    });
-
     
     it('should reset input value', () => {
         store = mockStore({...INITIAL_STATE, inputValue: 'transformers'});

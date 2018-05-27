@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { fullLoad, returnToMainPage } from '../../action-creators';
+import { fullLoad, returnToMainPage } from '../../store/action-creators';
 
 import './full-film-item.scss';
 
@@ -12,8 +13,10 @@ class FullFilmItem extends React.Component {
     }
 
     render() {
-        
+        if (this.props.user.fullItem.filmData) {
         return (
+            <div>
+            <Link to='/' onClick={()=>{this.props.returnToMainPage()}}><button className="btn return-button cl-red bg-white">SEARCH</button></Link>
             <div className="full-film-item">
                 <img src={this.props.user.fullItem.filmData.poster_path} />
                 <div className="full-film-info">
@@ -33,7 +36,9 @@ class FullFilmItem extends React.Component {
                     <p className="description">{this.props.user.fullItem.filmData.overview}</p>
                 </div>
             </div>
+        </div>
         );
+    } else return null;
     }
 };
 

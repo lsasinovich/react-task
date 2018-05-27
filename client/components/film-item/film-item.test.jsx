@@ -4,7 +4,7 @@ import { fetch } from 'isomorphic-fetch';
 import FilmItem from './film-item';
 
 import { INITIAL_STATE } from '../../constants/app-constants';
-import { fullFilmLoad } from '../../action-creators';
+import { fullFilmLoad } from '../../store/action-creators';
 
 const mockStore = configureStore();
 let store = mockStore(INITIAL_STATE);
@@ -22,7 +22,12 @@ describe('<FilmItem/>', function() {
 
   beforeEach(() => {
       props = { 
-        ...testData 
+        ...testData,
+        match: {
+          params: {
+            id: 123456
+          }
+        }
       };
   });
 

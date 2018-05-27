@@ -3,7 +3,7 @@ import configureStore from 'redux-mock-store';
 import { fetch } from 'isomorphic-fetch';
 
 import ResultsBody from './results-body';
-import { EmptyResults } from '../empty-results/empty-results';
+import EmptyResults from '../empty-results/empty-results';
 
 import { INITIAL_STATE} from '../../constants/app-constants';
 

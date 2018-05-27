@@ -12,6 +12,11 @@ ShallowWrapper {
           "Genre",
         ],
         "id": 123456,
+        "match": Object {
+          "params": Object {
+            "id": 123456,
+          },
+        },
         "posterUrl": "PosterUrl",
         "title": "Title",
         "year": 1900,
@@ -84,10 +89,15 @@ ShallowWrapper {
           className="film-info"
         >
           <div>
-            <p
-              className="title"
+            <Link
               onClick={[Function]}
-            />
+              replace={false}
+              to="/film/undefined"
+            >
+              <p
+                className="title"
+              />
+            </Link>
             <p
               className="genre"
             />
@@ -119,10 +129,15 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <div>
-              <p
-                className="title"
+              <Link
                 onClick={[Function]}
-              />
+                replace={false}
+                to="/film/undefined"
+              >
+                <p
+                  className="title"
+                />
+              </Link>
               <p
                 className="genre"
               />
@@ -141,10 +156,15 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <p
-                  className="title"
+                <Link
                   onClick={[Function]}
-                />,
+                  replace={false}
+                  to="/film/undefined"
+                >
+                  <p
+                    className="title"
+                  />
+                </Link>,
                 <p
                   className="genre"
                 />,
@@ -155,15 +175,29 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "class",
                 "props": Object {
-                  "children": undefined,
-                  "className": "title",
+                  "children": <p
+                    className="title"
+                  />,
                   "onClick": [Function],
+                  "replace": false,
+                  "to": "/film/undefined",
                 },
                 "ref": null,
-                "rendered": null,
-                "type": "p",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                    "className": "title",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "p",
+                },
+                "type": [Function],
               },
               Object {
                 "instance": null,
@@ -212,10 +246,15 @@ ShallowWrapper {
             className="film-info"
           >
             <div>
-              <p
-                className="title"
+              <Link
                 onClick={[Function]}
-              />
+                replace={false}
+                to="/film/undefined"
+              >
+                <p
+                  className="title"
+                />
+              </Link>
               <p
                 className="genre"
               />
@@ -247,10 +286,15 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <div>
-                <p
-                  className="title"
+                <Link
                   onClick={[Function]}
-                />
+                  replace={false}
+                  to="/film/undefined"
+                >
+                  <p
+                    className="title"
+                  />
+                </Link>
                 <p
                   className="genre"
                 />
@@ -269,10 +313,15 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <p
-                    className="title"
+                  <Link
                     onClick={[Function]}
-                  />,
+                    replace={false}
+                    to="/film/undefined"
+                  >
+                    <p
+                      className="title"
+                    />
+                  </Link>,
                   <p
                     className="genre"
                   />,
@@ -283,15 +332,29 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "host",
+                  "nodeType": "class",
                   "props": Object {
-                    "children": undefined,
-                    "className": "title",
+                    "children": <p
+                      className="title"
+                    />,
                     "onClick": [Function],
+                    "replace": false,
+                    "to": "/film/undefined",
                   },
                   "ref": null,
-                  "rendered": null,
-                  "type": "p",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": undefined,
+                      "className": "title",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "p",
+                  },
+                  "type": [Function],
                 },
                 Object {
                   "instance": null,
@@ -349,6 +412,11 @@ ShallowWrapper {
           "Genre",
         ],
         "id": 123456,
+        "match": Object {
+          "params": Object {
+            "id": 123456,
+          },
+        },
         "title": "Title",
         "year": 1900,
       }
@@ -420,10 +488,15 @@ ShallowWrapper {
           className="film-info"
         >
           <div>
-            <p
-              className="title"
+            <Link
               onClick={[Function]}
-            />
+              replace={false}
+              to="/film/undefined"
+            >
+              <p
+                className="title"
+              />
+            </Link>
             <p
               className="genre"
             />
@@ -455,10 +528,15 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <div>
-              <p
-                className="title"
+              <Link
                 onClick={[Function]}
-              />
+                replace={false}
+                to="/film/undefined"
+              >
+                <p
+                  className="title"
+                />
+              </Link>
               <p
                 className="genre"
               />
@@ -477,10 +555,15 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <p
-                  className="title"
+                <Link
                   onClick={[Function]}
-                />,
+                  replace={false}
+                  to="/film/undefined"
+                >
+                  <p
+                    className="title"
+                  />
+                </Link>,
                 <p
                   className="genre"
                 />,
@@ -491,15 +574,29 @@ ShallowWrapper {
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "host",
+                "nodeType": "class",
                 "props": Object {
-                  "children": undefined,
-                  "className": "title",
+                  "children": <p
+                    className="title"
+                  />,
                   "onClick": [Function],
+                  "replace": false,
+                  "to": "/film/undefined",
                 },
                 "ref": null,
-                "rendered": null,
-                "type": "p",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                    "className": "title",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "p",
+                },
+                "type": [Function],
               },
               Object {
                 "instance": null,
@@ -548,10 +645,15 @@ ShallowWrapper {
             className="film-info"
           >
             <div>
-              <p
-                className="title"
+              <Link
                 onClick={[Function]}
-              />
+                replace={false}
+                to="/film/undefined"
+              >
+                <p
+                  className="title"
+                />
+              </Link>
               <p
                 className="genre"
               />
@@ -583,10 +685,15 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <div>
-                <p
-                  className="title"
+                <Link
                   onClick={[Function]}
-                />
+                  replace={false}
+                  to="/film/undefined"
+                >
+                  <p
+                    className="title"
+                  />
+                </Link>
                 <p
                   className="genre"
                 />
@@ -605,10 +712,15 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <p
-                    className="title"
+                  <Link
                     onClick={[Function]}
-                  />,
+                    replace={false}
+                    to="/film/undefined"
+                  >
+                    <p
+                      className="title"
+                    />
+                  </Link>,
                   <p
                     className="genre"
                   />,
@@ -619,15 +731,29 @@ ShallowWrapper {
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "host",
+                  "nodeType": "class",
                   "props": Object {
-                    "children": undefined,
-                    "className": "title",
+                    "children": <p
+                      className="title"
+                    />,
                     "onClick": [Function],
+                    "replace": false,
+                    "to": "/film/undefined",
                   },
                   "ref": null,
-                  "rendered": null,
-                  "type": "p",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": undefined,
+                      "className": "title",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "p",
+                  },
+                  "type": [Function],
                 },
                 Object {
                   "instance": null,

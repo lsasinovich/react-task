@@ -1,4 +1,4 @@
-import { ACTIONS, SORT, SEARCH } from './constants/app-constants';
+import { ACTIONS, SORT, SEARCH } from '../constants/app-constants';
 
 
 export const setEmptyResults = () => {
@@ -41,10 +41,13 @@ export const resetInputValue = () => {
     };
 }
 
-export const searchHandler = (results) => {
+export const searchHandler = (results, sortBy, searchBy, input) => {
     return {
         type: ACTIONS.SEARCH,
-        results: results
+        results: results,
+        sortBy: sortBy,
+        searchBy: searchBy,
+        input: input
     };
 }
 
@@ -56,21 +59,38 @@ export const switchSearch = (search) => {
 
 }
 
-export const getMovie = (search, sort, inputValue) => dispatch => {
-    return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${sort}&sortOrder=desc&search=${inputValue}&searchBy=${SEARCH[search]}&limit=12`)
+export const getMovie = (sort, search, inputValue, location) => dispatch => {
+    const params = new URLSearchParams(location.search); 
+    const input = params.get('inputValue') || inputValue;
+    const searchBy = params.get('searchBy') || search;
+    const sortBy = params.get('sortBy') || sort;
+    return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sortBy]}&sortOrder=desc&search=${input}&searchBy=${SEARCH[searchBy]}&limit=12`)
       .then(response => response.json())
-      .then(json => dispatch(searchHandler(json)))
+      .then(json => dispatch(searchHandler(json, sortBy, searchBy, input)))
+      .catch(function(error) {
+        window.location.pathname = '/not_found';
+        console.log('Can not find films with this criteria');
+      });
 }
 
 export const fullLoad = (id) => dispatch => {
-    console.log(id);
     return fetch(`http://react-cdp-api.herokuapp.com/movies/${id}`)
           .then(response => response.json())
-          .then(json => dispatch(fullFilmLoad(json)));
+          .then(json => {
+              dispatch(fullFilmLoad(json))
+          })
+          .catch(function(error) {
+            window.location.pathname = '/not_found';
+            console.log('Can not load this film');
+          });
 }
 
 export const switchSortAction = (sort, stateSort, inputValue, search) => dispatch => {
         return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sort]}&sortOrder=desc&search=${inputValue}&searchBy=${SEARCH[search]}&limit=12`)
         .then(response => response.json())
         .then(json => dispatch(switchSort(sort, json)))
+        .catch(function(error) {
+            window.location.pathname = '/not_found';
+            console.log('Can not switch sort');
+        });
 }

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import './results-bar.scss';
 import { ACTIONS, SORT, ITEM_COUNT_PER_PAGE } from '../../constants/app-constants';
-import { switchSortAction } from '../../action-creators';
+import { switchSortAction } from '../../store/action-creators';
 
 class ResultsBar extends React.Component {
 

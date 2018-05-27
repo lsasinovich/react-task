@@ -308,7 +308,7 @@ ShallowWrapper {
         <div
           className="results-body"
         >
-          <EmptyResults />
+          <Connect(EmptyResults) />
         </div>
       </div>,
     },
@@ -321,7 +321,7 @@ ShallowWrapper {
         "children": <div
           className="results-body"
         >
-          <EmptyResults />
+          <Connect(EmptyResults) />
         </div>,
       },
       "ref": null,
@@ -330,14 +330,14 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <EmptyResults />,
+          "children": <Connect(EmptyResults) />,
           "className": "results-body",
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {},
           "ref": null,
           "rendered": null,
@@ -359,7 +359,7 @@ ShallowWrapper {
           <div
             className="results-body"
           >
-            <EmptyResults />
+            <Connect(EmptyResults) />
           </div>
         </div>,
       },
@@ -372,7 +372,7 @@ ShallowWrapper {
           "children": <div
             className="results-body"
           >
-            <EmptyResults />
+            <Connect(EmptyResults) />
           </div>,
         },
         "ref": null,
@@ -381,14 +381,14 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <EmptyResults />,
+            "children": <Connect(EmptyResults) />,
             "className": "results-body",
           },
           "ref": null,
           "rendered": Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "class",
             "props": Object {},
             "ref": null,
             "rendered": null,

@@ -2,10 +2,11 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import promiseMiddleware from 'redux-promise-middleware';
 import fetchMock from 'fetch-mock';
-import { reducers } from './store';
+
+import { reducers } from './store/store';
 
 import { INITIAL_STATE, ACTIONS } from './constants/app-constants';
-import { switchSort, fullFilmLoad, updateInputValue, returnToMainPage, resetInputValue, searchHandler, switchSearch, getMovie, fullLoad, switchSortAction } from './action-creators';
+import { switchSort, fullFilmLoad, updateInputValue, returnToMainPage, resetInputValue, searchHandler, switchSearch, getMovie, fullLoad, switchSortAction } from './store/action-creators';
 
 const mockResults = {
     id: 123,

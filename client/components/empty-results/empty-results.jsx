@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { setEmptyResults, returnToMainPage } from '../../action-creators';
+import { setEmptyResults, returnToMainPage } from '../../store/action-creators';
 import './empty-results.scss';
 
 class EmptyResults extends React.Component {

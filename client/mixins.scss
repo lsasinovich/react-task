@@ -58,6 +58,9 @@ $small: 480px;
 }
 
 .return-button {
+    position: absolute;
+    top: 10px;
+    right: 0;
     padding: 5px 20px;
     font-size: 14px;
 }

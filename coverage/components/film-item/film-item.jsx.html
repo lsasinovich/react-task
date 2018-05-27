@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">83.33% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/6</span>
+        <span class='fraction'>3/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/3</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">50% </span>
-        <span class="quiet">Branches</span>
-        <span class='fraction'>1/2</span>
-      </div>
-      <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
-        <span class="quiet">Functions</span>
-        <span class='fraction'>2/3</span>
-      </div>
-      <div class='fl pad1y space-right2'>
-        <span class="strong">83.33% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>5/6</span>
+        <span class='fraction'>3/6</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -92,7 +92,8 @@
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -102,7 +103,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -120,7 +122,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,12 +130,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,19 +146,20 @@ import { connect } from 'react-redux';
 &nbsp;
 import './film-item.scss';
 import { ACTIONS } from '../../constants/app-constants';
-import { fullLoad } from '../../action-creators';
+import { fullLoad } from '../../store/action-creators';
+import { Link } from 'react-router-dom';
 &nbsp;
 class FilmItem extends React.Component {
-    render() {
-        return (
+<span class="fstat-no" title="function not covered" >    re</span>nder() {
+<span class="cstat-no" title="statement not covered" >        return (</span>
             &lt;div className="film-item"&gt;
                 { this.props.posterUrl ?
-<span class="branch-0 cbranch-no" title="branch not covered" >                    &lt;img src={this.props.posterUrl}/&gt; </span>:
+                    &lt;img src={this.props.posterUrl}/&gt; :
                     &lt;img src={require('../../images/noposter.jpg')}/&gt;
                 }
                 &lt;div className="film-info"&gt;
                     &lt;div&gt;
-                        &lt;p className="title" onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt;<span class="cstat-no" title="statement not covered" >this.props.fullLoad(this.props.id)}</span>&gt;{this.props.title}&lt;/p&gt;
+                        &lt;Link to={`/film/${this.props.id}`} onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt;<span class="cstat-no" title="statement not covered" >this.props.fullLoad(this.props.id)}</span>&gt;&lt;p className="title"&gt;{this.props.title}&lt;/p&gt;&lt;/Link&gt;
                         &lt;p className="genre"&gt;{this.props.genres}&lt;/p&gt;
                     &lt;/div&gt;
                     &lt;p className="year"&gt;{this.props.year}&lt;/p&gt;
@@ -178,8 +181,8 @@ const mapDispatchToProps = {
     fullLoad
 }
 &nbsp;
-const mapStateToProps = (state) =&gt; {
-    return {
+const mapStateToProps = <span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; {
+<span class="cstat-no" title="statement not covered" >    return {</span>
         user: state
     };
 };
@@ -190,7 +193,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(FilmItem);</pre></td
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon May 21 2018 21:49:44 GMT+0300 (MSK)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun May 27 2018 16:26:14 GMT+0300 (MSK)
 </div>
 </div>
 <script src="../../prettify.js"></script>

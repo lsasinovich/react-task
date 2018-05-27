@@ -10,11 +10,12 @@ import ResultsBar from '../../components/results-bar/results-bar';
 import ResultsBody from '../../components/results-body/results-body';
 import EmptyResults from '../../components/empty-results/empty-results';
 import FullFilmItem from '../../components/full-film-item/full-film-item';
+import { NotFoundPage } from '../../components/not-found-page/not-found-page';
 
 import './core.scss';
 import '../../mixins.scss';
 import { ACTIONS, ITEM_COUNT_PER_PAGE } from '../../constants/app-constants';
-import { setEmptyResults, returnToMainPage } from '../../action-creators';
+import { setEmptyResults, returnToMainPage } from '../../store/action-creators';
 
 class Core extends React.Component {
     componentWillMount() {
@@ -26,28 +27,33 @@ class Core extends React.Component {
     render() {
         return (
             <Router>
-                <div className="core-page">
-                    <Switch>
-                        <Route path='/film/:id'>
-                            <Header>
-                                <Route path='/film/:id' render={() =>
-                                        <Link to='/' onClick={()=>this.props.returnToMainPage()}><button className="btn return-button cl-red bg-white">SEARCH</button></Link>
-                                    } />
-                                <Route path='/film/:id' component={FullFilmItem}/> 
-                            </Header>
-                        </Route>
-            
-                        <Route path='/' component={Header} />
-                        <Redirect to='/not_found' />
-                    </Switch>
+                <Switch>
+                    <Route exact path="/not_found" component={NotFoundPage} />
+                    <Route path="/">
+                        <div className="core-page">
+                            <Switch>
+                                <Route path='/film/:id'>
+                                        {!this.props.user.results[0] ? 
+                                            <Header><Route path='/film/:id' component={FullFilmItem}/></Header>: 
+                                            null
+                                        }
+                                </Route>
                     
-                    <ResultsBar />
-                    <Switch>
-                        <Route exact path='/' component={EmptyResults} />
-                        <Route path='*' component={ResultsBody}  assets={this.props.user.results} />
-                    </Switch>
-                    <Footer/>
-                </div>
+                                <Route path='/' component={Header} />
+                                <Redirect to='/not_found' />
+                            </Switch>
+                            
+                            <ResultsBar />
+                            <Switch>
+                                <Route exact path='/' component={EmptyResults} />
+                                <Route path='/film/:id' component={ResultsBody} />
+                                <Route path='/search' component={ResultsBody} />
+                                <Redirect to='/not_found' />
+                            </Switch>
+                            <Footer/>
+                        </div>
+                    </Route>
+                </Switch>
             </Router>
         );
     }

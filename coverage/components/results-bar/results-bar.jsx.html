@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>4/6</span>
+        <span class='fraction'>2/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>8/10</span>
+        <span class='fraction'>0/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/4</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/6</span>
+        <span class='fraction'>2/6</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -106,7 +106,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -133,10 +133,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -149,12 +149,12 @@ import { connect } from 'react-redux';
 &nbsp;
 import './results-bar.scss';
 import { ACTIONS, SORT, ITEM_COUNT_PER_PAGE } from '../../constants/app-constants';
-import { switchSortAction } from '../../action-creators';
+import { switchSortAction } from '../../store/action-creators';
 &nbsp;
 class ResultsBar extends React.Component {
 &nbsp;
-    render() {
-        return(
+<span class="fstat-no" title="function not covered" >    re</span>nder() {
+<span class="cstat-no" title="statement not covered" >        return(</span>
             &lt;div className="results-bar"&gt;
             { !!this.props.user.resultsCount ? 
                 &lt;div&gt;
@@ -163,8 +163,8 @@ class ResultsBar extends React.Component {
                         &lt;p className="results-count"&gt;{this.props.user.resultsCount} movies found&lt;/p&gt;
                         &lt;div className="results-sort"&gt;
                             &lt;p&gt;Sort by&lt;/p&gt;
-                            &lt;p className={this.props.user.sort === "releaseDate" ? "cl-red" : <span class="branch-1 cbranch-no" title="branch not covered" >"cl-black"}</span> onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt;<span class="cstat-no" title="statement not covered" >this.props.switchSortAction("releaseDate", "release_date", this.props.user.inputValue, this.props.user.search)}</span>&gt;release date&lt;/p&gt;
-                            &lt;p className={this.props.user.sort === "rating" ? <span class="branch-0 cbranch-no" title="branch not covered" >"cl-red" </span>: "cl-black"} onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt;<span class="cstat-no" title="statement not covered" >this.props.switchSortAction("rating", "vote_average", this.props.user.inputValue, this.props.user.search)}</span>&gt;rating&lt;/p&gt;
+                            &lt;p className={this.props.user.sort === "releaseDate" ? "cl-red" : "cl-black"} onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt;<span class="cstat-no" title="statement not covered" >this.props.switchSortAction("releaseDate", "release_date", this.props.user.inputValue, this.props.user.search)}</span>&gt;release date&lt;/p&gt;
+                            &lt;p className={this.props.user.sort === "rating" ? "cl-red" : "cl-black"} onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt;<span class="cstat-no" title="statement not covered" >this.props.switchSortAction("rating", "vote_average", this.props.user.inputValue, this.props.user.search)}</span>&gt;rating&lt;/p&gt;
                         &lt;/div&gt;
                     &lt;/div&gt; :
                     &lt;div&gt;
@@ -183,8 +183,8 @@ class ResultsBar extends React.Component {
 &nbsp;
 const mapDispatchToProps = { switchSortAction };
 &nbsp;
-const mapStateToProps = (state) =&gt; {
-    return {
+const mapStateToProps = <span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; {
+<span class="cstat-no" title="statement not covered" >    return {</span>
         user: state
     };
 };
@@ -196,7 +196,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(ResultsBar);
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon May 21 2018 21:49:44 GMT+0300 (MSK)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun May 27 2018 16:26:14 GMT+0300 (MSK)
 </div>
 </div>
 <script src="../../prettify.js"></script>

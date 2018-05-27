@@ -1,6 +1,7 @@
 @import "../../mixins.scss";
 
 .full-film-item {
+    position: relative;
     display: flex;
     flex-direction: row;
     font-weight: 400;

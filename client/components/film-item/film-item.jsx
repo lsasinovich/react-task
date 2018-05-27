@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import './film-item.scss';
 import { ACTIONS } from '../../constants/app-constants';
-import { fullLoad } from '../../action-creators';
+import { fullLoad } from '../../store/action-creators';
 import { Link } from 'react-router-dom';
 
 class FilmItem extends React.Component {

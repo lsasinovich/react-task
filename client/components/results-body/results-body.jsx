@@ -21,7 +21,7 @@ class ResultsBody extends React.Component {
                 genres={asset.genres.join(', ')}
             />
         )) : <EmptyResults />;
-
+        
         return (
             <ResultsBodyErrorBoundary>
             <div>

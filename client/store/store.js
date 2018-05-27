@@ -2,7 +2,8 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
 import { persistStore, persistReducer } from 'redux-persist';
-import { SORT, ACTIONS, INITIAL_STATE } from './constants/app-constants';
+
+import { SORT, ACTIONS, INITIAL_STATE } from '../constants/app-constants';
 
 export function reducers (state = INITIAL_STATE, action) {
     switch (action.type) {
@@ -48,6 +49,9 @@ export function reducers (state = INITIAL_STATE, action) {
         case ACTIONS.SEARCH: {
             state = {
                 ...state,
+                inputValue: action.input,
+                search: action.searchBy,
+                sort: action.sortBy,
                 results: action.results,
                 resultsCount: action.results.total,
                 searchInfo: {

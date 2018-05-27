@@ -1,11 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Core/> should render Core and match snapshot 1`] = `
+exports[`<Core/> should render Core with search route 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Core
-    dispatch={[Function]}
+    location={
+      Object {
+        "pathname": "/search",
+      }
+    }
+    returnToMainPage={[Function]}
+    setEmptyResults={[Function]}
     store={
       Object {
         "clearActions": [Function],
@@ -63,102 +69,127 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "children": Array [
-        <Connect(Header)
-          fullItem={
-            Object {
-              "isActive": false,
-            }
-          }
-        />,
-        <Connect(ResultsBar) />,
-        <Connect(ResultsBody)
-          assets={
-            Object {
-              "data": Array [],
-            }
-          }
-        />,
-        <Footer />,
-      ],
-      "className": "core-page",
+      "children": <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/not_found"
+        />
+        <Route
+          path="/"
+        >
+          <div
+            className="core-page"
+          >
+            <Switch>
+              <Route
+                path="/film/:id"
+              >
+                <Connect(Header)>
+                  <Route
+                    component={[Function]}
+                    path="/film/:id"
+                  />
+                </Connect(Header)>
+              </Route>
+              <Route
+                component={[Function]}
+                path="/"
+              />
+              <Redirect
+                push={false}
+                to="/not_found"
+              />
+            </Switch>
+            <Connect(ResultsBar) />
+            <Switch>
+              <Route
+                component={[Function]}
+                exact={true}
+                path="/"
+              />
+              <Route
+                component={[Function]}
+                path="/film/:id"
+              />
+              <Route
+                component={[Function]}
+                path="/search"
+              />
+              <Redirect
+                push={false}
+                to="/not_found"
+              />
+            </Switch>
+            <Footer />
+          </div>
+        </Route>
+      </Switch>,
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "fullItem": Object {
-            "isActive": false,
-          },
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "assets": Object {
-            "data": Array [],
-          },
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
         "children": Array [
-          <Connect(Header)
-            fullItem={
-              Object {
-                "isActive": false,
-              }
-            }
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/not_found"
           />,
-          <Connect(ResultsBar) />,
-          <Connect(ResultsBody)
-            assets={
-              Object {
-                "data": Array [],
-              }
-            }
-          />,
-          <Footer />,
+          <Route
+            path="/"
+          >
+            <div
+              className="core-page"
+            >
+              <Switch>
+                <Route
+                  path="/film/:id"
+                >
+                  <Connect(Header)>
+                    <Route
+                      component={[Function]}
+                      path="/film/:id"
+                    />
+                  </Connect(Header)>
+                </Route>
+                <Route
+                  component={[Function]}
+                  path="/"
+                />
+                <Redirect
+                  push={false}
+                  to="/not_found"
+                />
+              </Switch>
+              <Connect(ResultsBar) />
+              <Switch>
+                <Route
+                  component={[Function]}
+                  exact={true}
+                  path="/"
+                />
+                <Route
+                  component={[Function]}
+                  path="/film/:id"
+                />
+                <Route
+                  component={[Function]}
+                  path="/search"
+                />
+                <Redirect
+                  push={false}
+                  to="/not_found"
+                />
+              </Switch>
+              <Footer />
+            </div>
+          </Route>,
         ],
-        "className": "core-page",
       },
       "ref": null,
       "rendered": Array [
@@ -167,19 +198,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "fullItem": Object {
-              "isActive": false,
-            },
+            "component": [Function],
+            "exact": true,
+            "path": "/not_found",
           },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -189,25 +211,757 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "assets": Object {
-              "data": Array [],
-            },
+            "children": <div
+              className="core-page"
+            >
+              <Switch>
+                <Route
+                  path="/film/:id"
+                >
+                  <Connect(Header)>
+                    <Route
+                      component={[Function]}
+                      path="/film/:id"
+                    />
+                  </Connect(Header)>
+                </Route>
+                <Route
+                  component={[Function]}
+                  path="/"
+                />
+                <Redirect
+                  push={false}
+                  to="/not_found"
+                />
+              </Switch>
+              <Connect(ResultsBar) />
+              <Switch>
+                <Route
+                  component={[Function]}
+                  exact={true}
+                  path="/"
+                />
+                <Route
+                  component={[Function]}
+                  path="/film/:id"
+                />
+                <Route
+                  component={[Function]}
+                  path="/search"
+                />
+                <Redirect
+                  push={false}
+                  to="/not_found"
+                />
+              </Switch>
+              <Footer />
+            </div>,
+            "path": "/",
           },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Switch>
+                  <Route
+                    path="/film/:id"
+                  >
+                    <Connect(Header)>
+                      <Route
+                        component={[Function]}
+                        path="/film/:id"
+                      />
+                    </Connect(Header)>
+                  </Route>
+                  <Route
+                    component={[Function]}
+                    path="/"
+                  />
+                  <Redirect
+                    push={false}
+                    to="/not_found"
+                  />
+                </Switch>,
+                <Connect(ResultsBar) />,
+                <Switch>
+                  <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/"
+                  />
+                  <Route
+                    component={[Function]}
+                    path="/film/:id"
+                  />
+                  <Route
+                    component={[Function]}
+                    path="/search"
+                  />
+                  <Redirect
+                    push={false}
+                    to="/not_found"
+                  />
+                </Switch>,
+                <Footer />,
+              ],
+              "className": "core-page",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <Route
+                      path="/film/:id"
+                    >
+                      <Connect(Header)>
+                        <Route
+                          component={[Function]}
+                          path="/film/:id"
+                        />
+                      </Connect(Header)>
+                    </Route>,
+                    <Route
+                      component={[Function]}
+                      path="/"
+                    />,
+                    <Redirect
+                      push={false}
+                      to="/not_found"
+                    />,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <Connect(Header)>
+                        <Route
+                          component={[Function]}
+                          path="/film/:id"
+                        />
+                      </Connect(Header)>,
+                      "path": "/film/:id",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": <Route
+                          component={[Function]}
+                          path="/film/:id"
+                        />,
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "component": [Function],
+                          "path": "/film/:id",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "path": "/",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "push": false,
+                      "to": "/not_found",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <Route
+                      component={[Function]}
+                      exact={true}
+                      path="/"
+                    />,
+                    <Route
+                      component={[Function]}
+                      path="/film/:id"
+                    />,
+                    <Route
+                      component={[Function]}
+                      path="/search"
+                    />,
+                    <Redirect
+                      push={false}
+                      to="/not_found"
+                    />,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "exact": true,
+                      "path": "/",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "path": "/film/:id",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "path": "/search",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "push": false,
+                      "to": "/not_found",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
           "type": [Function],
         },
       ],
-      "type": "div",
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <Switch>
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/not_found"
+          />
+          <Route
+            path="/"
+          >
+            <div
+              className="core-page"
+            >
+              <Switch>
+                <Route
+                  path="/film/:id"
+                >
+                  <Connect(Header)>
+                    <Route
+                      component={[Function]}
+                      path="/film/:id"
+                    />
+                  </Connect(Header)>
+                </Route>
+                <Route
+                  component={[Function]}
+                  path="/"
+                />
+                <Redirect
+                  push={false}
+                  to="/not_found"
+                />
+              </Switch>
+              <Connect(ResultsBar) />
+              <Switch>
+                <Route
+                  component={[Function]}
+                  exact={true}
+                  path="/"
+                />
+                <Route
+                  component={[Function]}
+                  path="/film/:id"
+                />
+                <Route
+                  component={[Function]}
+                  path="/search"
+                />
+                <Redirect
+                  push={false}
+                  to="/not_found"
+                />
+              </Switch>
+              <Footer />
+            </div>
+          </Route>
+        </Switch>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/not_found"
+            />,
+            <Route
+              path="/"
+            >
+              <div
+                className="core-page"
+              >
+                <Switch>
+                  <Route
+                    path="/film/:id"
+                  >
+                    <Connect(Header)>
+                      <Route
+                        component={[Function]}
+                        path="/film/:id"
+                      />
+                    </Connect(Header)>
+                  </Route>
+                  <Route
+                    component={[Function]}
+                    path="/"
+                  />
+                  <Redirect
+                    push={false}
+                    to="/not_found"
+                  />
+                </Switch>
+                <Connect(ResultsBar) />
+                <Switch>
+                  <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/"
+                  />
+                  <Route
+                    component={[Function]}
+                    path="/film/:id"
+                  />
+                  <Route
+                    component={[Function]}
+                    path="/search"
+                  />
+                  <Redirect
+                    push={false}
+                    to="/not_found"
+                  />
+                </Switch>
+                <Footer />
+              </div>
+            </Route>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/not_found",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <div
+                className="core-page"
+              >
+                <Switch>
+                  <Route
+                    path="/film/:id"
+                  >
+                    <Connect(Header)>
+                      <Route
+                        component={[Function]}
+                        path="/film/:id"
+                      />
+                    </Connect(Header)>
+                  </Route>
+                  <Route
+                    component={[Function]}
+                    path="/"
+                  />
+                  <Redirect
+                    push={false}
+                    to="/not_found"
+                  />
+                </Switch>
+                <Connect(ResultsBar) />
+                <Switch>
+                  <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/"
+                  />
+                  <Route
+                    component={[Function]}
+                    path="/film/:id"
+                  />
+                  <Route
+                    component={[Function]}
+                    path="/search"
+                  />
+                  <Redirect
+                    push={false}
+                    to="/not_found"
+                  />
+                </Switch>
+                <Footer />
+              </div>,
+              "path": "/",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Switch>
+                    <Route
+                      path="/film/:id"
+                    >
+                      <Connect(Header)>
+                        <Route
+                          component={[Function]}
+                          path="/film/:id"
+                        />
+                      </Connect(Header)>
+                    </Route>
+                    <Route
+                      component={[Function]}
+                      path="/"
+                    />
+                    <Redirect
+                      push={false}
+                      to="/not_found"
+                    />
+                  </Switch>,
+                  <Connect(ResultsBar) />,
+                  <Switch>
+                    <Route
+                      component={[Function]}
+                      exact={true}
+                      path="/"
+                    />
+                    <Route
+                      component={[Function]}
+                      path="/film/:id"
+                    />
+                    <Route
+                      component={[Function]}
+                      path="/search"
+                    />
+                    <Redirect
+                      push={false}
+                      to="/not_found"
+                    />
+                  </Switch>,
+                  <Footer />,
+                ],
+                "className": "core-page",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <Route
+                        path="/film/:id"
+                      >
+                        <Connect(Header)>
+                          <Route
+                            component={[Function]}
+                            path="/film/:id"
+                          />
+                        </Connect(Header)>
+                      </Route>,
+                      <Route
+                        component={[Function]}
+                        path="/"
+                      />,
+                      <Redirect
+                        push={false}
+                        to="/not_found"
+                      />,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": <Connect(Header)>
+                          <Route
+                            component={[Function]}
+                            path="/film/:id"
+                          />
+                        </Connect(Header)>,
+                        "path": "/film/:id",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": <Route
+                            component={[Function]}
+                            path="/film/:id"
+                          />,
+                        },
+                        "ref": null,
+                        "rendered": Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "component": [Function],
+                            "path": "/film/:id",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                        "type": [Function],
+                      },
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "component": [Function],
+                        "path": "/",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "push": false,
+                        "to": "/not_found",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <Route
+                        component={[Function]}
+                        exact={true}
+                        path="/"
+                      />,
+                      <Route
+                        component={[Function]}
+                        path="/film/:id"
+                      />,
+                      <Route
+                        component={[Function]}
+                        path="/search"
+                      />,
+                      <Redirect
+                        push={false}
+                        to="/not_found"
+                      />,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "component": [Function],
+                        "exact": true,
+                        "path": "/",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "component": [Function],
+                        "path": "/film/:id",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "component": [Function],
+                        "path": "/search",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "push": false,
+                        "to": "/not_found",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -220,12 +974,18 @@ ShallowWrapper {
 }
 `;
 
-exports[`<Core/> should render Core with Full Film Item 1`] = `
+exports[`<Core/> should render Core with search route 2`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Core
-    dispatch={[Function]}
+    location={
+      Object {
+        "pathname": "/111111",
+      }
+    }
+    returnToMainPage={[Function]}
+    setEmptyResults={[Function]}
     store={
       Object {
         "clearActions": [Function],
@@ -260,7 +1020,7 @@ ShallowWrapper {
     user={
       Object {
         "fullItem": Object {
-          "isActive": true,
+          "isActive": false,
         },
         "inputValue": "",
         "results": Object {
@@ -283,102 +1043,127 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "children": Array [
-        <Connect(Header)
-          fullItem={
-            Object {
-              "isActive": true,
-            }
-          }
-        />,
-        <Connect(ResultsBar) />,
-        <Connect(ResultsBody)
-          assets={
-            Object {
-              "data": Array [],
-            }
-          }
-        />,
-        <Footer />,
-      ],
-      "className": "core-page",
+      "children": <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/not_found"
+        />
+        <Route
+          path="/"
+        >
+          <div
+            className="core-page"
+          >
+            <Switch>
+              <Route
+                path="/film/:id"
+              >
+                <Connect(Header)>
+                  <Route
+                    component={[Function]}
+                    path="/film/:id"
+                  />
+                </Connect(Header)>
+              </Route>
+              <Route
+                component={[Function]}
+                path="/"
+              />
+              <Redirect
+                push={false}
+                to="/not_found"
+              />
+            </Switch>
+            <Connect(ResultsBar) />
+            <Switch>
+              <Route
+                component={[Function]}
+                exact={true}
+                path="/"
+              />
+              <Route
+                component={[Function]}
+                path="/film/:id"
+              />
+              <Route
+                component={[Function]}
+                path="/search"
+              />
+              <Redirect
+                push={false}
+                to="/not_found"
+              />
+            </Switch>
+            <Footer />
+          </div>
+        </Route>
+      </Switch>,
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "fullItem": Object {
-            "isActive": true,
-          },
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "assets": Object {
-            "data": Array [],
-          },
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
         "children": Array [
-          <Connect(Header)
-            fullItem={
-              Object {
-                "isActive": true,
-              }
-            }
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/not_found"
           />,
-          <Connect(ResultsBar) />,
-          <Connect(ResultsBody)
-            assets={
-              Object {
-                "data": Array [],
-              }
-            }
-          />,
-          <Footer />,
+          <Route
+            path="/"
+          >
+            <div
+              className="core-page"
+            >
+              <Switch>
+                <Route
+                  path="/film/:id"
+                >
+                  <Connect(Header)>
+                    <Route
+                      component={[Function]}
+                      path="/film/:id"
+                    />
+                  </Connect(Header)>
+                </Route>
+                <Route
+                  component={[Function]}
+                  path="/"
+                />
+                <Redirect
+                  push={false}
+                  to="/not_found"
+                />
+              </Switch>
+              <Connect(ResultsBar) />
+              <Switch>
+                <Route
+                  component={[Function]}
+                  exact={true}
+                  path="/"
+                />
+                <Route
+                  component={[Function]}
+                  path="/film/:id"
+                />
+                <Route
+                  component={[Function]}
+                  path="/search"
+                />
+                <Redirect
+                  push={false}
+                  to="/not_found"
+                />
+              </Switch>
+              <Footer />
+            </div>
+          </Route>,
         ],
-        "className": "core-page",
       },
       "ref": null,
       "rendered": Array [
@@ -387,19 +1172,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "fullItem": Object {
-              "isActive": true,
-            },
+            "component": [Function],
+            "exact": true,
+            "path": "/not_found",
           },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -409,25 +1185,757 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "assets": Object {
-              "data": Array [],
-            },
+            "children": <div
+              className="core-page"
+            >
+              <Switch>
+                <Route
+                  path="/film/:id"
+                >
+                  <Connect(Header)>
+                    <Route
+                      component={[Function]}
+                      path="/film/:id"
+                    />
+                  </Connect(Header)>
+                </Route>
+                <Route
+                  component={[Function]}
+                  path="/"
+                />
+                <Redirect
+                  push={false}
+                  to="/not_found"
+                />
+              </Switch>
+              <Connect(ResultsBar) />
+              <Switch>
+                <Route
+                  component={[Function]}
+                  exact={true}
+                  path="/"
+                />
+                <Route
+                  component={[Function]}
+                  path="/film/:id"
+                />
+                <Route
+                  component={[Function]}
+                  path="/search"
+                />
+                <Redirect
+                  push={false}
+                  to="/not_found"
+                />
+              </Switch>
+              <Footer />
+            </div>,
+            "path": "/",
           },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Switch>
+                  <Route
+                    path="/film/:id"
+                  >
+                    <Connect(Header)>
+                      <Route
+                        component={[Function]}
+                        path="/film/:id"
+                      />
+                    </Connect(Header)>
+                  </Route>
+                  <Route
+                    component={[Function]}
+                    path="/"
+                  />
+                  <Redirect
+                    push={false}
+                    to="/not_found"
+                  />
+                </Switch>,
+                <Connect(ResultsBar) />,
+                <Switch>
+                  <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/"
+                  />
+                  <Route
+                    component={[Function]}
+                    path="/film/:id"
+                  />
+                  <Route
+                    component={[Function]}
+                    path="/search"
+                  />
+                  <Redirect
+                    push={false}
+                    to="/not_found"
+                  />
+                </Switch>,
+                <Footer />,
+              ],
+              "className": "core-page",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <Route
+                      path="/film/:id"
+                    >
+                      <Connect(Header)>
+                        <Route
+                          component={[Function]}
+                          path="/film/:id"
+                        />
+                      </Connect(Header)>
+                    </Route>,
+                    <Route
+                      component={[Function]}
+                      path="/"
+                    />,
+                    <Redirect
+                      push={false}
+                      to="/not_found"
+                    />,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": <Connect(Header)>
+                        <Route
+                          component={[Function]}
+                          path="/film/:id"
+                        />
+                      </Connect(Header)>,
+                      "path": "/film/:id",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": <Route
+                          component={[Function]}
+                          path="/film/:id"
+                        />,
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "component": [Function],
+                          "path": "/film/:id",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                      "type": [Function],
+                    },
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "path": "/",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "push": false,
+                      "to": "/not_found",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <Route
+                      component={[Function]}
+                      exact={true}
+                      path="/"
+                    />,
+                    <Route
+                      component={[Function]}
+                      path="/film/:id"
+                    />,
+                    <Route
+                      component={[Function]}
+                      path="/search"
+                    />,
+                    <Redirect
+                      push={false}
+                      to="/not_found"
+                    />,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "exact": true,
+                      "path": "/",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "path": "/film/:id",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "component": [Function],
+                      "path": "/search",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "push": false,
+                      "to": "/not_found",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
           "type": [Function],
         },
       ],
-      "type": "div",
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <Switch>
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/not_found"
+          />
+          <Route
+            path="/"
+          >
+            <div
+              className="core-page"
+            >
+              <Switch>
+                <Route
+                  path="/film/:id"
+                >
+                  <Connect(Header)>
+                    <Route
+                      component={[Function]}
+                      path="/film/:id"
+                    />
+                  </Connect(Header)>
+                </Route>
+                <Route
+                  component={[Function]}
+                  path="/"
+                />
+                <Redirect
+                  push={false}
+                  to="/not_found"
+                />
+              </Switch>
+              <Connect(ResultsBar) />
+              <Switch>
+                <Route
+                  component={[Function]}
+                  exact={true}
+                  path="/"
+                />
+                <Route
+                  component={[Function]}
+                  path="/film/:id"
+                />
+                <Route
+                  component={[Function]}
+                  path="/search"
+                />
+                <Redirect
+                  push={false}
+                  to="/not_found"
+                />
+              </Switch>
+              <Footer />
+            </div>
+          </Route>
+        </Switch>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/not_found"
+            />,
+            <Route
+              path="/"
+            >
+              <div
+                className="core-page"
+              >
+                <Switch>
+                  <Route
+                    path="/film/:id"
+                  >
+                    <Connect(Header)>
+                      <Route
+                        component={[Function]}
+                        path="/film/:id"
+                      />
+                    </Connect(Header)>
+                  </Route>
+                  <Route
+                    component={[Function]}
+                    path="/"
+                  />
+                  <Redirect
+                    push={false}
+                    to="/not_found"
+                  />
+                </Switch>
+                <Connect(ResultsBar) />
+                <Switch>
+                  <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/"
+                  />
+                  <Route
+                    component={[Function]}
+                    path="/film/:id"
+                  />
+                  <Route
+                    component={[Function]}
+                    path="/search"
+                  />
+                  <Redirect
+                    push={false}
+                    to="/not_found"
+                  />
+                </Switch>
+                <Footer />
+              </div>
+            </Route>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/not_found",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <div
+                className="core-page"
+              >
+                <Switch>
+                  <Route
+                    path="/film/:id"
+                  >
+                    <Connect(Header)>
+                      <Route
+                        component={[Function]}
+                        path="/film/:id"
+                      />
+                    </Connect(Header)>
+                  </Route>
+                  <Route
+                    component={[Function]}
+                    path="/"
+                  />
+                  <Redirect
+                    push={false}
+                    to="/not_found"
+                  />
+                </Switch>
+                <Connect(ResultsBar) />
+                <Switch>
+                  <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/"
+                  />
+                  <Route
+                    component={[Function]}
+                    path="/film/:id"
+                  />
+                  <Route
+                    component={[Function]}
+                    path="/search"
+                  />
+                  <Redirect
+                    push={false}
+                    to="/not_found"
+                  />
+                </Switch>
+                <Footer />
+              </div>,
+              "path": "/",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Switch>
+                    <Route
+                      path="/film/:id"
+                    >
+                      <Connect(Header)>
+                        <Route
+                          component={[Function]}
+                          path="/film/:id"
+                        />
+                      </Connect(Header)>
+                    </Route>
+                    <Route
+                      component={[Function]}
+                      path="/"
+                    />
+                    <Redirect
+                      push={false}
+                      to="/not_found"
+                    />
+                  </Switch>,
+                  <Connect(ResultsBar) />,
+                  <Switch>
+                    <Route
+                      component={[Function]}
+                      exact={true}
+                      path="/"
+                    />
+                    <Route
+                      component={[Function]}
+                      path="/film/:id"
+                    />
+                    <Route
+                      component={[Function]}
+                      path="/search"
+                    />
+                    <Redirect
+                      push={false}
+                      to="/not_found"
+                    />
+                  </Switch>,
+                  <Footer />,
+                ],
+                "className": "core-page",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <Route
+                        path="/film/:id"
+                      >
+                        <Connect(Header)>
+                          <Route
+                            component={[Function]}
+                            path="/film/:id"
+                          />
+                        </Connect(Header)>
+                      </Route>,
+                      <Route
+                        component={[Function]}
+                        path="/"
+                      />,
+                      <Redirect
+                        push={false}
+                        to="/not_found"
+                      />,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": <Connect(Header)>
+                          <Route
+                            component={[Function]}
+                            path="/film/:id"
+                          />
+                        </Connect(Header)>,
+                        "path": "/film/:id",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": <Route
+                            component={[Function]}
+                            path="/film/:id"
+                          />,
+                        },
+                        "ref": null,
+                        "rendered": Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "component": [Function],
+                            "path": "/film/:id",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                        "type": [Function],
+                      },
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "component": [Function],
+                        "path": "/",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "push": false,
+                        "to": "/not_found",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <Route
+                        component={[Function]}
+                        exact={true}
+                        path="/"
+                      />,
+                      <Route
+                        component={[Function]}
+                        path="/film/:id"
+                      />,
+                      <Route
+                        component={[Function]}
+                        path="/search"
+                      />,
+                      <Redirect
+                        push={false}
+                        to="/not_found"
+                      />,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "component": [Function],
+                        "exact": true,
+                        "path": "/",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "component": [Function],
+                        "path": "/film/:id",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "component": [Function],
+                        "path": "/search",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "push": false,
+                        "to": "/not_found",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
