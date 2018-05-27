@@ -94,6 +94,13 @@ export function reducers (state = INITIAL_STATE, action) {
             }
             break;
         }
+        case ACTIONS.SET_SEARCH_URL: {
+            state = {
+                ...state,
+                searchURL: action.searchURL
+            }
+            break;
+        }
     }
     return state;
 }

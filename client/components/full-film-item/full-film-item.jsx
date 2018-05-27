@@ -16,7 +16,7 @@ class FullFilmItem extends React.Component {
         if (this.props.user.fullItem.filmData) {
         return (
             <div>
-            <Link to='/' onClick={()=>{console.log(this.props)}}><button className="btn return-button cl-red bg-white">SEARCH</button></Link>
+            <Link to={this.props.user.searchURL} onClick={()=>this.props.returnToMainPage()}><button className="btn return-button cl-red bg-white">SEARCH</button></Link>
             <div className="full-film-item">
                 <img src={this.props.user.fullItem.filmData.poster_path} />
                 <div className="full-film-info">
@@ -43,7 +43,8 @@ class FullFilmItem extends React.Component {
 };
 
 const mapDispatchToProps = {
-    fullLoad
+    fullLoad,
+    returnToMainPage
 }
 
 const mapStateToProps = (state) => {

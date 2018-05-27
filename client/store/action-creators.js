@@ -7,6 +7,13 @@ export const setEmptyResults = () => {
     }
 }
 
+export const setSearchURL = (searchURL) => {
+    return {
+        type: ACTIONS.SET_SEARCH_URL,
+        searchURL: searchURL
+    }
+}
+
 export const switchSort = (sort, results) => {
     return {
         type: ACTIONS.SWITCH_SORT,

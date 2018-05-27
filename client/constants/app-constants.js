@@ -18,7 +18,8 @@ export const ACTIONS = {
     SWITCH_SORT: "SWITCH_SORT",
     FULL_FILM_LOAD: "FULL_FILM_LOAD",
     PAGINATION_HANDLER: "PAGINATION_HANDLER",
-    GET_MOVIES_BY_GENRES: "GET_MOVIES_BY_GENRES"
+    GET_MOVIES_BY_GENRES: "GET_MOVIES_BY_GENRES",
+    SET_SEARCH_URL: "SET_SEARCH_URL"
 }
 
 export const ITEM_COUNT_PER_PAGE = 12;
@@ -35,5 +36,6 @@ export const INITIAL_STATE = {
     inputValue: "",
     sort: "releaseDate",
     search: 'title',
-    resultsCount: -1
+    resultsCount: -1,
+    searchURL: '/'
 }
