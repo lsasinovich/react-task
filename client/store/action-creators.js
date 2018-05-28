@@ -73,14 +73,11 @@ export const switchSearch = (search) => {
 
 }
 
-export const getMovie = (sort, search, inputValue, location) => dispatch => {
-    const params = new URLSearchParams(location.search); 
-    const input = params.get('inputValue') || inputValue;
-    const searchBy = params.get('searchBy') || search;
-    const sortBy = params.get('sortBy') || sort;
-    return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sortBy]}&sortOrder=desc&search=${input}&searchBy=${SEARCH[searchBy]}&limit=12`)
+export const getMovie = (sort, search, inputValue) => dispatch => {
+    inputValue = inputValue || '';
+    return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sort]}&sortOrder=desc&search=${inputValue}&searchBy=${SEARCH[search]}&limit=12`)
       .then(response => response.json())
-      .then(json => dispatch(searchHandler(json, sortBy, searchBy, input)))
+      .then(json => dispatch(searchHandler(json, sort, search, inputValue)))
       .catch(function(error) {
         window.location.pathname = '/not_found';
         console.log('Can not find films with this criteria');
@@ -104,10 +101,10 @@ export const fullLoad = (id) => dispatch => {
               dispatch(fullFilmLoad(json))
               dispatch(getMoviesByGenres(json.genres[0]))
           })
-        //   .catch(function(error) {
-        //     window.location.pathname = '/not_found';
-        //     console.log('Can not load this film');
-        //   });
+          .catch(function(error) {
+            window.location.pathname = '/not_found';
+            console.log('Can not load this film');
+          });
 }
 
 export const switchSortAction = (sort, stateSort, inputValue, search) => dispatch => {

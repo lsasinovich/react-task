@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { fullLoad, returnToMainPage } from '../../store/action-creators';
+import { fullLoad, returnToMainPage, getMovie } from '../../store/action-creators';
 
 import './full-film-item.scss';
 
@@ -16,7 +16,7 @@ class FullFilmItem extends React.Component {
         if (this.props.user.fullItem.filmData) {
         return (
             <div>
-            <Link to={this.props.user.searchURL} onClick={()=>this.props.returnToMainPage()}><button className="btn return-button cl-red bg-white">SEARCH</button></Link>
+            <Link to={`/search/${this.props.user.inputValue}`} onClick={()=>{this.props.returnToMainPage(); this.props.getMovie(this.props.user.sort, this.props.user.search, this.props.user.inputValue);}}><button className="btn return-button cl-red bg-white">SEARCH</button></Link>
             <div className="full-film-item">
                 <img src={this.props.user.fullItem.filmData.poster_path} />
                 <div className="full-film-info">
@@ -44,7 +44,8 @@ class FullFilmItem extends React.Component {
 
 const mapDispatchToProps = {
     fullLoad,
-    returnToMainPage
+    returnToMainPage,
+    getMovie
 }
 
 const mapStateToProps = (state) => {

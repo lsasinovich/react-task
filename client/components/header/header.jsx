@@ -11,10 +11,9 @@ import { ACTIONS, SEARCH, SORT } from '../../constants/app-constants';
 import { updateInputValue, searchHandler, returnToMainPage, resetInputValue, switchSearch, getMovie, setSearchURL} from '../../store/action-creators';
 
 class Header extends React.Component {
-    
     componentDidMount() {
         if(!this.props.location || this.props.location.pathname === '/') return;
-        this.props.getMovie(this.props.user.sort, this.props.user.search, this.props.user.inputValue, this.props.location);
+        this.props.getMovie(this.props.user.sort, this.props.user.search, this.props.match.params.inputValue);
     }
 
     render() {
@@ -33,9 +32,9 @@ class Header extends React.Component {
                         onChange={(event)=>this.props.updateInputValue(event.target.value)}
                         onKeyPress={ (event) => {
                             if (event.key == 'Enter') { 
-                                this.props.history.push(`/search?sortBy=${this.props.user.sort}&searchBy=${this.props.user.search}&inputValue=${this.props.user.inputValue}`);
-                                this.props.setSearchURL(`/search?sortBy=${this.props.user.sort}&searchBy=${this.props.user.search}&inputValue=${this.props.user.inputValue}`);
-                                this.props.getMovie(this.props.user.sort, this.props.user.search, this.props.user.inputValue, this.props.location.search);
+                                this.props.history.push(`/search/${this.props.user.inputValue}`);
+                                this.props.setSearchURL(`/search/${this.props.user.inputValue}`);
+                                this.props.getMovie(this.props.user.sort, this.props.user.search, this.props.user.inputValue);
                             }
                         }
                     }
@@ -52,10 +51,10 @@ class Header extends React.Component {
                         <button className={`btn genre-button ${this.props.user.search === "genres" ? "bg-red" : "bg-grey"} cl-white`} onClick={()=>this.props.switchSearch('genres')}>GENRE</button>
                         <button className={`btn title-button ${this.props.user.search === "title" ? "bg-red" : "bg-grey"} cl-white`} onClick={()=>this.props.switchSearch('title')}>TITLE</button>
                     </div>
-                    <Link to={`/search?sortBy=${this.props.user.sort}&searchBy=${this.props.user.search}&inputValue=${this.props.user.inputValue}`} 
+                    <Link to={`/search/${this.props.user.inputValue}`} 
                           onClick={()=>{
-                              this.props.setSearchURL(`/search?sortBy=${this.props.user.sort}&searchBy=${this.props.user.search}&inputValue=${this.props.user.inputValue}`);
-                              this.props.getMovie(this.props.user.sort, this.props.user.search, this.props.user.inputValue, this.props.location.search)}}>
+                              this.props.setSearchURL(`${this.props.user.inputValue}`);
+                              this.props.getMovie(this.props.user.sort, this.props.user.search, this.props.user.inputValue)}}>
                         <button className='btn search-button bg-red cl-white'>SEARCH</button>
                     </Link>
                 </div>

@@ -19,7 +19,6 @@ import { setEmptyResults, returnToMainPage } from '../../store/action-creators';
 
 class Core extends React.Component {
     componentDidMount() {
-        console.log(this.props.location.pathname );
        if (this.props.location.pathname === '/') {
             this.props.setEmptyResults();
        };
@@ -39,7 +38,8 @@ class Core extends React.Component {
                                             null
                                         }
                                 </Route>
-                    
+
+                                <Route path='/search(/:inputValue)' component={Header} />
                                 <Route path='/' component={Header} />
                                 <Redirect to='/not_found' />
                             </Switch>
@@ -48,7 +48,7 @@ class Core extends React.Component {
                             <Switch>
                                 <Route exact path='/' component={EmptyResults} />
                                 <Route path='/film/:id' component={ResultsBody} />
-                                <Route path='/search' component={ResultsBody} />
+                                <Route path='/search(/:inputValue)' component={ResultsBody} />
                                 <Redirect to='/not_found' />
                             </Switch>
                             <Footer/>
