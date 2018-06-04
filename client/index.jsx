@@ -6,12 +6,11 @@ import { Provider } from 'react-redux';
 import { persistor, store, reducer } from './store/store';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import { persistStore, autoRehydrate } from 'redux-persist';
-import { BrowserRouter as Router, Route } from 'react-router-dom'; 
-import { Switch } from 'react-router'; 
+import { BrowserRouter } from 'react-router-dom'; 
 import Core from './pages/core/core';
 
-//import './index.scss';
+import './index.scss';
 
-ReactDOM.render(<Core/>, 
+ReactDOM.hydrate(<Core Router={BrowserRouter}/>, 
 document.getElementById("root"));
 

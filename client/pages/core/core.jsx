@@ -26,35 +26,14 @@ class Core extends React.Component {
     // }
 
     render() {
-        return (<div>hi</div>
-            // <Switch>
-            //     <Route exact path="/not_found" component={NotFoundPage} />
-            //     <Route path="/">
-            //         <div className="core-page">
-            //             <Switch>
-            //                 <Route path='/film/:id'>
-            //                         {!this.props.user.results[0] ? 
-            //                             <Header><Route path='/film/:id' component={FullFilmItem}/></Header>: 
-            //                             null
-            //                         }
-            //                 </Route>
-
-            //                 <Route path='/search(/:inputValue)' component={Header} />
-            //                 <Route path='/' component={Header} />
-            //                 <Redirect to='/not_found' />
-            //             </Switch>
-                        
-            //             <ResultsBar />
-            //             <Switch>
-            //                 <Route exact path='/' component={EmptyResults} />
-            //                 <Route path='/film/:id' component={ResultsBody} />
-            //                 <Route path='/search(/:inputValue)' component={ResultsBody} />
-            //                 <Redirect to='/not_found' />
-            //             </Switch>
-            //             <Footer/>
-            //         </div>
-            //     </Route>
-            // </Switch>
+        const { Router, location, context } = this.props;
+        return (
+            <Router location={location} context={context}>
+                <div>
+                    <Route path='/footer' component={Footer}/>
+                    <p>hi</p>
+                </div>
+            </Router>
         );
     }
 }
