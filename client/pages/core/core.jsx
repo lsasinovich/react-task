@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Switch, Redirect} from 'react-router';
+import { hot } from 'react-hot-loader';
 
 import { Footer } from '../../components/footer/footer';
 import { Nextflixroulette } from '../../components/nextflixroulette/nextflixroulette';
@@ -18,43 +19,42 @@ import { ACTIONS, ITEM_COUNT_PER_PAGE } from '../../constants/app-constants';
 import { setEmptyResults, returnToMainPage } from '../../store/action-creators';
 
 class Core extends React.Component {
-    componentDidMount() {
-       if (this.props.location.pathname === '/') {
-            this.props.setEmptyResults();
-       };
-    }
+    // componentDidMount() {
+    //    if (this.props.location.pathname === '/') {
+    //         this.props.setEmptyResults();
+    //    };
+    // }
 
     render() {
-        return (
-           
-                <Switch>
-                    <Route exact path="/not_found" component={NotFoundPage} />
-                    <Route path="/">
-                        <div className="core-page">
-                            <Switch>
-                                <Route path='/film/:id'>
-                                        {!this.props.user.results[0] ? 
-                                            <Header><Route path='/film/:id' component={FullFilmItem}/></Header>: 
-                                            null
-                                        }
-                                </Route>
+        return (<div>hi</div>
+            // <Switch>
+            //     <Route exact path="/not_found" component={NotFoundPage} />
+            //     <Route path="/">
+            //         <div className="core-page">
+            //             <Switch>
+            //                 <Route path='/film/:id'>
+            //                         {!this.props.user.results[0] ? 
+            //                             <Header><Route path='/film/:id' component={FullFilmItem}/></Header>: 
+            //                             null
+            //                         }
+            //                 </Route>
 
-                                <Route path='/search(/:inputValue)' component={Header} />
-                                <Route path='/' component={Header} />
-                                <Redirect to='/not_found' />
-                            </Switch>
-                            
-                            <ResultsBar />
-                            <Switch>
-                                <Route exact path='/' component={EmptyResults} />
-                                <Route path='/film/:id' component={ResultsBody} />
-                                <Route path='/search(/:inputValue)' component={ResultsBody} />
-                                <Redirect to='/not_found' />
-                            </Switch>
-                            <Footer/>
-                        </div>
-                    </Route>
-                </Switch>
+            //                 <Route path='/search(/:inputValue)' component={Header} />
+            //                 <Route path='/' component={Header} />
+            //                 <Redirect to='/not_found' />
+            //             </Switch>
+                        
+            //             <ResultsBar />
+            //             <Switch>
+            //                 <Route exact path='/' component={EmptyResults} />
+            //                 <Route path='/film/:id' component={ResultsBody} />
+            //                 <Route path='/search(/:inputValue)' component={ResultsBody} />
+            //                 <Redirect to='/not_found' />
+            //             </Switch>
+            //             <Footer/>
+            //         </div>
+            //     </Route>
+            // </Switch>
         );
     }
 }
@@ -69,4 +69,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Core);
+export default hot(module)(Core);

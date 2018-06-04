@@ -1,3 +1,5 @@
+import 'babel-polyfill';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -8,17 +10,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Switch } from 'react-router'; 
 import Core from './pages/core/core';
 
-import './index.scss';
+//import './index.scss';
 
-ReactDOM.render(
-        <PersistGate persistor={persistor}>
-            <Provider store={store}>
-                <Router>
-                    <Switch>
-                        <Core/>
-                    </Switch>
-                </Router>
-            </Provider>
-        </PersistGate>, 
+ReactDOM.render(<Core/>, 
 document.getElementById("root"));
 
