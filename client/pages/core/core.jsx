@@ -7,15 +7,25 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Switch, Redirect} from 'react-router';
 import { hot } from 'react-hot-loader';
 import { Provider } from 'react-redux';
+import Loadable from 'react-loadable';
+
+function MyLoadingComponent() {
+    return <div>Loading...</div>;
+}
 
 import { Footer } from '../../components/footer/footer';
 import { Nextflixroulette } from '../../components/nextflixroulette/nextflixroulette';
+import { NotFoundPage } from '../../components/not-found-page/not-found-page';
 import Header from '../../components/header/header';
 import ResultsBar from '../../components/results-bar/results-bar';
-import ResultsBody from '../../components/results-body/results-body';
+// import ResultsBody from '../../components/results-body/results-body';
+const ResultsBody = Loadable({
+    loader: () => import('../../components/results-body/results-body'),
+    loading: MyLoadingComponent,
+});
+
 import EmptyResults from '../../components/empty-results/empty-results';
 import FullFilmItem from '../../components/full-film-item/full-film-item';
-import { NotFoundPage } from '../../components/not-found-page/not-found-page';
 
 import './core.scss';
 import '../../mixins.scss';

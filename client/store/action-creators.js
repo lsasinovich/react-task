@@ -142,7 +142,7 @@ export function* watchFetchMoviesByGenres() {
 }
 
 export function* fullLoad(action) {
-    const genres = action.payload.id;
+    const id = action.payload.id;
 
     const response = yield call(fetch, `http://react-cdp-api.herokuapp.com/movies/${id}`);
     const results = yield response.json();

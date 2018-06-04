@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { setEmptyResults, returnToMainPage } from '../../store/action-creators';
 import './empty-results.scss';
+import '../results-body/results-body.scss';
 
 class EmptyResults extends React.Component {
     componentDidMount() {
@@ -11,8 +12,8 @@ class EmptyResults extends React.Component {
 
     render() {
         return (
-            <div>
-            <p className="empty-page">No films found</p>
+            <div className="results-body">
+                <p className="empty-page">No films found</p>
             </div>
         );
     }
