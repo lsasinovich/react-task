@@ -4,7 +4,7 @@ import { Nextflixroulette } from '../nextflixroulette/nextflixroulette';
 import './footer.scss';
 
 export const Footer = () => (
-    <div className="footer">
+    <div id="footer">
         <Nextflixroulette/>
     </div>
 );

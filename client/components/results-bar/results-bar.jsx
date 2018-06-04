@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import './results-bar.scss';
 import { ACTIONS, SORT, ITEM_COUNT_PER_PAGE } from '../../constants/app-constants';
-import { switchSortAction } from '../../store/action-creators';
+import { switchSortAsyncAction } from '../../store/action-creators';
 
 class ResultsBar extends React.Component {
 
@@ -19,8 +19,8 @@ class ResultsBar extends React.Component {
                         <p className="results-count">{this.props.user.resultsCount} movies found</p>
                         <div className="results-sort">
                             <p>Sort by</p>
-                            <p className={this.props.user.sort === "releaseDate" ? "cl-red" : "cl-black"} onClick={()=>this.props.switchSortAction("releaseDate", "release_date", this.props.user.inputValue, this.props.user.search)}>release date</p>
-                            <p className={this.props.user.sort === "rating" ? "cl-red" : "cl-black"} onClick={()=>this.props.switchSortAction("rating", "vote_average", this.props.user.inputValue, this.props.user.search)}>rating</p>
+                            <p className={this.props.user.sort === "releaseDate" ? "cl-red" : "cl-black"} onClick={()=>this.props.switchSortAsyncAction("releaseDate", "release_date", this.props.user.inputValue, this.props.user.search)}>release date</p>
+                            <p className={this.props.user.sort === "rating" ? "cl-red" : "cl-black"} onClick={()=>this.props.switchSortAsyncAction("rating", "vote_average", this.props.user.inputValue, this.props.user.search)}>rating</p>
                         </div>
                     </div> :
                     <p>Films by {this.props.user.fullItem.filmData.genres[0]} genre</p>
@@ -32,7 +32,9 @@ class ResultsBar extends React.Component {
     }
 };
 
-const mapDispatchToProps = { switchSortAction };
+const mapDispatchToProps = { 
+    switchSortAsyncAction 
+};
 
 const mapStateToProps = (state) => {
     return {

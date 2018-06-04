@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import './film-item.scss';
 import { ACTIONS } from '../../constants/app-constants';
-import { fullLoad } from '../../store/action-creators';
+import { fetchMoviesById } from '../../store/action-creators';
 import { Link } from 'react-router-dom';
 
 class FilmItem extends React.Component {
@@ -17,7 +17,7 @@ class FilmItem extends React.Component {
                 }
                 <div className="film-info">
                     <div>
-                        <Link to={`/film/${this.props.id}`} onClick={()=>this.props.fullLoad(this.props.id)}><p className="title">{this.props.title}</p></Link>
+                        <Link to={`/film/${this.props.id}`} onClick={()=>this.props.fetchMoviesById(this.props.id)}><p className="title">{this.props.title}</p></Link>
                         <p className="genre">{this.props.genres}</p>
                     </div>
                     <p className="year">{this.props.year}</p>
@@ -36,7 +36,7 @@ FilmItem.propTypes = {
 };
 
 const mapDispatchToProps = {
-    fullLoad
+    fetchMoviesById
 }
 
 const mapStateToProps = (state) => {

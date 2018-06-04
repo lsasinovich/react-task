@@ -23,13 +23,9 @@ class ResultsBody extends React.Component {
         )) : <EmptyResults />;
         
         return (
-            <ResultsBodyErrorBoundary>
-            <div>
                 <div className="results-body">
                     { children }   
                 </div>
-            </div>
-            </ResultsBodyErrorBoundary>
         );
     }
 };

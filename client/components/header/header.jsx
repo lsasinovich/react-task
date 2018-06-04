@@ -8,12 +8,12 @@ import FullFilmItem from '../full-film-item/full-film-item';
 
 import './header.scss';
 import { ACTIONS, SEARCH, SORT } from '../../constants/app-constants';
-import { updateInputValue, searchHandler, returnToMainPage, resetInputValue, switchSearch, getMovie, setSearchURL} from '../../store/action-creators';
+import { updateInputValue, searchHandler, returnToMainPage, resetInputValue, switchSearch, fetchMovies, setSearchURL} from '../../store/action-creators';
 
 class Header extends React.Component {
-    componentDidMount() {
+    componentWillMount() {
         if(!this.props.location || this.props.location.pathname === '/') return;
-        this.props.getMovie(this.props.user.sort, this.props.user.search, this.props.match.params.inputValue);
+        this.props.fetchMovies(this.props.user.sort, this.props.user.search, this.props.match.params.inputValue);
     }
 
     render() {
@@ -34,7 +34,7 @@ class Header extends React.Component {
                             if (event.key == 'Enter') { 
                                 this.props.history.push(`/search/${this.props.user.inputValue}`);
                                 this.props.setSearchURL(`/search/${this.props.user.inputValue}`);
-                                this.props.getMovie(this.props.user.sort, this.props.user.search, this.props.user.inputValue);
+                                this.props.fetchMovies(this.props.user.sort, this.props.user.search, this.props.user.inputValue);
                             }
                         }
                     }
@@ -54,7 +54,7 @@ class Header extends React.Component {
                     <Link to={`/search/${this.props.user.inputValue}`} 
                           onClick={()=>{
                               this.props.setSearchURL(`${this.props.user.inputValue}`);
-                              this.props.getMovie(this.props.user.sort, this.props.user.search, this.props.user.inputValue)}}>
+                              this.props.fetchMovies(this.props.user.sort, this.props.user.search, this.props.user.inputValue)}}>
                         <button className='btn search-button bg-red cl-white'>SEARCH</button>
                     </Link>
                 </div>
@@ -71,7 +71,7 @@ const mapDispatchToProps = {
     returnToMainPage, 
     resetInputValue, 
     switchSearch, 
-    getMovie,
+    fetchMovies,
     setSearchURL
 }
 

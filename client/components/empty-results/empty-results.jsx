@@ -11,7 +11,9 @@ class EmptyResults extends React.Component {
 
     render() {
         return (
+            <div>
             <p className="empty-page">No films found</p>
+            </div>
         );
     }
 } 

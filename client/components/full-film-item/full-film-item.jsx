@@ -3,20 +3,20 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { fullLoad, returnToMainPage, getMovie } from '../../store/action-creators';
+import { fetchMoviesById, returnToMainPage, fetchMovies } from '../../store/action-creators';
 
 import './full-film-item.scss';
 
 class FullFilmItem extends React.Component {
-    componentDidMount() {
-        this.props.fullLoad(this.props.match.params.id);
+    componentWillMount() {
+        this.props.fetchMoviesById(this.props.match.params.id);
     }
 
     render() {
         if (this.props.user.fullItem.filmData) {
         return (
             <div>
-            <Link to={`/search/${this.props.user.inputValue}`} onClick={()=>{this.props.returnToMainPage(); this.props.getMovie(this.props.user.sort, this.props.user.search, this.props.user.inputValue);}}><button className="btn return-button cl-red bg-white">SEARCH</button></Link>
+            <Link to={`/search/${this.props.user.inputValue}`} onClick={()=>{this.props.returnToMainPage(); this.props.fetchMovies(this.props.user.sort, this.props.user.search, this.props.user.inputValue);}}><button className="btn return-button cl-red bg-white">SEARCH</button></Link>
             <div className="full-film-item">
                 <img src={this.props.user.fullItem.filmData.poster_path} />
                 <div className="full-film-info">
@@ -43,9 +43,9 @@ class FullFilmItem extends React.Component {
 };
 
 const mapDispatchToProps = {
-    fullLoad,
+    fetchMoviesById,
     returnToMainPage,
-    getMovie
+    fetchMovies
 }
 
 const mapStateToProps = (state) => {

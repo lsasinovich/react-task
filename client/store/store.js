@@ -1,11 +1,12 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import storage from 'redux-persist/lib/storage';
-import thunk from 'redux-thunk';
-import { persistStore, persistReducer } from 'redux-persist';
+import thunkMiddleware from 'redux-thunk';
+import createSagaMiddleware, { END } from 'redux-saga';
 
 import { SORT, ACTIONS, INITIAL_STATE } from '../constants/app-constants';
+import { rootSaga } from './rootSaga';
 
-export function reducers (state = INITIAL_STATE, action) {
+export function reducer (state = INITIAL_STATE, action) {
     switch (action.type) {
         case ACTIONS.SET_EMPTY_RESULTS: {
             state = { 
@@ -105,7 +106,14 @@ export function reducers (state = INITIAL_STATE, action) {
     return state;
 }
 
-const reducer = persistReducer({key: 'root', storage },reducers);
-const store = createStore(reducer, compose(applyMiddleware(thunk)));
-let persistor = persistStore(store);
-export { store, persistor };
+const sagaMiddleware = createSagaMiddleware();
+
+export function configureStore(initialState) {
+  const store = createStore(reducer, initialState, applyMiddleware(sagaMiddleware));
+
+  sagaMiddleware.run(rootSaga);
+  store.runSaga = () => sagaMiddleware.run(rootSaga);
+  store.close = () => store.dispatch(END);
+
+  return store;
+};

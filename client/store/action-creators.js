@@ -1,4 +1,5 @@
 import { ACTIONS, SORT, SEARCH } from '../constants/app-constants';
+import { call, put, all, takeLatest } from 'redux-saga/effects';
 
 
 export const setEmptyResults = () => {
@@ -70,49 +71,99 @@ export const switchSearch = (search) => {
         type: ACTIONS.SWITCH_SEARCH,
         search: search
     };
-
 }
 
-export const getMovie = (sort, search, inputValue) => dispatch => {
-    inputValue = inputValue || '';
-    return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sort]}&sortOrder=desc&search=${inputValue}&searchBy=${SEARCH[search]}&limit=12`)
-      .then(response => response.json())
-      .then(json => dispatch(searchHandler(json, sort, search, inputValue)))
-      .catch(function(error) {
-        window.location.pathname = '/not_found';
-        console.log('Can not find films with this criteria');
-      });
+export const fetchMovies = (sort, search, inputValue) => {
+    console.log('here');
+    return {
+        type: ACTIONS.FETCH_MOVIES,
+        payload: {
+            sort: sort, 
+            search: search, 
+            inputValue: inputValue
+        }
+    }
 }
 
-export const getMoviesByGenres = (genres) => dispatch => {
-    console.log(`http://react-cdp-api.herokuapp.com/movies?search=${genres}&searchBy=genres&limit=12`);
-    return fetch(`http://react-cdp-api.herokuapp.com/movies?search=${genres}&searchBy=genres&limit=12`)
-          .then(response => response.json())
-          .then(json => {
-              dispatch(getMoviesByGenresAction(json))
-          })
+export const fetchMoviesByGenres = (genre) => {
+    return {
+        type: ACTIONS.FETCH_MOVIES_BY_GENRES,
+        payload: {
+            genre: genre
+        }
+    }
 }
 
-export const fullLoad = (id) => dispatch => {
-
-    return fetch(`http://react-cdp-api.herokuapp.com/movies/${id}`)
-          .then(response => response.json())
-          .then(json => {
-              dispatch(fullFilmLoad(json))
-              dispatch(getMoviesByGenres(json.genres[0]))
-          })
-          .catch(function(error) {
-            window.location.pathname = '/not_found';
-            console.log('Can not load this film');
-          });
+export const fetchMoviesById = (id) => {
+    return {
+        type: ACTIONS.FETCH_MOVIES_BY_ID,
+        payload: {
+            id: id
+        }
+    }
 }
 
-export const switchSortAction = (sort, stateSort, inputValue, search) => dispatch => {
-        return fetch(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sort]}&sortOrder=desc&search=${inputValue}&searchBy=${SEARCH[search]}&limit=12`)
-        .then(response => response.json())
-        .then(json => dispatch(switchSort(sort, json)))
-        .catch(function(error) {
-            window.location.pathname = '/not_found';
-            console.log('Can not switch sort');
-        });
+export const switchSortAsyncAction = (sort, stateSort, inputValue, search) => {
+    return {
+        type: ACTIONS.SWITCH_SORT_ASYNC_ACTION,
+        payload: {
+            sort: sort, 
+            stateSort: stateSort, 
+            inputValue: inputValue, 
+            search: search
+        }
+    }
+}
+
+export function* getMovie(action) {
+    const { sort, search, inputValue } = action.payload;
+    const value = inputValue || '';
+    const response = yield call(fetch, `http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sort]}&sortOrder=desc&search=${value}&searchBy=${SEARCH[search]}&limit=12`);
+    const results = yield response.json();
+  
+    yield put(searchHandler(results, sort, search, value));
+}
+
+export function* watchFetchMovies() {
+    yield takeLatest(ACTIONS.FETCH_MOVIES, getMovie);
+}
+
+export function* getMoviesByGenres(action) {
+    const genres = action.payload.genre;
+
+    const response = yield call(fetch, `http://react-cdp-api.herokuapp.com/movies?search=${genres}&searchBy=genres&limit=12`);
+    const results = yield response.json();
+  
+    yield put(getMoviesByGenresAction(results));
+}
+
+export function* watchFetchMoviesByGenres() {
+    yield takeLatest(ACTIONS.FETCH_MOVIES_BY_GENRES, getMoviesByGenres);
+}
+
+export function* fullLoad(action) {
+    const genres = action.payload.id;
+
+    const response = yield call(fetch, `http://react-cdp-api.herokuapp.com/movies/${id}`);
+    const results = yield response.json();
+  
+    yield put(fullFilmLoad(results));
+    yield put(getMoviesByGenres(results.genres[0]));
+}
+
+export function* watchFetchMoviesById() {
+    yield takeLatest(ACTIONS.FETCH_MOVIES_BY_ID, fullLoad);
+}
+
+export function* switchSortAction(action) {
+    const { sort, stateSort, inputValue, search } = action.payload;
+
+    const response = yield call(fetch, `http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sort]}&sortOrder=desc&search=${inputValue}&searchBy=${SEARCH[search]}&limit=12`);
+    const results = yield response.json();
+  
+    yield put(switchSort(sort, results));
+}
+
+export function* watchSwitchSort() {
+    yield takeLatest(ACTIONS.SWITCH_SORT_ASYNC_ACTION, switchSortAction);
 }
