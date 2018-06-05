@@ -138,7 +138,7 @@ export function* getMoviesByGenres(action) {
 }
 
 export function* watchFetchMoviesByGenres() {
-    yield takeLatest(ACTIONS.FETCH_MOVIES_BY_GENRES, getMoviesByGenres);
+    yield takeLatest(ACTIONS.FETCH_MOVIES_BY_GENRES, fetchMoviesByGenres);
 }
 
 export function* fullLoad(action) {
@@ -146,9 +146,12 @@ export function* fullLoad(action) {
 
     const response = yield call(fetch, `http://react-cdp-api.herokuapp.com/movies/${id}`);
     const results = yield response.json();
-  
-    yield put(fullFilmLoad(results));
-    yield put(getMoviesByGenres(results.genres[0]));
+    if(results.id) {
+        yield put(fullFilmLoad(results));
+        yield put(fetchMoviesByGenres(results.genres[0]));
+    } else {
+        window.location.pathname = '/not_found';
+    }
 }
 
 export function* watchFetchMoviesById() {

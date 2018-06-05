@@ -22,6 +22,7 @@ import ResultsBar from '../../components/results-bar/results-bar';
 const ResultsBody = Loadable({
     loader: () => import('../../components/results-body/results-body'),
     loading: MyLoadingComponent,
+    modules: ['myNamedChunk']
 });
 
 import EmptyResults from '../../components/empty-results/empty-results';

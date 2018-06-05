@@ -1,4 +1,5 @@
 import React from 'react';
+import Loadable from "react-loadable";
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import Core from '../client/pages/core/core';
@@ -31,14 +32,17 @@ export default function serverRenderer() {
     const store = configureStore();
     // This context object contains the results of the render
     const context = {};
+    const modules = [];
 
     const root = (
-      <Core
-        context={context}
-        location={req.url}
-        Router={StaticRouter}
-        store={store}
-      />
+      <Loadable.Capture report={m => modules.push(m)}>
+        <Core
+          context={context}
+          location={req.url}
+          Router={StaticRouter}
+          store={store}
+        />
+      </Loadable.Capture>
     );
 
     store.runSaga().done.then(() => {
