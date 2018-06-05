@@ -138,7 +138,7 @@ export function* getMoviesByGenres(action) {
 }
 
 export function* watchFetchMoviesByGenres() {
-    yield takeLatest(ACTIONS.FETCH_MOVIES_BY_GENRES, fetchMoviesByGenres);
+    yield takeLatest(ACTIONS.FETCH_MOVIES_BY_GENRES, getMoviesByGenres);
 }
 
 export function* fullLoad(action) {

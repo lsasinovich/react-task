@@ -4,7 +4,7 @@ import 'isomorphic-fetch';
 import React from 'react';
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Switch, Redirect} from 'react-router';
+import { Switch, Redirect, browserHistory} from 'react-router';
 import { hot } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import Loadable from 'react-loadable';
@@ -38,7 +38,7 @@ class Core extends React.Component {
         const { Router, location, context, store } = this.props;
         return (
             <Provider store={store}>
-                <Router>
+                <Router history={browserHistory} context={context} location={location}>
                     <Switch>
                         <Route exact path="/not_found" component={NotFoundPage} />
                         <Route path="/">
