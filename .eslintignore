@@ -1,0 +1,10 @@
+node_modules/
+dist/
+webpack.*
+/server
+coverage/
+.history/
+.vscode/
+.DS_Store/
+errorShots/
+.idea/
