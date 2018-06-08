@@ -4,7 +4,7 @@ import 'isomorphic-fetch';
 import React from 'react';
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Switch, Redirect, browserHistory} from 'react-router';
+import { Switch, Redirect, browserHistory } from 'react-router';
 import { hot } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import Loadable from 'react-loadable';
@@ -20,7 +20,7 @@ import Header from '../../components/header/header';
 import ResultsBar from '../../components/results-bar/results-bar';
 // import ResultsBody from '../../components/results-body/results-body';
 const ResultsBody = Loadable({
-    loader: () => import('../../components/results-body/results-body'),
+    loader: () => import ('../../components/results-body/results-body'),
     loading: MyLoadingComponent,
     modules: ['myNamedChunk']
 });
@@ -45,17 +45,17 @@ class Core extends React.Component {
                             <div className="core-page">
                                 <Switch>
                                     <Route path='/film/:id'>
-                                            {!this.props.user.results[0] ? 
-                                                <Header><Route path='/film/:id' component={FullFilmItem}/></Header>: 
-                                                null
-                                            }
+                                        {!this.props.user.results[0] ?
+                                            <Header><Route path='/film/:id' component={FullFilmItem} /></Header> :
+                                            null
+                                        }
                                     </Route>
 
                                     <Route path='/search/:inputValue' component={Header} />
                                     <Route path='/' component={Header} />
                                     <Redirect to='/not_found' />
                                 </Switch>
-                                
+
                                 <ResultsBar />
                                 <Switch>
                                     <Route exact path='/' component={EmptyResults} />
@@ -63,10 +63,10 @@ class Core extends React.Component {
                                     <Route path='/search/:inputValue' component={ResultsBody} />
                                     <Redirect to='/not_found' />
                                 </Switch>
-                                <Footer/>
+                                <Footer />
                             </div>
                         </Route>
-                    </Switch> 
+                    </Switch>
                 </Router>
             </Provider>
         );

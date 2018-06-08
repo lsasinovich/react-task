@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { setEmptyResults, returnToMainPage } from '../../store/action-creators';
+import { setEmptyResults } from '../../store/action-creators';
 import './empty-results.scss';
 import '../results-body/results-body.scss';
 
@@ -17,16 +17,14 @@ class EmptyResults extends React.Component {
             </div>
         );
     }
-} 
-
-const mapDispatchToProps = {
-    setEmptyResults
 }
 
-const mapStateToProps = (state) => {
-    return {
-        user: state
-    };
+const mapDispatchToProps = {
+    setEmptyResults,
 };
+
+const mapStateToProps = state => ({
+    user: state,
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(EmptyResults);

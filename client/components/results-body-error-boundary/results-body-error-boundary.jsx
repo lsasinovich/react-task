@@ -18,7 +18,7 @@ export class ResultsBodyErrorBoundary extends React.Component {
         if (this.state.hasError) {
             return <h1 className="error-boundary">Something went wrong.</h1>;
         }
-            return this.props.children;
+        return this.props.children;
     }
 }
 

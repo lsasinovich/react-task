@@ -1,55 +1,56 @@
 import React from 'react';
 import configureStore from 'redux-mock-store';
-import { fetch } from 'isomorphic-fetch';
 
 import ResultsBar from './results-bar';
-import { INITIAL_STATE, ACTIONS, SORT, ITEM_COUNT_PER_PAGE } from '../../constants/app-constants';
+import { INITIAL_STATE } from '../../constants/app-constants';
 
 const mockStore = configureStore();
-let store = mockStore({...INITIAL_STATE,resultsCount:135, inputValue: "twilight"});
+let store = mockStore({ ...INITIAL_STATE, resultsCount: 135, inputValue: 'twilight' });
 
-describe('<ResultsBar/>', function() {
-  // it('should switch sort by clicking', () => {
-  //   const wrapper = shallow(<ResultsBar store={store}/>).dive();
-  //   const instance = wrapper.instance();
-    
-  //   jest.spyOn(instance, 'switchSort');
-  //   wrapper.update();
-    
-  //   const buttons = wrapper.find('p');
-  //   buttons.at(3).simulate('click');
-  
-  //   expect(instance.switchSort).toHaveBeenCalled();
-  //   buttons.at(2).simulate('click');
-  
-  //   expect(instance.switchSort).toHaveBeenCalled();
-  //  });
+describe('<ResultsBar/>', () => {
+    // it('should switch sort by clicking', () => {
+    //   const wrapper = shallow(<ResultsBar store={store}/>).dive();
+    //   const instance = wrapper.instance();
 
-  it('should render ResultsBar and match snapshot', function() {
-      store = mockStore(INITIAL_STATE);
-      const wrapper = shallow(<ResultsBar store={store}/>).dive();
-      expect(wrapper).toMatchSnapshot();
-  });
+    //   jest.spyOn(instance, 'switchSort');
+    //   wrapper.update();
 
-  it('should render ResultsBar without results count', function() {
-    delete INITIAL_STATE.resultsCount;
-    store = mockStore(INITIAL_STATE);
-    const wrapper = shallow(<ResultsBar store={store}/>).dive();
+    //   const buttons = wrapper.find('p');
+    //   buttons.at(3).simulate('click');
 
-    expect(wrapper).toMatchSnapshot();
-  });
+    //   expect(instance.switchSort).toHaveBeenCalled();
+    //   buttons.at(2).simulate('click');
 
-  it('should render ResultsBar with fullItem', function() {
-    store = mockStore({...INITIAL_STATE,resultsCount:135, fullItem: {isActive: true}});
-    const wrapper = shallow(<ResultsBar store={store}/>).dive();
+    //   expect(instance.switchSort).toHaveBeenCalled();
+    //  });
 
-    expect(wrapper).toMatchSnapshot();
-  });
+    it('should render ResultsBar and match snapshot', () => {
+        store = mockStore(INITIAL_STATE);
+        const wrapper = shallow(<ResultsBar store={store} />).dive();
+        expect(wrapper).toMatchSnapshot();
+    });
 
-  it('should render ResultsBar with input value', function() {
-    store = mockStore({...INITIAL_STATE,resultsCount:135, fullItem: {isActive: true}, inputValue: "input"});
-    const wrapper = shallow(<ResultsBar store={store}/>).dive();
+    it('should render ResultsBar without results count', () => {
+        delete INITIAL_STATE.resultsCount;
+        store = mockStore(INITIAL_STATE);
+        const wrapper = shallow(<ResultsBar store={store} />).dive();
 
-    expect(wrapper).toMatchSnapshot();
-  });
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render ResultsBar with fullItem', () => {
+        store = mockStore({ ...INITIAL_STATE, resultsCount: 135, fullItem: { isActive: true } });
+        const wrapper = shallow(<ResultsBar store={store} />).dive();
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render ResultsBar with input value', () => {
+        store = mockStore({
+            ...INITIAL_STATE, resultsCount: 135, fullItem: { isActive: true }, inputValue: 'input',
+        });
+        const wrapper = shallow(<ResultsBar store={store} />).dive();
+
+        expect(wrapper).toMatchSnapshot();
+    });
 });

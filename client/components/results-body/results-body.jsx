@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { ResultsBar } from '../results-bar/results-bar';
 import FilmItem from '../film-item/film-item';
 import EmptyResults from '../empty-results/empty-results';
 import { ResultsBodyErrorBoundary } from '../results-body-error-boundary/results-body-error-boundary';
@@ -21,19 +19,19 @@ class ResultsBody extends React.Component {
                 genres={asset.genres.join(', ')}
             />
         )) : <EmptyResults />;
-        
+
         return (
+            <ResultsBodyErrorBoundary>
                 <div className="results-body">
-                    { children }   
+                    { children }
                 </div>
+            </ResultsBodyErrorBoundary>
         );
     }
-};
+}
 
-const mapStateToProps = (state) => {
-    return {
-        user: state
-    };
-};
+const mapStateToProps = state => ({
+    user: state,
+});
 
 export default connect(mapStateToProps)(ResultsBody);
