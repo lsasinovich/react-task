@@ -1,4 +1,4 @@
-const Loadable = require("react-loadable");
+const Loadable = require('react-loadable');
 const app = require('./app');
 
 const port = process.env.PORT || 3001;

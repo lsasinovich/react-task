@@ -9,7 +9,7 @@ module.exports = {
   output: {
     filename: 'js/[name].js',
     path: path.resolve('./dist'),
-    publicPath: '/'
+    publicPath: '/',
   },
 
   resolve: {
@@ -25,11 +25,11 @@ module.exports = {
       },
       {
         test: /\.(ttf|eot|svg|woff|png|jpg)$/,
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          name: "[path][name].[ext]?[hash]"
-        }
-      }
+          name: '[path][name].[ext]?[hash]',
+        },
+      },
     ],
   },
 

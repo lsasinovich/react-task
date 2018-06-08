@@ -23,7 +23,7 @@ module.exports = merge(common, {
         use: [
           isDevMod ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader'
+          'sass-loader',
         ],
       },
     ],

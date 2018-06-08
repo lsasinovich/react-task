@@ -17,7 +17,7 @@ module.exports = merge(common, {
         test: /\.scss$/,
         use: [
           'css-loader/locals', // It doesn't embed CSS but only exports the identifier mappings.
-          'sass-loader'
+          'sass-loader',
         ],
       },
     ],

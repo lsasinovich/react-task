@@ -1,0 +1,49 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 8,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "rules": {
+        "prefer-destructuring": ["error", {"object": false, "array": false}],
+        "no-default-export": true,
+        "max-len": [
+            1,
+            120,
+            2,
+            {
+                "ignoreComments": true
+            }
+        ],
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "import/newline-after-import": [2],
+        "import/extensions": [0],
+        "import/no-absolute-path": [0],
+        "import/no-extraneous-dependencies": [0],
+        "import/no-named-as-default": [0],
+        "import/no-unresolved": [0]
+    },
+    "extends": [
+        "airbnb-base"
+    ],
+    "plugins": [
+        "import",
+        "react",
+        "jsx-a11y",
+        "jest"
+    ],
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jest/globals": true
+    },
+    "globals": {
+        "document": false,
+        "browser": true
+    }
+}
