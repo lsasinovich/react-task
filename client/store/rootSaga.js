@@ -4,20 +4,20 @@ import {
   watchFetchMovies,
   watchFetchMoviesById,
   watchSwitchSort,
-  watchFetchMoviesByGenres,
+  watchFetchMoviesByGenres
 } from './action-creators';
 
 function* moviesSaga() {
-  yield all([
-    watchFetchMovies(),
-    watchFetchMoviesById(),
-    watchSwitchSort(),
-    watchFetchMoviesByGenres(),
-  ]);
-}
+    yield all([
+      watchFetchMovies(),
+      watchFetchMoviesById(),
+      watchSwitchSort(),
+      watchFetchMoviesByGenres()
+    ]);
+  }
 
-export default function* rootSaga() {
-  yield all([
-    moviesSaga(),
-  ]);
-}
+  export function* rootSaga() {
+    yield all([
+        moviesSaga(),
+    ]);
+  }
