@@ -1,18 +1,36 @@
+//@flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import './film-item.scss';
 import { fetchMoviesById } from '../../store/action-creators';
 
-class FilmItem extends React.Component {
+type OwnProps = {
+    id: number,
+    title: string,
+    posterUrl: string,
+    genres: string,
+    year: number,
+};
+
+type StateProps = {
+    user: any
+};
+
+type DispatchProps = {
+    fetchMoviesById: Function,
+};
+
+type Props = StateProps & DispatchProps & OwnProps;
+
+class FilmItem extends React.Component<Props> {
     render() {
         return (
             <div className="film-item">
-                { this.props.posterUrl ?
-                    <img src={this.props.posterUrl}/> :
-                    <img src={require('../../images/noposter.jpg')}/>
+                {this.props.posterUrl ?
+                    <img src={this.props.posterUrl} /> :
+                    <img src={require('../../images/noposter.jpg')} />
                 }
                 <div className="film-info">
                     <div>
@@ -26,19 +44,11 @@ class FilmItem extends React.Component {
     }
 }
 
-FilmItem.propTypes = {
-    id: PropTypes.number,
-    title: PropTypes.string,
-    posterUrl: PropTypes.string,
-    genres: PropTypes.string,
-    year: PropTypes.number,
-};
-
 const mapDispatchToProps = {
     fetchMoviesById,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) : StateProps => ({
     user: state,
 });
 

@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { connect } from 'react-redux';
 import FilmItem from '../film-item/film-item';
@@ -6,7 +7,23 @@ import { ResultsBodyErrorBoundary } from '../results-body-error-boundary/results
 
 import './results-body.scss';
 
-class ResultsBody extends React.Component {
+type Props = {
+    user: {
+        results: {
+            data: [
+                {
+                    id: number,
+                    title: string,
+                    poster_path: string,
+                    release_date: string,
+                    genres: Array<string>,
+                }]
+        },
+
+    },
+};
+
+class ResultsBody extends React.Component<Props> {
     render() {
         const assets = this.props.user.results;
         const children = assets.data[0] ? assets.data.map(asset => (
@@ -23,7 +40,7 @@ class ResultsBody extends React.Component {
         return (
             <ResultsBodyErrorBoundary>
                 <div className="results-body">
-                    { children }
+                    {children}
                 </div>
             </ResultsBodyErrorBoundary>
         );

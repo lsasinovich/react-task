@@ -1,3 +1,4 @@
+//@flow
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -15,7 +16,43 @@ import {
     setSearchURL,
 } from '../../store/action-creators';
 
-class Header extends React.Component {
+type OwnProps = {
+    location: {
+        pathname: string
+    },
+    match: {
+        params: {
+            inputValue: string,
+        }
+    },
+    history: any,
+    children: any
+}
+
+type StateProps = {
+    user: {
+        inputValue: string,
+        fullItem: {
+            isActive: boolean
+        },
+        sort: string,
+        search: string
+    },
+};
+
+type DispatchProps = {
+    updateInputValue: Function,
+    searchHandler: Function,
+    returnToMainPage: Function,
+    resetInputValue: Function,
+    switchSearch: Function,
+    fetchMovies: Function,
+    setSearchURL: Function,
+};
+
+type Props = StateProps & DispatchProps & OwnProps;
+
+class Header extends React.Component<Props> {
     componentWillMount() {
         if (!this.props.location || this.props.location.pathname === '/') return;
         this.props.fetchMovies(this.props.user.sort, this.props.user.search, this.props.match.params.inputValue);
@@ -81,7 +118,7 @@ const mapDispatchToProps = {
     setSearchURL,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) : StateProps => ({
     user: state,
 });
 

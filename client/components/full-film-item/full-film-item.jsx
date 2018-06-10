@@ -1,3 +1,4 @@
+//@flow
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -6,7 +7,43 @@ import { fetchMoviesById, returnToMainPage, fetchMovies } from '../../store/acti
 
 import './full-film-item.scss';
 
-class FullFilmItem extends React.Component {
+type OwnProps = {
+    match: {
+        params: {
+            id: number,
+        }
+    }
+}
+
+type StateProps = {
+    user: {
+        fullItem: {
+            filmData: {
+                vote_average: number,
+                inputValue: string,
+                release_date: string,
+                runtime: number,
+                overview: string,
+                poster_path: string,
+                title: string,
+                tagline: string,
+            }
+        },
+        inputValue: string,
+        search: string,
+        sort: string
+    },
+};
+
+type DispatchProps = {
+    fetchMoviesById: Function,
+    returnToMainPage: Function,
+    fetchMovies: Function,
+};
+
+type Props = StateProps & DispatchProps & OwnProps;
+
+class FullFilmItem extends React.Component<Props> {
     componentWillMount() {
         this.props.fetchMoviesById(this.props.match.params.id);
     }
@@ -47,7 +84,7 @@ const mapDispatchToProps = {
     fetchMovies,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) : StateProps => ({
     user: state,
 });
 

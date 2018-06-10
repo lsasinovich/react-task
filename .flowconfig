@@ -1,0 +1,18 @@
+[ignore]
+.*\.test\.js
+<PROJECT_ROOT>/node_modules/.*
+<PROJECT_ROOT>/node_modules/react-hot-loader/.*
+<PROJECT_ROOT>/flow-typed/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/flow/SCSSFlowStub.js.flow'
+module.name_mapper.extension='jsx' -> '<PROJECT_ROOT>/flow/JSXFlowStub.js.flow'
+module.name_mapper.extension='js' -> '<PROJECT_ROOT>/flow/JSFlowStub.js.flow'
+[strict]

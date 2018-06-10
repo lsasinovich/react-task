@@ -1,3 +1,4 @@
+//@flow
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -5,7 +6,11 @@ import { setEmptyResults } from '../../store/action-creators';
 import './empty-results.scss';
 import '../results-body/results-body.scss';
 
-class EmptyResults extends React.Component {
+type Props = {
+    setEmptyResults: Function,
+}
+
+class EmptyResults extends React.Component<Props>{
     componentDidMount() {
         this.props.setEmptyResults();
     }

@@ -1,10 +1,32 @@
+// @flow
 import React from 'react';
 import { connect } from 'react-redux';
 
 import './results-bar.scss';
 import { switchSortAsyncAction } from '../../store/action-creators';
 
-class ResultsBar extends React.Component {
+type StateProps = {
+    user: {
+        inputValue: string,
+        sort: string,
+        search: string,
+        resultsCount: number,
+        fullItem: {
+            isActive: boolean,
+            filmData: {
+                genres: any
+            },
+        }
+    },
+};
+
+type DispatchProps = {
+    switchSortAsyncAction: Function,
+}
+
+type Props = StateProps & DispatchProps;
+
+class ResultsBar extends React.Component<Props> {
     render() {
         return (
             <div className="results-bar">
@@ -32,7 +54,7 @@ const mapDispatchToProps = {
     switchSortAsyncAction,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state): StateProps => ({
     user: state,
 });
 
