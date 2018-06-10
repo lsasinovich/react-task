@@ -1,9 +1,8 @@
 import { configure } from '@storybook/react';
+import 'babel-polyfill';
 
-// automatically import all files ending in *.stories.js
-const req = require.context('../client/stories', true, /.stories.js$/);
 function loadStories() {
-  req.keys().forEach(filename => req(filename));
+  require('../stories/index.stories.js');
 }
 
 configure(loadStories, module);

@@ -1,0 +1,88 @@
+@import '../mixins.scss';
+
+.film-item {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+    
+
+    img {
+        width: 200px;
+        height: 320px;
+    }
+
+    .film-info {
+        width: 180px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 10px;
+        margin: 0;
+        font-weight: 700;
+        
+        div {
+            width: 100px;
+            margin-right: 10px;
+
+            .title {
+                margin-bottom: 8px;
+                font-size: 12px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+    
+            .genre {
+                font-size: 9px;
+            }
+        }
+
+        .year {
+            width: 35px;
+            padding: 2px 4px;
+            border: 1px solid $black;
+            font-size: 10px;
+        }
+    }
+}
+@media screen and ( min-width: $xlarge ) {
+    .film-item {
+        width: 25%;
+    }
+}
+
+@media screen and ( max-width: $medium ) {
+    .film-item {
+        width: 50%;
+    }
+}
+
+@media screen and ( max-width: $small ) {
+    .film-item {
+        width: 100%;
+        margin-bottom: 20px;
+    
+        .film-info {
+            div {
+                width: 170px;
+                margin-right: 10px;
+    
+                .title {
+                    font-size: 14px;
+                }
+        
+                .genre {
+                    font-size: 11px;
+                }
+            }
+    
+            .year {
+                font-size: 10px;
+            }
+        }
+    }
+}

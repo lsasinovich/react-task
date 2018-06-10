@@ -12,7 +12,26 @@ module.exports = {
   ],
   module: {
     rules: [
-      // add your custom rules.
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.(js|jsx)?$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      },
+      {
+        test: /\.(ttf|eot|svg|woff|png|jpg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]?[hash]',
+        }
+      }
     ],
   },
 };
