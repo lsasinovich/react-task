@@ -11,6 +11,10 @@ $xlarge: 1200px;
 $medium: 780px;
 $small: 480px;
 
+.d-flex {
+    display: flex;
+}
+
 .bg-white {
     background-color: $white;
 }
@@ -40,62 +44,4 @@ $small: 480px;
     border: none;
     border-radius: 0;
     font-weight: 600;
-}
-.genre-button {
-    padding: 5px 20px;
-    margin: 0 10px;
-    font-size: 14px;
-}
-
-.title-button {
-    font-size: 14px;
-    padding: 5px 20px;
-}
-
-.search-button {
-    font-size: 16px;
-    padding: 5px 40px;
-}
-
-.return-button {
-    position: absolute;
-    top: 10px;
-    right: 0;
-    padding: 5px 20px;
-    font-size: 14px;
-}
-
-@media screen and ( max-width: $medium ) {
-    .genre-button {
-        font-size: 12px;
-        padding: 5px 15px;
-    }
-
-    .title-button {
-        font-size: 12px;
-        padding: 5px 15px;
-    }
-    
-    .search-button {
-        font-size: 14px;
-        padding: 5px 20px;
-    }
-}
-
-
-@media screen and ( max-width: $small ) {
-    .genre-button {
-        font-size: 10px;
-        padding: 5px;
-    }
-
-    .title-button {
-        font-size: 10px;
-        padding: 5px;
-    }
-    
-    .search-button {
-        font-size: 11px;
-        padding: 5px;
-    }
 }
