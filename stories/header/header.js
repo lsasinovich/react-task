@@ -6,7 +6,6 @@ import './header.scss';
 
 export function Header(props) {
     const user = props.user;
-    console.log(props.hi);
     return (
         <div className="header">
             <div className="return-div">
@@ -14,7 +13,7 @@ export function Header(props) {
             </div>
             { !user.fullItem.isActive &&
                 <div>
-                    <p className="find-movie" onClick={() => props.hi()}>FIND YOUR MOVIE</p>
+                    <p className="find-movie">FIND YOUR MOVIE</p>
                     <div className="search-wrapper">
                         <input className="search-bar"
                             placeholder="Let's find your movie"

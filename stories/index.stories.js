@@ -4,6 +4,8 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
+import { Map } from 'immutable';
+
 import { Button, Welcome } from '@storybook/react/demo';
 
 import { EmptyResults } from './empty-page/empty-results';
@@ -32,7 +34,7 @@ storiesOf('Footer', module).add('default', () => <Footer />);
 storiesOf('Netflixroulette', module).add('default', () => <Netflixroulette />);
 storiesOf('Not found page', module).add('default', () => <NotFoundPage />);
 
-const resultsBarProps = {
+const resultsBarProps = Map({
     inputValue: 'iron man',
     sort: 'rating',
     search: 'title',
@@ -43,58 +45,29 @@ const resultsBarProps = {
             genres: [],
         },
     },
-};
+});
 
 const resultsBarPropsWithRatingSort = { ...resultsBarProps };
-
-storiesOf('Results Bar', module).add('sort by rating', () => <ResultsBar user={resultsBarPropsWithRatingSort} />);
-
-const resultsBarPropsWithReleaseDateSort = {
-    ...resultsBarProps,
-    sort: 'releaseDate',
-};
-
-storiesOf('Results Bar', module).add('sort by release date', () =>
-    <ResultsBar user={
-        resultsBarPropsWithReleaseDateSort
-    } />);
-
-const resultsBarPropsWithoutResults = {
-    ...resultsBarProps,
-    resultsCount: 0,
-};
-storiesOf('Results Bar', module).add('without results', () => <ResultsBar user={resultsBarPropsWithoutResults} />);
-
-const resultsBarPropsWithFullItem = {
-    ...resultsBarProps,
-    fullItem: {
-        isActive: true,
-        filmData: {
-            genres: ['Drama'],
-        },
+const resultsBarPropsWithReleaseDateSort = resultsBarProps.set('sort', 'releaseDate');
+const resultsBarPropsWithoutResults = resultsBarProps.set('resultsCount', 0);
+const resultsBarPropsWithFullItem = resultsBarProps.set('fullItem', {
+    isActive: true,
+    filmData: {
+        genres: ['Drama'],
     },
-};
-storiesOf('Results Bar', module).add('with full item', () => <ResultsBar user={resultsBarPropsWithFullItem} />);
+});
 
-const filmItemProps = {
+const filmItemProps = Map({
     id: 123456,
     title: 'Iron man',
     posterUrl: '',
     genres: ['Drama', 'Comedy'],
     year: 1999,
-};
-storiesOf('Film Item', module).add('without poster image', () => <FilmItem user={filmItemProps} />);
+});
 
-const filmItemPropsWithImage = {
-    id: 123456,
-    title: 'Iron man',
-    posterUrl: './iron.jpg',
-    genres: ['Drama', 'Comedy'],
-    year: 1999,
-};
-storiesOf('Film Item', module).add('with poster image', () => <FilmItem user={filmItemPropsWithImage} />);
+const filmItemPropsWithImage = filmItemProps.set('posterUrl', './iron.jpg');
 
-const FullFilmItemProps = {
+const FullFilmItemProps = Map({
     fullItem: {
         filmData: {
             vote_average: 9.4,
@@ -110,31 +83,36 @@ const FullFilmItemProps = {
     inputValue: 'Iron Man',
     search: 'title',
     sort: 'rating',
-};
+});
 
-storiesOf('Full Film Item', module).add('with all information', () => <FullFilmItem user={FullFilmItemProps} />);
-
-
-const headerProps = {
+const headerPropsWithTitleSearch = Map({
     inputValue: 'Iron Man',
     fullItem: {
         isActive: false,
     },
     sort: 'rating',
     search: 'title',
-};
+});
 
-storiesOf('Header', module).add('without results', () => <Header user={headerProps} />);
+const headerPropsWithGenreSearch = headerPropsWithTitleSearch.set('search', 'genres');
 
+storiesOf('Results Bar', module).add('sort by rating', () => <ResultsBar user={resultsBarPropsWithRatingSort} />);
 
-const headerPropsWithGenreSearch = {
-    inputValue: 'Iron Man',
-    fullItem: {
-        isActive: false,
-    },
-    sort: 'rating',
-    search: 'genres',
-};
+storiesOf('Results Bar', module).add('sort by release date', () =>
+    <ResultsBar user={
+        resultsBarPropsWithReleaseDateSort
+    } />);
 
-storiesOf('Header', module).add('with genre search', () => <Header user={headerPropsWithGenreSearch} hi={linkTo('Button')}/>);
+storiesOf('Results Bar', module).add('without results', () => <ResultsBar user={resultsBarPropsWithoutResults} />);
 
+storiesOf('Results Bar', module).add('with full item', () => <ResultsBar user={resultsBarPropsWithFullItem} />);
+
+storiesOf('Film Item', module).add('without poster image', () => <FilmItem user={filmItemProps} />);
+
+storiesOf('Film Item', module).add('with poster image', () => <FilmItem user={filmItemPropsWithImage} />);
+
+storiesOf('Full Film Item', module).add('with all information', () => <FullFilmItem user={FullFilmItemProps} />);
+
+storiesOf('Header', module).add('with title search', () => <Header user={headerPropsWithTitleSearch} />);
+
+storiesOf('Header', module).add('with genre search', () => <Header user={headerPropsWithGenreSearch} />);

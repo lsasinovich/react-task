@@ -1,6 +1,8 @@
 // @flow
 import React from 'react';
 import { connect } from 'react-redux';
+import { Map } from 'immutable';
+
 import FilmItem from '../film-item/film-item';
 import EmptyResults from '../empty-results/empty-results';
 import { ResultsBodyErrorBoundary } from '../results-body-error-boundary/results-body-error-boundary';
@@ -25,7 +27,7 @@ type Props = {
 
 class ResultsBody extends React.Component<Props> {
     render() {
-        const assets = this.props.user.results;
+        const assets = Map(this.props.user.results);
         const children = assets.data[0] ? assets.data.map(asset => (
             <FilmItem
                 key={asset.id}
