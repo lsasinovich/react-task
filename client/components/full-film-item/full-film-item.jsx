@@ -59,7 +59,7 @@ class FullFilmItem extends React.Component<Props> {
                             this.props.returnToMainPage();
                             this.props.fetchMovies(this.props.user.sort, this.props.user.search, this.props.user.inputValue);
                         }
-                    }>
+                        }>
                         <Button size="sm" className="return-button">SEARCH</Button>
                     </Link>
                     <div className="d-flex">
