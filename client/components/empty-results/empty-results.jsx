@@ -10,7 +10,7 @@ type Props = {
     setEmptyResults: Function,
 }
 
-class EmptyResults extends React.Component<Props>{
+class EmptyResults extends React.Component<Props> {
     componentDidMount() {
         this.props.setEmptyResults();
     }

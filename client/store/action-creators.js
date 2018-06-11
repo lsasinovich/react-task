@@ -132,7 +132,6 @@ export function* switchSortAction(action) {
         sort, inputValue, search,
     } = action.payload;
 
-    console.log(`http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sort]}&sortOrder=desc&search=${inputValue}&searchBy=${SEARCH[search]}&limit=12`);
     const response = yield call(fetch, `http://react-cdp-api.herokuapp.com/movies?sortBy=${SORT[sort]}&sortOrder=desc&search=${inputValue}&searchBy=${SEARCH[search]}&limit=12`);
     const results = yield response.json();
 

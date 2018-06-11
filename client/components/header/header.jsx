@@ -17,6 +17,9 @@ import {
     setSearchURL,
 } from '../../store/action-creators';
 
+import Cross from '../../images/cross.png';
+import Arrow from '../../images/arrow.png';
+
 type OwnProps = {
     location: {
         pathname: string
@@ -77,25 +80,46 @@ class Header extends React.Component<Props> {
                                         if (event.key === 'Enter') {
                                             this.props.history.push(`/search/${this.props.user.inputValue}`);
                                             this.props.setSearchURL(`/search/${this.props.user.inputValue}`);
-                                            this.props.fetchMovies(this.props.user.sort, this.props.user.search, this.props.user.inputValue);
+                                            this.props.fetchMovies(
+                                                this.props.user.sort,
+                                                this.props.user.search,
+                                                this.props.user.inputValue,
+                                            );
                                         }
                                     }} />
                                 {this.props.user.inputValue === '' ?
-                                    <img className="arrow" src={require('../../images/arrow.png')} /> :
-                                    <img className="cross" src={require('../../images/cross.png')} onClick={() => this.props.resetInputValue()} />
+                                    <img className="arrow" src={Arrow} /> :
+                                    <img className="cross" src={Cross} onClick={() => this.props.resetInputValue()} />
                                 }
                             </InputGroup>
                         </div>
                         <div className="button-group cl-white">
                             <div>
                                 <p className="search-by">SEARCH BY</p>
-                                <Button className="genre-button" size='sm' color={this.props.user.search === 'genres' ? 'danger' : 'secondary'} onClick={() => this.props.switchSearch('genres')}>GENRE</Button>
-                                <Button size='sm' color={this.props.user.search === 'title' ? 'danger' : 'secondary'} onClick={() => this.props.switchSearch('title')}>TITLE</Button>
+                                <Button
+                                    className="genre-button"
+                                    size='sm'
+                                    color={this.props.user.search === 'genres' ? 'danger' : 'secondary'}
+                                    onClick={() => this.props.switchSearch('genres')}
+                                >
+                                    GENRE
+                                </Button>
+                                <Button
+                                    size='sm'
+                                    color={this.props.user.search === 'title' ? 'danger' : 'secondary'}
+                                    onClick={() => this.props.switchSearch('title')}
+                                >
+                                    TITLE
+                                </Button>
                             </div>
                             <Link to={`/search/${this.props.user.inputValue}`}
                                 onClick={() => {
                                     this.props.setSearchURL(`${this.props.user.inputValue}`);
-                                    this.props.fetchMovies(this.props.user.sort, this.props.user.search, this.props.user.inputValue);
+                                    this.props.fetchMovies(
+                                        this.props.user.sort,
+                                        this.props.user.search,
+                                        this.props.user.inputValue,
+                                    );
                                 }}>
                                 {this.props.user.inputValue ?
                                     <Button color="danger" size="sm">SEARCH</Button> :
@@ -125,5 +149,3 @@ const mapStateToProps = (state): StateProps => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
-
-// className='btn search-button bg-red cl-white'
