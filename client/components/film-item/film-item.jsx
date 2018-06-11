@@ -2,7 +2,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Map } from 'immutable';
+import {
+    Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button
+} from 'reactstrap';
 
 import './film-item.scss';
 import { fetchMoviesById } from '../../store/action-creators';
@@ -29,17 +32,21 @@ class FilmItem extends React.Component<Props> {
     render() {
         return (
             <div className="film-item">
-                {this.props.posterUrl ?
-                    <img src={this.props.posterUrl} /> :
-                    <img src={require('../../images/noposter.jpg')} />
-                }
-                <div className="film-info">
-                    <div>
-                        <Link to={`/film/${this.props.id}`} onClick={() => this.props.fetchMoviesById(this.props.id)}><p className="title">{this.props.title}</p></Link>
-                        <p className="genre">{this.props.genres}</p>
-                    </div>
-                    <p className="year">{this.props.year}</p>
-                </div>
+                <Card>
+                    {this.props.posterUrl ?
+                        <Link to={`/film/${this.props.id}`} onClick={() => this.props.fetchMoviesById(this.props.id)}>
+                            <CardImg top height="100%" src={this.props.posterUrl} alt="Card image cap" />
+                        </Link> :
+                        <CardImg top height="100%" src={require('../../images/noposter.jpg')} alt="Card image cap" />
+                    }
+                    <CardBody className="film-info">
+                        <Link to={`/film/${this.props.id}`} onClick={() => this.props.fetchMoviesById(this.props.id)}>
+                            <CardTitle>{this.props.title}</CardTitle>
+                        </Link>
+                        <CardSubtitle>{this.props.genres}</CardSubtitle>
+                        <CardText>{this.props.year}</CardText>
+                    </CardBody>
+                </Card>
             </div>
         );
     }
@@ -49,7 +56,7 @@ const mapDispatchToProps = {
     fetchMoviesById,
 };
 
-const mapStateToProps = (state) : StateProps => ({
+const mapStateToProps = (state): StateProps => ({
     user: state,
 });
 

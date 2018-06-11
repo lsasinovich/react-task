@@ -1,22 +1,30 @@
 @import '../../mixins.scss';
 
 .film-item {
-    width: 33%;
+    width: 15%;
+    margin: 0 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 15px;
-    
 
-    img {
-        width: 200px;
-        height: 320px;
+    .card {
+        display: flex;
+        flex-direction: column;
+        border: none;
+
+        .card-title {
+            color: $red;
+        }
+
+        img {
+            width: 100%;
+        }
     }
 
     .film-info {
-        width: 180px;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: flex-start;
         justify-content: space-between;
         padding: 10px;
@@ -24,7 +32,6 @@
         font-weight: 700;
         
         div {
-            width: 100px;
             margin-right: 10px;
 
             .title {
@@ -35,54 +42,21 @@
                     cursor: pointer;
                 }
             }
-    
-            .genre {
-                font-size: 9px;
-            }
         }
-
-        .year {
-            width: 35px;
-            padding: 2px 4px;
-            border: 1px solid $black;
-            font-size: 10px;
-        }
-    }
-}
-@media screen and ( min-width: $xlarge ) {
-    .film-item {
-        width: 25%;
     }
 }
 
 @media screen and ( max-width: $medium ) {
     .film-item {
-        width: 50%;
+        width: 30%;
+        margin: 0 10%;
     }
 }
 
 @media screen and ( max-width: $small ) {
     .film-item {
-        width: 100%;
+        width: 70%;
+        margin: 0 15%;
         margin-bottom: 20px;
-    
-        .film-info {
-            div {
-                width: 170px;
-                margin-right: 10px;
-    
-                .title {
-                    font-size: 14px;
-                }
-        
-                .genre {
-                    font-size: 11px;
-                }
-            }
-    
-            .year {
-                font-size: 10px;
-            }
-        }
     }
 }

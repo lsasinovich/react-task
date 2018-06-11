@@ -63,7 +63,9 @@ class Core extends React.Component<Props> {
                                 <Switch>
                                     <Route path='/film/:id'>
                                         {!this.props.user.results[0] ?
-                                            <Header location={location} history={browserHistory}><Route path='/film/:id' component={FullFilmItem} /></Header> :
+                                            <Header location={location} history={browserHistory}>
+                                                <Route path='/film/:id' component={FullFilmItem} />
+                                            </Header> :
                                             null
                                         }
                                     </Route>
