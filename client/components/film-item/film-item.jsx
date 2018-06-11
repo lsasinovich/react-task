@@ -1,11 +1,12 @@
-//@flow
+// @flow
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Map } from 'immutable';
 
 import './film-item.scss';
 import { fetchMoviesById } from '../../store/action-creators';
+
+import NoPoster from '../../images/noposter.jpg';
 
 type OwnProps = {
     id: number,
@@ -31,7 +32,7 @@ class FilmItem extends React.Component<Props> {
             <div className="film-item">
                 {this.props.posterUrl ?
                     <img src={this.props.posterUrl} /> :
-                    <img src={require('../../images/noposter.jpg')} />
+                    <img src={NoPoster} />
                 }
                 <div className="film-info">
                     <div>
