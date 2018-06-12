@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './full-film-item.scss';
+import { Iron } from './iron.jpg';
 
 export function FullFilmItem(newUser) {
     const user = newUser.user;
@@ -10,7 +11,7 @@ export function FullFilmItem(newUser) {
             <div>
                 <button className="btn return-button cl-red bg-white">SEARCH</button>
                 <div className="full-film-item">
-                    <img src={require('./iron.jpg')} />
+                    <img src={Iron} />
                     <div className="full-film-info">
                         <div className="title-and-rating">
                             <p className="title">{user.fullItem.filmData.title}</p>

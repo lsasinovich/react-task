@@ -1,6 +1,8 @@
 import React from 'react';
 
 import './film-item.scss';
+import NoPoster from './noposter.jpg';
+import Iron from './iron.jpg';
 
 export function FilmItem(newUser) {
     const user = newUser.user;
@@ -8,8 +10,8 @@ export function FilmItem(newUser) {
     return (
         <div className="film-item">
             {user.posterUrl ?
-                <img src={require('./iron.jpg')} /> :
-                <img src={require('./noposter.jpg')} />
+                <img src={Iron} /> :
+                <img src={NoPoster} />
             }
             <div className="film-info">
                 <div>

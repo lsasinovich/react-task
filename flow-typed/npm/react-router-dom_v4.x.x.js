@@ -1,5 +1,5 @@
-// flow-typed signature: a1ee87e08f5b14f9f9d369d4f03b173d
-// flow-typed version: 054fe1a852/react-router-dom_v4.x.x/flow_>=v0.63.x
+// flow-typed signature: fe714a602c89b76a1a69c9d10cac64e1
+// flow-typed version: 0e60d78d09/react-router-dom_v4.x.x/flow_>=v0.63.x
 
 declare module "react-router-dom" {
   declare export class BrowserRouter extends React$Component<{|
@@ -146,7 +146,8 @@ declare module "react-router-dom" {
   |}> {}
 
   declare export class Switch extends React$Component<{|
-    children?: React$Node
+    children?: React$Node,
+    location?: Location
   |}> {}
 
   declare export function withRouter<P: {}, Component: React$ComponentType<P>>(

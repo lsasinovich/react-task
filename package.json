@@ -15,7 +15,8 @@
     "flow": "flow",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "getstorybook": "getstorybook",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "f": "flow-typed"
   },
   "author": "Lizaveta Sasinovich",
   "license": "ISC",
@@ -43,7 +44,8 @@
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.2",
     "redux-persist": "^5.9.1",
-    "redux-saga": "^0.16.0"
+    "redux-saga": "^0.16.0",
+    "reselect": "^3.0.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.7",

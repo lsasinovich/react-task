@@ -46,7 +46,6 @@ type Props = StateProps & DispatchProps & OwnProps;
 
 class FullFilmItem extends React.Component<Props> {
     componentWillMount() {
-        console.log(this.props);
         this.props.fetchMoviesById(this.props.match.params.id);
     }
 

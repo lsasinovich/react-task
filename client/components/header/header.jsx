@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { InputGroup, Input, Button } from 'reactstrap';
+import type { ContextRouter } from 'react-router';
 
 import { Nextflixroulette } from '../nextflixroulette/nextflixroulette';
 
@@ -54,7 +55,7 @@ type DispatchProps = {
     setSearchURL: Function,
 };
 
-type Props = StateProps & DispatchProps & OwnProps;
+type Props = StateProps & DispatchProps & OwnProps & ContextRouter;
 
 class Header extends React.Component<Props> {
     componentWillMount() {
