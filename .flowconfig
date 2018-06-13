@@ -3,6 +3,9 @@
 <PROJECT_ROOT>/node_modules/.*
 <PROJECT_ROOT>/node_modules/react-hot-loader/.*
 <PROJECT_ROOT>/flow-typed/.*
+<PROJECT_ROOT>/client/components/header/header.jsx
+<PROJECT_ROOT>/client/pages/core/core.jsx
+<PROJECT_ROOT>/client/index.jsx
 
 [include]
 

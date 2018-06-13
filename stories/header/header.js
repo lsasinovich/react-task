@@ -29,12 +29,18 @@ export function Header(props) {
                         <div>
                             <p className="search-by">SEARCH BY</p>
                             <button
-                                className={`btn genre-button ${user.search === 'genres' ? 'bg-red' : 'bg-grey'} cl-white`}
+                                className={
+                                    `btn genre-button ${user.search === 'genres' ? 'bg-red' : 'bg-grey'} cl-white`
+                                }
+                                onClick={props.switchSearchToTitle}
                             >
                                 GENRE
                             </button>
                             <button
-                                className={`btn title-button ${user.search === 'title' ? 'bg-red' : 'bg-grey'} cl-white`}
+                                className={
+                                    `btn title-button ${user.search === 'title' ? 'bg-red' : 'bg-grey'} cl-white`
+                                }
+                                onClick={props.switchSearchToGenre}
                             >TITLE
                             </button>
                         </div>

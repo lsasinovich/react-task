@@ -4,8 +4,6 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import { Map } from 'immutable';
-
 import { Button, Welcome } from '@storybook/react/demo';
 
 import { EmptyResults } from './empty-page/empty-results';
@@ -34,7 +32,7 @@ storiesOf('Footer', module).add('default', () => <Footer />);
 storiesOf('Netflixroulette', module).add('default', () => <Netflixroulette />);
 storiesOf('Not found page', module).add('default', () => <NotFoundPage />);
 
-const resultsBarProps = Map({
+const resultsBarProps = {
     inputValue: 'iron man',
     sort: 'rating',
     search: 'title',
@@ -45,29 +43,41 @@ const resultsBarProps = Map({
             genres: [],
         },
     },
-});
+};
 
 const resultsBarPropsWithRatingSort = { ...resultsBarProps };
-const resultsBarPropsWithReleaseDateSort = resultsBarProps.set('sort', 'releaseDate');
-const resultsBarPropsWithoutResults = resultsBarProps.set('resultsCount', 0);
-const resultsBarPropsWithFullItem = resultsBarProps.set('fullItem', {
-    isActive: true,
-    filmData: {
-        genres: ['Drama'],
+const resultsBarPropsWithReleaseDateSort = {
+    ...resultsBarProps,
+    sort: 'releaseDate',
+};
+const resultsBarPropsWithoutResults = {
+    ...resultsBarProps,
+    resultsCount: 0,
+};
+const resultsBarPropsWithFullItem = {
+    ...resultsBarProps,
+    fullItem: {
+        isActive: true,
+        filmData: {
+            genres: ['Drama'],
+        },
     },
-});
+};
 
-const filmItemProps = Map({
+const filmItemProps = {
     id: 123456,
     title: 'Iron man',
     posterUrl: '',
     genres: ['Drama', 'Comedy'],
     year: 1999,
-});
+};
 
-const filmItemPropsWithImage = filmItemProps.set('posterUrl', './iron.jpg');
+const filmItemPropsWithImage = {
+    ...filmItemProps,
+    posterUrl: './iron.jpg',
+};
 
-const FullFilmItemProps = Map({
+const FullFilmItemProps = {
     fullItem: {
         filmData: {
             vote_average: 9.4,
@@ -83,25 +93,33 @@ const FullFilmItemProps = Map({
     inputValue: 'Iron Man',
     search: 'title',
     sort: 'rating',
-});
+};
 
-const headerPropsWithTitleSearch = Map({
+const headerPropsWithTitleSearch = {
     inputValue: 'Iron Man',
     fullItem: {
         isActive: false,
     },
     sort: 'rating',
     search: 'title',
-});
+};
 
-const headerPropsWithGenreSearch = headerPropsWithTitleSearch.set('search', 'genres');
+const headerPropsWithGenreSearch = {
+    ...headerPropsWithTitleSearch,
+    search: 'genres',
+};
 
-storiesOf('Results Bar', module).add('sort by rating', () => <ResultsBar user={resultsBarPropsWithRatingSort} />);
+storiesOf('Results Bar', module).add('sort by rating', () => <ResultsBar
+    user={resultsBarPropsWithRatingSort}
+    switchSortToReleaseDate={linkTo('Results Bar', 'sort by release date')}
+/>);
 
 storiesOf('Results Bar', module).add('sort by release date', () =>
     <ResultsBar user={
         resultsBarPropsWithReleaseDateSort
-    } />);
+    }
+    switchSortToRating={linkTo('Results Bar', 'sort by rating')}
+    />);
 
 storiesOf('Results Bar', module).add('without results', () => <ResultsBar user={resultsBarPropsWithoutResults} />);
 
@@ -113,6 +131,12 @@ storiesOf('Film Item', module).add('with poster image', () => <FilmItem user={fi
 
 storiesOf('Full Film Item', module).add('with all information', () => <FullFilmItem user={FullFilmItemProps} />);
 
-storiesOf('Header', module).add('with title search', () => <Header user={headerPropsWithTitleSearch} />);
+storiesOf('Header', module).add('with title search', () => <Header
+    user={headerPropsWithTitleSearch}
+    switchSearchToGenre={linkTo('Header', 'with genre search')}
+/>);
 
-storiesOf('Header', module).add('with genre search', () => <Header user={headerPropsWithGenreSearch} />);
+storiesOf('Header', module).add('with genre search', () => <Header
+    user={headerPropsWithGenreSearch}
+    switchSearchToTitle={linkTo('Header', 'with title search')}
+/>);
