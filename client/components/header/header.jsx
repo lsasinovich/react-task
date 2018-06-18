@@ -21,6 +21,8 @@ import {
 import Cross from '../../images/cross.png';
 import Arrow from '../../images/arrow.png';
 
+import { switchSearchAction, getSearchFromState } from '../../selectors';
+
 type OwnProps = {
     location: {
         pathname: string
@@ -100,15 +102,15 @@ class Header extends React.Component<Props> {
                                 <Button
                                     className="genre-button"
                                     size='sm'
-                                    color={this.props.user.search === 'genres' ? 'danger' : 'secondary'}
-                                    onClick={() => this.props.switchSearch('genres')}
+                                    color={ this.props.search === 'genres' ? 'danger' : 'secondary'}
+                                    onClick={() => switchSearchAction('genres')}
                                 >
                                     GENRE
                                 </Button>
                                 <Button
                                     size='sm'
-                                    color={this.props.user.search === 'title' ? 'danger' : 'secondary'}
-                                    onClick={() => this.props.switchSearch('title')}
+                                    color={ this.props.search === 'title' ? 'danger' : 'secondary'}
+                                    onClick={() => switchSearchAction('title')}
                                 >
                                     TITLE
                                 </Button>
@@ -140,13 +142,14 @@ const mapDispatchToProps = {
     searchHandler,
     returnToMainPage,
     resetInputValue,
-    switchSearch,
+    switchSearchAction,
     fetchMovies,
     setSearchURL,
 };
 
 const mapStateToProps = (state): StateProps => ({
     user: state,
+    search: getSearchFromState(state),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
