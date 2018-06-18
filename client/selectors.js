@@ -1,13 +1,29 @@
 import { createSelector } from 'reselect';
-import { switchSearch } from './store/action-creators';
 
 const getSearch = search => search;
-export const getSearchFromState = state => state.search;
 
-export const switchSearchAction = createSelector(
+export const getSearchFromState = createSelector(
     [getSearch],
-    (search) => {
-        console.log('here');
-        return switchSearch(search);
-    },
+    search => search,
+);
+
+const getInput = inputValue => inputValue;
+
+export const getInputValueFromState = createSelector(
+    [getInput],
+    input => input,
+);
+
+const getSort = sort => sort;
+
+export const getSortFromState = createSelector(
+    [getSort],
+    sort => sort,
+);
+
+const getFilmId = id => id;
+
+export const getFilmIdFromState = createSelector(
+    [getFilmId],
+    id => id,
 );

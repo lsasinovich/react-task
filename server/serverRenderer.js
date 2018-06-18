@@ -12,8 +12,9 @@ function renderHTML(html, preloadedState) {
         <head>
           <meta charset=utf-8>
           <title>React Task</title>
+          <link href="/css/main.css" rel="stylesheet" type="text/css">
           <link rel="icon" type="image/gif/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png">
-          ${process.env.NODE_ENV === 'development' ? '' : '<link href="/css/main.css" rel="stylesheet" type="text/css">'}
+         
           <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.0.0-alpha.5/dist/css/bootstrap.min.css">
         </head>
         <body>

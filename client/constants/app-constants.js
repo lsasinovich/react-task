@@ -40,6 +40,6 @@ export const INITIAL_STATE = {
     inputValue: '',
     sort: 'releaseDate',
     search: 'title',
-    resultsCount: -1,
+    resultsCount: 0,
     searchURL: '/',
 };

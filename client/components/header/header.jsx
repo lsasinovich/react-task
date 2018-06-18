@@ -21,7 +21,7 @@ import {
 import Cross from '../../images/cross.png';
 import Arrow from '../../images/arrow.png';
 
-import { switchSearchAction, getSearchFromState } from '../../selectors';
+import { getSearchFromState, getInputValueFromState } from '../../selectors';
 
 type OwnProps = {
     location: {
@@ -77,8 +77,8 @@ class Header extends React.Component<Props> {
                         <div className="search-wrapper">
                             <InputGroup>
                                 <Input className="search-bar" placeholder="Let's find your movie"
-                                    value={this.props.user.inputValue}
-                                    onChange={event => this.props.updateInputValue(event.target.value)}
+                                    value={this.props.inputValue}
+                                    onChange={event => this.props.updateInputValue(getInputValueFromState(event.target.value))}
                                     onKeyPress={(event) => {
                                         if (event.key === 'Enter') {
                                             this.props.history.push(`/search/${this.props.user.inputValue}`);
@@ -102,15 +102,15 @@ class Header extends React.Component<Props> {
                                 <Button
                                     className="genre-button"
                                     size='sm'
-                                    color={ this.props.search === 'genres' ? 'danger' : 'secondary'}
-                                    onClick={() => switchSearchAction('genres')}
+                                    color={this.props.search === 'genres' ? 'danger' : 'secondary'}
+                                    onClick={() => this.props.switchSearch(getSearchFromState('genres'))}
                                 >
                                     GENRE
                                 </Button>
                                 <Button
                                     size='sm'
-                                    color={ this.props.search === 'title' ? 'danger' : 'secondary'}
-                                    onClick={() => switchSearchAction('title')}
+                                    color={this.props.search === 'title' ? 'danger' : 'secondary'}
+                                    onClick={() => this.props.switchSearch(getSearchFromState('title'))}
                                 >
                                     TITLE
                                 </Button>
@@ -142,14 +142,15 @@ const mapDispatchToProps = {
     searchHandler,
     returnToMainPage,
     resetInputValue,
-    switchSearchAction,
+    switchSearch,
     fetchMovies,
     setSearchURL,
 };
 
 const mapStateToProps = (state): StateProps => ({
     user: state,
-    search: getSearchFromState(state),
+    search: getSearchFromState(state.search),
+    inputValue: getInputValueFromState(state.inputValue),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

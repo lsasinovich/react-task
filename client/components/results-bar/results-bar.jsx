@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import './results-bar.scss';
 import { switchSortAsyncAction } from '../../store/action-creators';
 
+import { getSortFromState } from '../../selectors';
+
 type StateProps = {
     user: {
         inputValue: string,
@@ -38,18 +40,18 @@ class ResultsBar extends React.Component<Props> {
                                 <div className="results-sort">
                                     <p>Sort by</p>
                                     <p
-                                        className={this.props.user.sort === 'releaseDate' ? 'cl-red' : 'cl-black'}
+                                        className={this.props.sort === 'releaseDate' ? 'cl-red' : 'cl-black'}
                                         onClick={() => this.props.switchSortAsyncAction(
-                                            'releaseDate',
+                                            getSortFromState('releaseDate'),
                                             this.props.user.inputValue,
                                             this.props.user.search,
                                         )
                                         }
                                     >release date
                                     </p>
-                                    <p className={this.props.user.sort === 'rating' ? 'cl-red' : 'cl-black'}
+                                    <p className={this.props.sort === 'rating' ? 'cl-red' : 'cl-black'}
                                         onClick={() => this.props.switchSortAsyncAction(
-                                            'rating',
+                                            getSortFromState('rating'),
                                             this.props.user.inputValue,
                                             this.props.user.search,
                                         )
@@ -73,6 +75,7 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state): StateProps => ({
     user: state,
+    sort: getSortFromState(state.sort),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResultsBar);

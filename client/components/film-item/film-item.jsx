@@ -12,6 +12,8 @@ import { fetchMoviesById } from '../../store/action-creators';
 
 import NoPoster from '../../images/noposter.jpg';
 
+import { getFilmIdFromState } from '../../selectors';
+
 type OwnProps = {
     id: number,
     title: string,
@@ -36,13 +38,13 @@ class FilmItem extends React.Component<Props> {
             <div className="film-item">
                 <Card>
                     {this.props.posterUrl ?
-                        <Link to={`/film/${this.props.id}`} onClick={() => this.props.fetchMoviesById(this.props.id)}>
+                        <Link to={`/film/${this.props.id}`} onClick={() => this.props.fetchMoviesById(getFilmIdFromState(this.props.id))}>
                             <CardImg top height="100%" src={this.props.posterUrl} alt="Card image cap" />
                         </Link> :
                         <CardImg top height="100%" src={NoPoster} alt="Card image cap" />
                     }
                     <CardBody className="film-info">
-                        <Link to={`/film/${this.props.id}`} onClick={() => this.props.fetchMoviesById(this.props.id)}>
+                        <Link to={`/film/${this.props.id}`} onClick={() => this.props.fetchMoviesById(getFilmIdFromState(this.props.id))}>
                             <CardTitle>{this.props.title}</CardTitle>
                         </Link>
                         <CardSubtitle>{this.props.genres}</CardSubtitle>

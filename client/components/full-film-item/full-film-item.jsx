@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 
 import { fetchMoviesById, returnToMainPage, fetchMovies } from '../../store/action-creators';
+import { getFilmIdFromState } from '../../selectors';
 
 import './full-film-item.scss';
 
@@ -46,7 +47,7 @@ type Props = StateProps & DispatchProps & OwnProps;
 
 class FullFilmItem extends React.Component<Props> {
     componentWillMount() {
-        this.props.fetchMoviesById(this.props.match.params.id);
+        this.props.fetchMoviesById(getFilmIdFromState(this.props.match.params.id));
     }
 
     render() {
