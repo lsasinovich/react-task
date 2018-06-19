@@ -20,6 +20,7 @@ type StateProps = {
             },
         }
     },
+    sort: string,
 };
 
 type DispatchProps = {
